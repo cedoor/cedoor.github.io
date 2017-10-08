@@ -1,0 +1,12 @@
+<div class="social-media box text-center">
+    <h4 class="box-title">Social media</h4>
+    <table class="table">
+        <tr>
+            <td *ngFor="let social of data.socialMedia">
+                <a href="http://{{ social.name }}.com/{{ social.username }}" target="_blank">
+                    <img src="./assets/img/social-media/{{ social.name | lowercase }}.png">
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

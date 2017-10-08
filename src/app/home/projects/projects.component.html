@@ -1,0 +1,17 @@
+<div class="projects box text-center">
+    <h4 class="box-title">Projects</h4>
+    <table class="table">
+        <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Source</th>
+        </tr>
+        <tr *ngFor="let project of data.projects">
+            <td>{{ project }}</td>
+            <td>
+                <a href="http://github.com/{{ project }}" target="_blank">
+                    <img src="./assets/img/social-media/github2.png">
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>

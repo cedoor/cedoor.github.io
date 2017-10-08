@@ -1,0 +1,13 @@
+.social-media > table {
+    margin: 0;
+}
+
+.social-media > table > tbody > tr > td {
+    border-top: 0;
+    padding: 0;
+}
+
+.social-media img {
+    -webkit-filter: grayscale(40%);
+    filter: grayscale(40%);
+}

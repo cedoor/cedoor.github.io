@@ -1,0 +1,14 @@
+.informations {
+    padding: 20px 15px;
+}
+
+.informations table {
+    margin-bottom: 5px;
+}
+
+.informations blockquote {
+    color: #787660;
+    font-size: 13px;
+    padding: 0 7px 10px 7px;
+    margin-bottom: 0;
+}

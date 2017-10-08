@@ -1,0 +1,16 @@
+<img class="ripple-gif" *ngIf="!loaded" src="./assets/img/ripple.gif">
+<div *ngIf="loaded" class="container">
+    <div class="space-block hidden-xs"></div>
+    <div class="row">
+        <div class="sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <app-photo [data]="data"></app-photo>
+            <app-social [data]="data"></app-social>
+            <app-projects [data]="data"></app-projects>
+        </div>
+        <div class="content col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <app-info [data]="data"></app-info>
+            <app-skills [data]="data"></app-skills>
+        </div>
+    </div>
+    <div class="space-block hidden-xs"></div>
+</div>

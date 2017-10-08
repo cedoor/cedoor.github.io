@@ -1,0 +1,8 @@
+.projects > table {
+    margin-bottom: -10px;
+}
+
+.projects > table > tbody > tr > td:first-child {
+    font-weight: bold;
+    color: #70836e;
+}

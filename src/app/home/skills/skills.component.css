@@ -1,0 +1,37 @@
+.skills {
+    font-size: 15px;
+    padding: 20px 15px;
+}
+
+.skills > table {
+    margin-bottom: 10px;
+}
+
+.skills > table:last-child {
+    margin-bottom: -8px;
+}
+
+.skills > table > tbody > tr:hover {
+    background-color: #f6f6f6;
+}
+
+.skills > table > tbody > tr > td {
+    border-color: #ededed;
+}
+
+.skills > table {
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.skills .level-bar {
+    background-color: #ebebeb;
+    margin-top: 7px;
+}
+
+.skills .level-bar > div {
+    background-color: #c4cbb9;
+    height: 8px;
+    -webkit-transition: width 1s; /* Safari */
+    transition: width 1s;
+}
