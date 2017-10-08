@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {ResourcesService} from "../services/resources.service";
+import {ResourcesService} from "../../services/resources.service";
 
 @Component({
     selector: "app-home",
@@ -11,6 +11,7 @@ export class HomeComponent {
     delay: number = .5;
 
     loaded: boolean = false;
+
     data: any;
 
     constructor(public resources: ResourcesService) {

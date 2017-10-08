@@ -1,0 +1,8 @@
+<div class="posts text-center box">
+    <h2 class="box-title">Blog</h2>
+    <hr>
+    <div *ngFor="let post of posts">
+        <p><i>{{ post.date }}</i></p>
+        <div Markdown path="./assets/blog/{{ post.name }}.md"></div>
+    </div>
+</div>

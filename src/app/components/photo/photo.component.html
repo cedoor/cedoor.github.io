@@ -2,4 +2,5 @@
     <img [src]="data?.photo?.src" [width]="data?.photo?.width">
     <h4>{{ data?.photo?.name }}</h4>
     <p>{{ data?.photo?.email }}</p>
+    <p><a routerLink="/{{ link | lowercase }}">{{ link }}</a></p>
 </div>

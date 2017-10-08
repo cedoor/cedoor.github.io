@@ -7,17 +7,12 @@ import "rxjs/add/operator/map";
 export class ResourcesService {
 
     dataURL: string = "./assets/data.json";
-    postsURL: string = "./assets/blog";
 
     constructor(private http: Http) {
     }
 
     getData(): Promise<any> {
         return this.http.get(this.dataURL).map(data => data.json()).toPromise();
-    }
-
-    getPost(name: string): Promise<any> {
-        return this.http.get(`${this.postsURL}/${name}`).toPromise();
     }
 
 }

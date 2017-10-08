@@ -1,5 +1,3 @@
-/* Basic styling */
-
 ::-webkit-scrollbar {
     width: 15px;
 }
@@ -28,6 +26,10 @@ table {
     margin: 0;
 }
 
+table.table > tbody > tr > td, table.table > tbody > tr > th {
+    border-top-color: #dadada;
+}
+
 .container {
     max-width: 1000px;
     padding: 0;
@@ -39,10 +41,6 @@ table {
 
 .container > .row > div {
     padding: 0 5px;
-}
-
-.space-block {
-    height: 40px;
 }
 
 .box a:focus, .box a:hover {
@@ -73,14 +71,14 @@ table {
     color: #6b6b6b;
 }
 
+.space-block {
+    height: 40px;
+}
+
 .ripple-gif {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: -41px;
     margin-left: -41px;
-}
-
-table.table > tbody > tr > td, table.table > tbody > tr > th {
-    border-top-color: #dadada;
 }
