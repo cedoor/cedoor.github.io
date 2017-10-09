@@ -2,17 +2,17 @@
     padding: 20px 15px;
 }
 
-.posts>h2 {
+.posts > h2 {
     color: #686868;
 }
 
-.posts>div {
+.posts > div {
     position: relative;
     text-align: left;
     padding-bottom: 10px;
 }
 
-.posts>div>p {
+.posts > div > p {
     position: absolute;
     color: #828282;
     right: 20px;

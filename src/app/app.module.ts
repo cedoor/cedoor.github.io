@@ -13,7 +13,7 @@ import {SocialComponent} from "./components/social/social.component";
 import {ResourcesService} from "./services/resources.service";
 import {HttpModule} from "@angular/http";
 import {MarkdownModule} from "angular2-markdown";
-import { PostsComponent } from './components/posts/posts.component';
+import {PostsComponent} from "./components/posts/posts.component";
 
 const appRoutes: Routes = [
     {path: "home", component: HomeComponent},
@@ -41,9 +41,7 @@ const appRoutes: Routes = [
         BrowserModule,
         HttpModule,
         MarkdownModule.forRoot(),
-        RouterModule.forRoot(
-            appRoutes, //{enableTracing: true} // <-- debugging purposes only
-        )
+        RouterModule.forRoot(appRoutes)
     ],
     providers: [
         ResourcesService

@@ -18,10 +18,6 @@ export class BlogComponent {
         new Post({
             name: "Hello",
             date: "08/10/2017"
-        }),
-        new Post({
-            name: "Hello2",
-            date: "08/10/2017"
         })
     ];
 
