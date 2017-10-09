@@ -1,6 +1,6 @@
 {
   "name": "cedoor",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Personal site with informations about me",
   "author": "Omar Desogus <omardesogus9@gmail.com>",
   "homepage": "https://github.com/cedoor/cedoor.github.io#readme",
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "public": "ng build --prod && ngh --branch=master --message='update site to version 0.2.0'"
+    "public": "ng build --prod && ngh --branch=master --message='update site to version 0.3.0'"
   },
   "private": true,
   "dependencies": {
