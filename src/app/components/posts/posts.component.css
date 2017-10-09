@@ -15,7 +15,7 @@
 .posts > div > p {
     position: absolute;
     color: #828282;
-    right: 20px;
-    bottom: -10px;
+    right: 10px;
+    bottom: -15px;
     font-size: 14px;
 }

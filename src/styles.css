@@ -65,7 +65,7 @@ table.table > tbody > tr > td, table.table > tbody > tr > th {
 .box {
     position: relative;
     padding: 20px 10px;
-    border: 1px solid #e3e3e3;
+    border: 1px solid #d2d2d2;
     border-radius: 3px;
     margin-bottom: 10px;
     color: #6b6b6b;
@@ -81,4 +81,9 @@ table.table > tbody > tr > td, table.table > tbody > tr > th {
     left: 50%;
     margin-top: -41px;
     margin-left: -41px;
+}
+
+markdown img {
+    max-width: 100%;
+    height: auto;
 }

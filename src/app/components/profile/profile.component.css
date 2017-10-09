@@ -1,11 +1,11 @@
-.photo > p, .photo > h4 {
+.profile > p, .profile > h4 {
     margin: 0;
 }
 
-.photo > h4 {
+.profile > h4 {
     margin-top: 18px;
 }
 
-.photo > p {
+.profile > p {
     margin-top: 10px;
 }

@@ -1,15 +1,25 @@
 {
-    "photo": {
+    "posts": [
+        {
+            "name": "Hello",
+            "date": "08/10/2017"
+        }
+    ],
+    "profile": {
         "name": "Omar Desogus",
         "email": "omardesogus9@gmail.com",
-        "src": "https://avatars1.githubusercontent.com/u/11427903?v=4&s=460",
+        "image": "https://avatars1.githubusercontent.com/u/11427903?v=4&s=460",
         "width": 150
     },
     "projects": [
-        "Mindmapp",
-        "Cgrapp"
+        {
+            "name": "Mindmapp"
+        },
+        {
+            "name": "Cgrapp"
+        }
     ],
-    "socialMedia": [
+    "socials": [
         {
             "name": "Facebook",
             "username": "cedoor"
@@ -27,7 +37,7 @@
             "username": "in/omardesogus"
         }
     ],
-    "informations": {
+    "info": {
         "data": [
             {
                 "name": "Date of birth",

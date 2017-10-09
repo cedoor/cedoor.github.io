@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {Skill} from "../../models/skill";
 
 @Component({
     selector: "app-skills",
@@ -7,7 +8,7 @@ import {Component, Input} from "@angular/core";
 })
 export class SkillsComponent {
 
-    @Input() data: any;
+    @Input() skills: Skill[];
 
     constructor() {
     }

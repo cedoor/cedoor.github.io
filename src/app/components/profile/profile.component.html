@@ -1,0 +1,6 @@
+<div class="profile box text-center">
+    <img [src]="profile.image" [width]="profile.width">
+    <h4>{{ profile.name }}</h4>
+    <p>{{ profile.email }}</p>
+    <p><a routerLink="/{{ link | lowercase }}">{{ link }}</a></p>
+</div>

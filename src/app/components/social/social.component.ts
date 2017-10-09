@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {Social} from "../../models/social";
 
 @Component({
     selector: "app-social",
@@ -7,7 +8,7 @@ import {Component, Input} from "@angular/core";
 })
 export class SocialComponent {
 
-    @Input() data: any;
+    @Input() socials: Social[];
 
     constructor() {
     }

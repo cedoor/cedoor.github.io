@@ -6,7 +6,7 @@ import {AppComponent} from "./app.component";
 import {BlogComponent} from "./pages/blog/blog.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {InfoComponent} from "./components/info/info.component";
-import {PhotoComponent} from "./components/photo/photo.component";
+import {ProfileComponent} from "./components/profile/profile.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
 import {SkillsComponent} from "./components/skills/skills.component";
 import {SocialComponent} from "./components/social/social.component";
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
         BlogComponent,
         HomeComponent,
         InfoComponent,
-        PhotoComponent,
+        ProfileComponent,
         ProjectsComponent,
         SkillsComponent,
         SocialComponent,
