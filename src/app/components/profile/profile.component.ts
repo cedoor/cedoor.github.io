@@ -4,7 +4,7 @@ import {Profile} from "../../models/profile";
 @Component({
     selector: "app-photo",
     templateUrl: "./profile.component.html",
-    styleUrls: ["./profile.component.css"]
+    styleUrls: ["./profile.component.scss"]
 })
 export class ProfileComponent {
 

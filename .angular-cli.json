@@ -18,14 +18,14 @@
             "tsconfig": "tsconfig.app.json",
             "prefix": "app",
             "styles": [
-                "styles.css",
+                "styles.scss",
                 "../node_modules/prismjs/themes/prism.css"
             ],
             "scripts": []
         }
     ],
     "defaults": {
-        "styleExt": "css",
+        "styleExt": "scss",
         "component": {}
     }
 }
