@@ -18,6 +18,7 @@ import {PostsComponent} from "./components/posts/posts.component";
 const appRoutes: Routes = [
     {path: "home", component: HomeComponent},
     {path: "blog", component: BlogComponent},
+    {path: "blog/:post", component: BlogComponent},
     {
         path: "**",
         redirectTo: "/home",
