@@ -12,7 +12,7 @@ import {SkillsComponent} from "./components/skills/skills.component";
 import {SocialComponent} from "./components/social/social.component";
 import {ResourcesService} from "./services/resources.service";
 import {HttpModule} from "@angular/http";
-import {MarkdownModule} from "angular2-markdown";
+import {MarkdownModule} from "ngx-markdown";
 import {PostsComponent} from "./components/posts/posts.component";
 
 const appRoutes: Routes = [
