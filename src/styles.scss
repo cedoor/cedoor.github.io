@@ -59,7 +59,7 @@ table.table > tbody > tr > td, table.table > tbody > tr > th {
 .box .box-title {
     margin: 0;
     margin-bottom: 15px;
-    color: #737373;
+    color: #5d5d5d;
 }
 
 .box {
@@ -68,7 +68,15 @@ table.table > tbody > tr > td, table.table > tbody > tr > th {
     border: 1px solid #d2d2d2;
     border-radius: 3px;
     margin-bottom: 10px;
-    color: #6b6b6b;
+    color: #575757;
+}
+
+.box blockquote {
+    font-size: 15px;
+
+    p {
+        color: #717171;
+    }
 }
 
 .space-block {
