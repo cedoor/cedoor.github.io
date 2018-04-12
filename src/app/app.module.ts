@@ -1,7 +1,6 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
-
 import {AppComponent} from "./app.component";
 import {BlogComponent} from "./pages/blog/blog.component";
 import {HomeComponent} from "./pages/home/home.component";
@@ -11,9 +10,9 @@ import {ProjectsComponent} from "./components/projects/projects.component";
 import {SkillsComponent} from "./components/skills/skills.component";
 import {SocialComponent} from "./components/social/social.component";
 import {ResourcesService} from "./services/resources.service";
-import {HttpModule} from "@angular/http";
 import {MarkdownModule} from "ngx-markdown";
 import {PostsComponent} from "./components/posts/posts.component";
+import {HttpClientModule} from "@angular/common/http";
 
 const appRoutes: Routes = [
     {path: "home", component: HomeComponent},
@@ -40,7 +39,7 @@ const appRoutes: Routes = [
     ],
     imports: [
         BrowserModule,
-        HttpModule,
+        HttpClientModule,
         MarkdownModule.forRoot(),
         RouterModule.forRoot(appRoutes)
     ],

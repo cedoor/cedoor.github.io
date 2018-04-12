@@ -1,8 +1,7 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {HttpClient} from "@angular/common/http";
 import "rxjs/add/operator/toPromise";
 import "rxjs/add/operator/map";
-import {Post} from "../models/post";
 
 @Injectable()
 export class ResourcesService {
@@ -10,15 +9,17 @@ export class ResourcesService {
     dataURL: string = "./data.json";
     postURL: string = "./posts";
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
     }
 
     getData(): Promise<any> {
-        return this.http.get(this.dataURL).map(data => data.json()).toPromise();
+        return this.http.get(this.dataURL).toPromise();
     }
 
     getPost(name: string): Promise<string> {
-        return this.http.get(`${this.postURL}/${name}.md`).map(data => data.text()).toPromise();
+        return this.http.get(`${this.postURL}/${name}.md`, {
+            responseType: "text"
+        }).toPromise();
     }
 
 }

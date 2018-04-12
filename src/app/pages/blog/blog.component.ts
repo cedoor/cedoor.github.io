@@ -59,7 +59,10 @@ export class BlogComponent {
                     date: post.date,
                     content: resource
                 }));
-                if (i === posts.length - 1) this.loaded = true;
+
+                if (i === posts.length - 1) {
+                    this.loaded = true;
+                }
             });
         });
     }
