@@ -13,10 +13,12 @@
     },
     "projects": [
         {
-            "name": "Mindmapp"
+            "name": "Mindmapp",
+            "link": "https://github.com/Mindmapp"
         },
         {
-            "name": "Cgrapp"
+            "name": "Cgrapp",
+            "link": "https://github.com/Cgrapp"
         }
     ],
     "socials": [
@@ -27,10 +29,6 @@
         {
             "name": "Github",
             "username": "cedoor"
-        },
-        {
-            "name": "Twitter",
-            "username": "cedoor9"
         },
         {
             "name": "LinkedIn",

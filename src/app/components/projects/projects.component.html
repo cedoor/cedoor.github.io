@@ -8,7 +8,7 @@
         <tr *ngFor="let project of projects">
             <td>{{ project.name }}</td>
             <td>
-                <a href="http://github.com/{{ project.name }}" target="_blank">
+                <a [href]="project.link" target="_blank">
                     <img src="./assets/img/social-media/github2.png">
                 </a>
             </td>
