@@ -13,14 +13,17 @@ import {ResourcesService} from "./services/resources.service";
 import {MarkdownModule} from "ngx-markdown";
 import {PostsComponent} from "./components/posts/posts.component";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatCardModule} from "@angular/material";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 const appRoutes: Routes = [
-    {path: "home", component: HomeComponent},
+    {path: "", component: HomeComponent},
     {path: "blog", component: BlogComponent},
     {path: "blog/:post", component: BlogComponent},
     {
         path: "**",
-        redirectTo: "/home",
+        redirectTo: "/",
         pathMatch: "full"
     }
 ];
@@ -39,9 +42,12 @@ const appRoutes: Routes = [
     ],
     imports: [
         BrowserModule,
+        FlexLayoutModule,
+        BrowserAnimationsModule,
         HttpClientModule,
         MarkdownModule.forRoot(),
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        MatCardModule
     ],
     providers: [
         ResourcesService

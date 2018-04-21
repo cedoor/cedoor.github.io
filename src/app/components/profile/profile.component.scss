@@ -1,11 +1,9 @@
-.profile > p, .profile > h4 {
-    margin: 0;
-}
+#profile {
+    margin: 15px 0;
+    text-align: center;
 
-.profile > h4 {
-    margin-top: 18px;
-}
-
-.profile > p {
-    margin-top: 10px;
+    img {
+        margin-top: 0;
+        width: 150px;
+    }
 }

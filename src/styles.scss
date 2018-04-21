@@ -20,13 +20,15 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    color: #666666;
 }
 
 table {
     margin: 0;
 }
 
-table.table > tbody > tr > td, table.table > tbody > tr > th {
+table.table > tbody > tr > td,
+table.table > tbody > tr > th {
     border-top-color: #dadada;
 }
 
@@ -40,43 +42,20 @@ table.table > tbody > tr > td, table.table > tbody > tr > th {
 }
 
 .container > .row > div {
-    padding: 0 5px;
+    padding: 0 8px;
 }
 
-.box a:focus, .box a:hover {
+a:focus, .box a:hover {
     text-decoration: none;
 }
 
-.box a:hover {
+a:hover {
     color: #4e5d65;
 }
 
-.box a {
+a {
     color: #5f7a88;
     cursor: pointer;
-}
-
-.box .box-title {
-    margin: 0;
-    margin-bottom: 15px;
-    color: #5d5d5d;
-}
-
-.box {
-    position: relative;
-    padding: 20px 10px;
-    border: 1px solid #d2d2d2;
-    border-radius: 3px;
-    margin-bottom: 10px;
-    color: #575757;
-}
-
-.box blockquote {
-    font-size: 15px;
-
-    p {
-        color: #717171;
-    }
 }
 
 .space-block {

@@ -1,15 +1,14 @@
 {
     "posts": [
         {
-            "name": "Elogio_alle_emozioni",
+            "name": "Elogio_all_immaginazione",
             "date": "02/11/2017"
         }
     ],
     "profile": {
         "name": "Omar Desogus",
         "email": "omardesogus9@gmail.com",
-        "image": "https://avatars1.githubusercontent.com/u/11427903?v=4&s=460",
-        "width": 150
+        "image": "https://avatars1.githubusercontent.com/u/11427903?v=4&s=460"
     },
     "projects": [
         {

@@ -1,21 +1,22 @@
-.posts {
-    padding: 20px 15px;
-}
+#posts {
+    margin: 15px 0;
 
-.posts > h2 {
-    color: #686868;
-}
+    h2 {
+        text-align: center;
+        color: #686868;
+    }
 
-.posts > div {
-    position: relative;
-    text-align: left;
-    padding-bottom: 10px;
-}
+    div {
+        position: relative;
+        text-align: left;
+        padding-bottom: 10px;
+    }
 
-.posts > div > p {
-    position: absolute;
-    color: #828282;
-    right: 10px;
-    bottom: -15px;
-    font-size: 14px;
+    div > p {
+        position: absolute;
+        color: #828282;
+        right: 10px;
+        bottom: -15px;
+        font-size: 14px;
+    }
 }

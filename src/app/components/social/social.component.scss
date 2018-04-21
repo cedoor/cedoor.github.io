@@ -1,13 +1,17 @@
-.social-media > table {
-    margin: 0;
-}
+#social {
+    margin: 15px 0;
+    text-align: center;
 
-.social-media > table > tbody > tr > td {
-    border-top: 0;
-    padding: 0;
-}
+    h4 {
+        margin-bottom: 20px;
+    }
 
-.social-media img {
-    -webkit-filter: grayscale(40%);
-    filter: grayscale(40%);
+    table {
+        margin: 0;
+    }
+
+    table > tbody > tr > td {
+        border-top: 0;
+        padding: 0;
+    }
 }

@@ -19,9 +19,12 @@
             "prefix": "app",
             "styles": [
                 "styles.scss",
-                "../node_modules/prismjs/themes/prism.css"
+                "../node_modules/prismjs/themes/prism.css",
+                "../node_modules/cookieconsent/build/cookieconsent.min.css"
             ],
-            "scripts": []
+            "scripts": [
+                "../node_modules/cookieconsent/build/cookieconsent.min.js"
+            ]
         }
     ],
     "defaults": {

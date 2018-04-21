@@ -1,8 +1,21 @@
-.projects > table {
-    margin-bottom: -10px;
-}
+#projects {
+    margin: 15px 0;
+    text-align: center;
 
-.projects > table > tbody > tr > td:first-child {
-    font-weight: bold;
-    color: #70836e;
+    h4 {
+        margin-bottom: 20px;
+    }
+
+    table {
+        margin-bottom: -10px;
+    }
+
+    table > tbody > tr > td:first-child {
+        font-weight: bold;
+        color: #70836e;
+    }
+
+    table > tbody > tr > th {
+        text-align: center;
+    }
 }
