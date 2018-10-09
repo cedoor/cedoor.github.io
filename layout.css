@@ -1,0 +1,90 @@
+body {
+    max-width: 1600px;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: "Raleway", sans-serif;
+}
+
+/** Sidebar **/
+
+div#sidebar {
+    flex: 0 0 230px;
+    background-color: #244264
+}
+
+div#avatar {
+    margin: 20px 0 20px 40px;
+    padding: 16px;
+    border-radius: 90px;
+    background-color: whitesmoke;
+    width: 155px;
+    height: 155px;
+    border: 4px solid #9f9f9f;
+}
+
+div#avatar > img {
+    width: 100%;
+}
+
+div#index {
+    margin: 25px 80px 20px 40px;
+}
+
+div#index > a {
+    display: block;
+    color: lightgray;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+    border-bottom: 2px solid #244264;
+}
+
+div#index > a:hover {
+    color: #ffcc63;
+    border-color: #ffcc63;
+}
+
+div#socials {
+    margin: 30px 40px;
+    color: lightgray;
+}
+
+div#socials > a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+div#socials > a:hover {
+    color: #ffcc63;
+}
+
+div#socials > a > i {
+    font-size: 27px;
+}
+
+/** Content **/
+
+div#content {
+    padding: 20px;
+}
+
+/** Media queries **/
+
+@media only screen and (min-width: 992px) {
+    html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+    }
+
+    body {
+        display: flex;
+        box-shadow: 0 0 20px 2px #8A8A8A;
+    }
+
+    div#sidebar > nav {
+        position: fixed;
+    }
+}

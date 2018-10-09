@@ -6,10 +6,10 @@
     "homepage": "https://github.com/cedoor/cedoor.github.io#readme",
     "license": "MIT",
     "scripts": {
-        "start": "ng serve"
+        "start": "live-server"
     },
-    "private": true,
-    "dependencies": {
-
+    "devDependencies": {
+        "live-server": "1.2.0",
+        "standard": "11.0.1"
     }
 }
