@@ -4,7 +4,7 @@
 <title>Cedoor</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <meta name="description" content="Personal site with informations about me">
 <meta property="og:description" content="Personal site with informations about me">
 <meta property="og:title" content="Omar Desogus">
@@ -21,13 +21,13 @@
 <div id="sidebar" class="animated faster">
     <nav>
         <div id="avatar" class="animated fast rollIn">
-            <img src="https://avatars1.githubusercontent.com/u/11427903?v=4&s=460"><br><br>
+            <img src="./images/avatar.png">
         </div>
 
         <div id="index" class="animated fast fadeIn">
             <a href="#" onclick="app.closeMenu()">
                 <i class="fa fa-user fa-fw"></i>
-                About
+                Who am i?
             </a>
             <a href="#" onclick="app.closeMenu()">
                 <i class="fa fa-rocket fa-fw"></i>
@@ -37,6 +37,10 @@
                 <i class="fa fa-briefcase fa-fw"></i>
                 Experience
             </a>
+            <a href="#" onclick="app.closeMenu()">
+                <i class="fa fa-bar-chart fa-fw"></i>
+                Skills
+            </a>
             <a href="#contact" onclick="app.closeMenu()">
                 <i class="fa fa-envelope fa-fw"></i>
                 Contact
@@ -44,7 +48,7 @@
         </div>
 
         <div id="socials" class="animated fast slideInUp">
-            <a href="#" target="_blank">
+            <a href="https://www.facebook.com/cedoor" target="_blank">
                 <i class="fa fa-facebook-official"></i>
             </a>
             <a href="#" target="_blank">
@@ -60,30 +64,32 @@
 <!-- Overlay effect when opening sidebar on small screens -->
 <div id="overlay" class="animated faster" onclick="app.closeMenu()"></div>
 
-<!-- !PAGE CONTENT! -->
+<!-- Page content -->
 <div id="content" class="animated fast fadeIn">
 
-    <!-- Header -->
-    <header id="about">
-        <a href="#"><img style="width:65px;"
-                         class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="app.openMenu()">
-            <i class="fa fa-bars"></i>
-        </span>
-        <div class="w3-container">
-            <h1><b>Cedoor</b></h1>
+    <span id="open-menu" onclick="app.openMenu()">||</span>
+
+    <div id="whoami" class="content-box">
+        <h2>$ whoami <span class="blinking">_</span></h2>
+        <div id="terminal">
+            <header>cedoor@cedoor-pc:~</header>
+            <div id="terminal-content">
+                <span style="color: #afb56b">cedoor</span>@cedoor-pc
+                <span style="color: #afb56b">[</span> ~
+                <span style="color: #afb56b">]</span>$
+                <span id="terminal-text">
+                    I know, this is so nerd, but I love it, sorry <3.
+                    My name is Omar and I am a programmer.
+                </span>
+                <span class="blinking">_</span>
+            </div>
         </div>
-    </header>
+    </div>
+
+    <div style="height: 400px">
+    </div>
 
     <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-        <h4><b>About Me</b></h4>
-        <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem
-            ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut
-            rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-            Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
-            gravida diam non fringilla.</p>
-        <hr>
-
         <h4>Technical Skills</h4>
         <!-- Progress bars / Skills -->
         <p>Photography</p>

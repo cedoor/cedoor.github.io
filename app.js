@@ -1,6 +1,8 @@
 const dom = {
   sidebar: document.getElementById('sidebar'),
-  overlay: document.getElementById('overlay')
+  overlay: document.getElementById('overlay'),
+  blinking: document.getElementsByClassName('blinking'),
+  terminalText: document.getElementById('terminal-text')
 }
 
 const timeouts = {}
@@ -31,7 +33,7 @@ app.openMenu = (sidebarEffect = 'slideInLeft', overlayEffect = 'fadeIn') => {
  * Close the side menu.
  */
 app.closeMenu = (sidebarEffect = 'slideOutLeft', overlayEffect = 'fadeOut') => {
-  if (timeouts.closeMenu === false || timeouts.closeMenu === undefined) {
+  if ((timeouts.closeMenu === false || timeouts.closeMenu === undefined) && dom.sidebar.style.display === 'block') {
     dom.sidebar.classList.toggle(sidebarEffect)
     dom.overlay.classList.toggle(overlayEffect)
 
@@ -47,3 +49,38 @@ app.closeMenu = (sidebarEffect = 'slideOutLeft', overlayEffect = 'fadeOut') => {
     }, 500)
   }
 }
+
+/** Initialization of some behaviors **/
+
+// Cursor blinking
+setInterval(() => {
+  for (const element of dom.blinking) {
+    element.style.opacity = element.style.opacity === '0' ? '1' : '0'
+  }
+}, 600)
+
+// Type writer
+let i = 0
+
+const text = dom.terminalText.innerText
+
+dom.terminalText.innerText = ''
+
+function typeWriter () {
+  if (i < text.length) {
+    dom.terminalText.innerHTML += text.charAt(i)
+
+    let speed = 40
+    if (text.charAt(i) === ',') {
+      speed = 200
+    } else if (text.charAt(i) === '.') {
+      speed = 800
+    }
+
+    i++
+
+    setTimeout(typeWriter, speed)
+  }
+}
+
+setTimeout(typeWriter, 1000)
