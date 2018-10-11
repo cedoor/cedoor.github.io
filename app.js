@@ -2,7 +2,8 @@ const dom = {
   sidebar: document.getElementById('sidebar'),
   overlay: document.getElementById('overlay'),
   blinking: document.getElementsByClassName('blinking'),
-  terminalText: document.getElementById('terminal-text')
+  terminalText: document.getElementById('terminal-text'),
+  scrollUp: document.getElementById('scroll-up')
 }
 
 const timeouts = {}
@@ -50,6 +51,25 @@ app.closeMenu = (sidebarEffect = 'slideOutLeft', overlayEffect = 'fadeOut') => {
   }
 }
 
+console.log(window.pageYOffset)
+
+/**
+ * Scroll up the web page.
+ */
+app.scrollUp = () => {
+  if (window.pageYOffset === 0) {
+    window.scroll({
+      top: 2500,
+      behavior: 'smooth'
+    })
+  } else {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+}
+
 /** Initialization of some behaviors **/
 
 // Cursor blinking
@@ -84,3 +104,8 @@ function typeWriter () {
 }
 
 setTimeout(typeWriter, 1000)
+
+// Taijitu rotation
+window.onscroll = () => {
+  dom.scrollUp.style.transform = `rotate(${window.pageYOffset / 5}deg)`
+}

@@ -136,7 +136,8 @@ div#terminal-content {
         position: fixed;
     }
 
-    span#open-menu {
+    span#open-menu,
+    img#scroll-up {
         display: none;
     }
 }
@@ -167,7 +168,7 @@ div#terminal-content {
 
     span#open-menu {
         position: fixed;
-        top: 45%;
+        bottom: 250px;
         left: 0;
         padding: 16px 2px;
         font-size: 25px;
@@ -175,5 +176,14 @@ div#terminal-content {
         border-bottom-right-radius: 30px;
         background-color: #7c804b;
         color: #3f3f3f;
+    }
+
+    img#scroll-up {
+        z-index: 3;
+        position: fixed;
+        bottom: 17px;
+        right: 17px;
+        opacity: .5;
+        width: 40px;
     }
 }

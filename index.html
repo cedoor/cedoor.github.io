@@ -4,7 +4,7 @@
 <title>Cedoor</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="images/taijitu.png">
 <meta name="description" content="Personal site with informations about me">
 <meta property="og:description" content="Personal site with informations about me">
 <meta property="og:title" content="Omar Desogus">
@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <body>
-
 <!-- Sidebar/menu -->
 <div id="sidebar" class="animated faster">
     <nav>
@@ -67,6 +66,10 @@
 <!-- Page content -->
 <div id="content" class="animated fast fadeIn">
 
+    <!-- Button to scroll up the page -->
+    <img id="scroll-up" src="./images/taijitu.png" onclick="app.scrollUp()">
+
+    <!-- Mobile button to open the menu -->
     <span id="open-menu" onclick="app.openMenu()">||</span>
 
     <div id="whoami" class="content-box">
