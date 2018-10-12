@@ -51,8 +51,6 @@ app.closeMenu = (sidebarEffect = 'slideOutLeft', overlayEffect = 'fadeOut') => {
   }
 }
 
-console.log(window.pageYOffset)
-
 /**
  * Scroll up the web page.
  */
