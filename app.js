@@ -3,7 +3,8 @@ const dom = {
   overlay: document.getElementById('overlay'),
   blinking: document.getElementsByClassName('blinking'),
   terminalText: document.getElementById('terminal-text'),
-  scrollUp: document.getElementById('scroll-up')
+  scrollUp: document.getElementById('scroll-up'),
+  experienceTimeline: document.getElementById('experience-timeline')
 }
 
 const timeouts = {}
@@ -68,6 +69,26 @@ app.scrollUp = () => {
   }
 }
 
+/**
+ *
+ */
+app.experienceRight = () => {
+  dom.experienceTimeline.scroll({
+    left: dom.experienceTimeline.scrollLeft + 250,
+    behavior: 'smooth'
+  })
+}
+
+/**
+ *
+ */
+app.experienceLeft = () => {
+  dom.experienceTimeline.scroll({
+    left: dom.experienceTimeline.scrollLeft - 250,
+    behavior: 'smooth'
+  })
+}
+
 /** Initialization of some behaviors **/
 
 // Cursor blinking
@@ -106,4 +127,14 @@ setTimeout(typeWriter, 1000)
 // Taijitu rotation
 window.onscroll = () => {
   dom.scrollUp.style.transform = `rotate(${window.pageYOffset / 5}deg)`
+}
+
+// Shortcuts
+
+window.onkeydown = (event) => {
+  if (event.keyCode === 39) {
+    app.experienceRight()
+  } else if (event.keyCode === 37) {
+    app.experienceLeft()
+  }
 }
