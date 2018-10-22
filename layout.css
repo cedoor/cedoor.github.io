@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 div#sidebar {
     background-color: #244264;
-    width: 235px;
+    width: 250px;
 }
 
 div#sidebar, div#overlay {
@@ -43,7 +43,7 @@ div#sidebar, div#overlay {
 }
 
 div#avatar {
-    margin: 20px 0 20px 42px;
+    margin: 20px auto;
     padding: 20px;
     border-radius: 90px;
     background-color: whitesmoke;
@@ -54,6 +54,12 @@ div#avatar {
 
 div#avatar > img {
     width: 100%;
+}
+
+div#contact {
+    text-align: center;
+    font-size: 15px;
+    color: lightgray;
 }
 
 div#index {
@@ -197,6 +203,29 @@ ul#experience-timeline i.fa {
     color: gray;
     position: absolute;
 }
+
+div#skills {
+    color: #404040;
+}
+
+div#skills div.skill-box {
+    margin: 0 10px;
+}
+
+div#skills table.skill {
+    margin: 0 10px;
+    width: 100%;
+}
+
+div#skills td.skill-level > div {
+    height: 10px;
+    background-color: #9c9c9c;
+}
+
+div#skills tr > td:first-child {
+    width: 100px;
+}
+
 /** Media queries desktop **/
 
 @media only screen and (min-width: 992px) {
@@ -210,7 +239,7 @@ ul#experience-timeline i.fa {
     }
 
     div#content {
-        margin-left: 235px;
+        margin-left: 250px;
     }
 
     ul#experience-timeline {
@@ -321,7 +350,7 @@ ul#experience-timeline i.fa {
         font-size: 25px;
         border-top-right-radius: 30px;
         border-bottom-right-radius: 30px;
-        background-color: #7c8578;
+        background-color: gray;
         color: whitesmoke;
     }
 
