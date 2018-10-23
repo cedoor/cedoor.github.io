@@ -106,7 +106,7 @@ div#content {
 
 div.content-box > h2 {
     margin: 0;
-    padding: 20px 0;
+    padding: 20px 0 15px 0;
     color: #515151;
 }
 
@@ -135,6 +135,7 @@ div#projects > div {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    margin-bottom: -20px;
 }
 
 a.project-box {
@@ -179,14 +180,14 @@ ul#experience-timeline > li {
 
 ul#experience-timeline div.timestamp {
     display: flex;
-    padding: 25px 40px;
+    padding: 20px 40px;
     flex-direction: column;
     align-items: center;
     font-weight: 100;
 }
 
 ul#experience-timeline div.status {
-    padding: 25px 40px;
+    padding: 20px 40px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -201,16 +202,41 @@ ul#experience-timeline i.fa {
     position: absolute;
 }
 
+ul#experience-timeline i.fa.fa-plane {
+    color: #548684;
+}
+
+ul#experience-timeline i.fa.fa-briefcase {
+    color: #866c5d;
+}
+
+ul#experience-timeline i.fa.fa-graduation-cap {
+    color: #86544e;
+}
+
+ul#experience-timeline i.fa.fa-book {
+    color: #5f8660;
+}
+
 div#skills {
     color: #404040;
+    margin-bottom: -10px;
 }
 
 div#skills div.skill-box {
-    margin: 0 10px;
+    padding: 0 10px 20px 10px;
+}
+
+div#skills div.skill-box {
+}
+
+div#skills div.skill-box h3 {
+    margin: 0;
+    padding-bottom: 10px;
 }
 
 div#skills table.skill {
-    margin: 0 10px;
+    padding: 0 10px;
     width: 100%;
 }
 
@@ -221,6 +247,18 @@ div#skills td.skill-level > div {
 
 div#skills tr > td:first-child {
     width: 100px;
+}
+
+div#skills-web-programming td.skill-level > div {
+    background-color: #57ae50;
+}
+
+div#skills-blockchain td.skill-level > div {
+    background-color: #9c647e;
+}
+
+div#skills-languages td.skill-level > div {
+    background-color: #66749c;
 }
 
 /** Media queries desktop **/
@@ -242,7 +280,7 @@ div#skills tr > td:first-child {
     ul#experience-timeline {
         display: flex;
         align-items: center;
-        margin: 20px 70px;
+        margin: 0 60px;
         padding: 0;
     }
 
@@ -260,18 +298,18 @@ div#skills tr > td:first-child {
 
     div#experience i.experience-navigator {
         position: absolute;
-        top: 112px;
+        top: 125px;
         cursor: pointer;
         padding: 10px;
         color: #6c6c6c;
     }
 
     div#experience i#experience-right {
-        right: 12px;
+        right: 8px;
     }
 
     div#experience i#experience-left {
-        left: 12px;
+        left: 8px;
     }
 
     div#sidebar {

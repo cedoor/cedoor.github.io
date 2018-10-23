@@ -5,6 +5,8 @@ const dom = {
   terminalText: document.getElementById('terminal-text'),
   scrollUp: document.getElementById('scroll-up'),
   experienceTimeline: document.getElementById('experience-timeline'),
+  experienceRight: document.getElementById('experience-right'),
+  experienceLeft: document.getElementById('experience-left'),
   whoami: document.getElementById('whoami'),
   projects: document.getElementById('projects'),
   experience: document.getElementById('experience'),
