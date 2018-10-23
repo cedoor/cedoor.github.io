@@ -76,22 +76,17 @@ div#index > a {
 }
 
 div#index > a:hover {
-    color: #f1f1f1;
-    border-color: #f1f1f1;
+    border-color: lightgray;
 }
 
 div#socials {
-    margin: 30px 40px;
+    margin: 30px 35px;
 }
 
 div#socials > a {
     margin-right: 10px;
     text-decoration: none;
     color: lightgray;
-}
-
-div#socials > a:hover {
-    color: #ffcc63;
 }
 
 div#socials > a > i {
@@ -150,10 +145,6 @@ a.project-box {
     color: #252525;
 }
 
-a.project-box:hover {
-    background-color: #eeeeee;
-}
-
 a.project-box h3 {
     color: #404040;
     margin: 0;
@@ -203,19 +194,19 @@ ul#experience-timeline i.fa {
 }
 
 ul#experience-timeline i.fa.fa-plane {
-    color: #548684;
+    color: #5f8a96;
 }
 
 ul#experience-timeline i.fa.fa-briefcase {
-    color: #866c5d;
+    color: #86816d;
 }
 
 ul#experience-timeline i.fa.fa-graduation-cap {
-    color: #86544e;
+    color: #9c7771;
 }
 
 ul#experience-timeline i.fa.fa-book {
-    color: #5f8660;
+    color: #5a7f59;
 }
 
 div#skills {
@@ -240,6 +231,10 @@ div#skills table.skill {
     width: 100%;
 }
 
+div#skills td {
+    padding: 2px 0;
+}
+
 div#skills td.skill-level > div {
     height: 10px;
     background-color: #9c9c9c;
@@ -250,15 +245,15 @@ div#skills tr > td:first-child {
 }
 
 div#skills-web-programming td.skill-level > div {
-    background-color: #57ae50;
+    background-color: #9bb699;
 }
 
 div#skills-blockchain td.skill-level > div {
-    background-color: #9c647e;
+    background-color: #9c8e94;
 }
 
 div#skills-languages td.skill-level > div {
-    background-color: #66749c;
+    background-color: #888f9c;
 }
 
 /** Media queries desktop **/
@@ -298,7 +293,7 @@ div#skills-languages td.skill-level > div {
 
     div#experience i.experience-navigator {
         position: absolute;
-        top: 125px;
+        top: 117px;
         cursor: pointer;
         padding: 10px;
         color: #6c6c6c;
