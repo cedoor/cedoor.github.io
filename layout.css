@@ -76,8 +76,8 @@ div#index > a {
 }
 
 div#index > a:hover {
-    color: #ffcc63;
-    border-color: #ffcc63;
+    color: #f1f1f1;
+    border-color: #f1f1f1;
 }
 
 div#socials {
@@ -101,16 +101,13 @@ div#socials > a > i {
 /** Content **/
 
 div#content {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
 }
 
 div.content-box > h2 {
-    margin: 15px 0;
+    margin: 0;
+    padding: 20px 0;
     color: #515151;
-}
-
-div#whoami > h2 {
-    margin-top: 0;
 }
 
 div#terminal {
@@ -295,7 +292,7 @@ div#skills tr > td:first-child {
     }
 
     div#content {
-        padding: 18px;
+        padding: 0 18px 18px 18px;
     }
 
     ul#experience-timeline {

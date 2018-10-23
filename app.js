@@ -4,7 +4,11 @@ const dom = {
   blinking: document.getElementsByClassName('blinking'),
   terminalText: document.getElementById('terminal-text'),
   scrollUp: document.getElementById('scroll-up'),
-  experienceTimeline: document.getElementById('experience-timeline')
+  experienceTimeline: document.getElementById('experience-timeline'),
+  whoami: document.getElementById('whoami'),
+  projects: document.getElementById('projects'),
+  experience: document.getElementById('experience'),
+  skills: document.getElementById('skills')
 }
 
 const timeouts = {}
@@ -53,6 +57,22 @@ app.closeMenu = (sidebarEffect = 'slideOutLeft', overlayEffect = 'fadeOut') => {
 }
 
 /**
+ * Scroll the page to the element id specified in the parameters.
+ * @param event
+ * @param id
+ */
+app.scrollTo = (event, id) => {
+  event.preventDefault()
+
+  app.closeMenu()
+
+  dom[id].scrollIntoView({
+    block: 'start',
+    behavior: 'smooth'
+  })
+}
+
+/**
  * Scroll up the web page.
  */
 app.scrollUp = () => {
@@ -70,7 +90,7 @@ app.scrollUp = () => {
 }
 
 /**
- *
+ * Move the experience timeline to the right.
  */
 app.experienceRight = () => {
   dom.experienceTimeline.scroll({
@@ -80,7 +100,7 @@ app.experienceRight = () => {
 }
 
 /**
- *
+ * Move the experience timeline to the left.
  */
 app.experienceLeft = () => {
   dom.experienceTimeline.scroll({
