@@ -105,9 +105,18 @@ div.content-box > h2 {
     color: #515151;
 }
 
+div#whoami > div {
+    padding: 0 10px;
+}
+
+div#description {
+    padding: 0 10px;
+    margin-top: 20px;
+    color: #252525;
+}
+
 div#terminal {
-    margin: 0 10px;
-    min-height: 200px;
+    min-height: 120px;
     background-color: #2b2b2b;
 }
 
@@ -121,6 +130,7 @@ div#terminal > header {
 
 div#terminal-content {
     font-family: monaco, Consolas, Lucida Console, monospace;
+    line-height: 22px;
     padding: 5px 10px;
     color: lightgray;
     font-size: 15px;
@@ -189,24 +199,8 @@ ul#experience-timeline div.status h5 {
 }
 
 ul#experience-timeline i.fa {
-    color: gray;
+    color: #6b7e82;
     position: absolute;
-}
-
-ul#experience-timeline i.fa.fa-plane {
-    color: #5f8a96;
-}
-
-ul#experience-timeline i.fa.fa-briefcase {
-    color: #86816d;
-}
-
-ul#experience-timeline i.fa.fa-graduation-cap {
-    color: #9c7771;
-}
-
-ul#experience-timeline i.fa.fa-book {
-    color: #5a7f59;
 }
 
 div#skills {
@@ -237,23 +231,11 @@ div#skills td {
 
 div#skills td.skill-level > div {
     height: 10px;
-    background-color: #9c9c9c;
+    background-color: #7e9398;
 }
 
 div#skills tr > td:first-child {
     width: 100px;
-}
-
-div#skills-web-programming td.skill-level > div {
-    background-color: #9bb699;
-}
-
-div#skills-blockchain td.skill-level > div {
-    background-color: #9c8e94;
-}
-
-div#skills-languages td.skill-level > div {
-    background-color: #888f9c;
 }
 
 /** Media queries desktop **/
@@ -372,24 +354,34 @@ div#skills-languages td.skill-level > div {
         width: 100%;
     }
 
-    span#open-menu {
+    div#open-menu {
+        z-index: 3;
         position: fixed;
-        bottom: 250px;
-        left: 0;
-        padding: 16px 2px;
-        font-size: 25px;
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        background-color: gray;
+        bottom: 200px;
+        left: -8px;
+        padding: 25px 10px;
+    }
+
+    div#open-menu > span {
+        border-top: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+        border-left: 16px solid #75888d;
+    }
+
+    div#open-menu > span > span {
+        position: relative;
+        left: -13px;
+        top: 1px;
+        font-size: 22px;
         color: whitesmoke;
     }
 
     img#scroll-up {
         z-index: 3;
-        position: fixed;
-        bottom: 17px;
-        right: 17px;
         opacity: .5;
+        position: fixed;
+        bottom: 14px;
+        right: 17px;
         width: 40px;
     }
 }

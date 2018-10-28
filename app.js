@@ -129,12 +129,13 @@ dom.terminalText.innerText = ''
 
 function typeWriter () {
   if (i < text.length) {
-    dom.terminalText.innerHTML += text.charAt(i)
+    const char = text.charAt(i)
+    dom.terminalText.innerHTML += char
 
     let speed = 40
-    if (text.charAt(i) === ',') {
+    if (char === ',') {
       speed = 200
-    } else if (text.charAt(i) === '.') {
+    } else if (char === '.' || char === '!') {
       speed = 800
     }
 

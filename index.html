@@ -73,21 +73,32 @@
     <img id="scroll-up" src="./images/taijitu.png" onclick="app.scrollUp()">
 
     <!-- Mobile button to open the menu -->
-    <span id="open-menu" onclick="app.openMenu()">||</span>
+    <div id="open-menu" onclick="app.openMenu()"><span><span>||</span></span></div>
 
     <div id="whoami" class="content-box">
         <h2 title="About me">$ whoami</h2>
-        <div id="terminal">
-            <header>cedoor@cedoor-pc:~</header>
-            <div id="terminal-content">
-                <span style="color: #97a292">cedoor</span>@cedoor-pc
-                <span style="color: #97a292">[</span> ~
-                <span style="color: #97a292">]</span>$
-                <span id="terminal-text">
-                    I know, this is so nerd, but I love it, sorry <3.
-                    My name is Omar and I am a programmer.
-                </span>
-                <span class="blinking">_</span>
+        <div>
+            <div id="terminal">
+                <header>cedoor@cedoor-pc:~</header>
+                <div id="terminal-content">
+                    <span style="color: #97a292">cedoor</span>@cedoor-pc
+                    <span style="color: #97a292">[</span> ~
+                    <span style="color: #97a292">]</span>$
+                    <span id="terminal-text">ls</span><span class="blinking">_</span>
+                </div>
+            </div>
+            <div id="description">
+                Hello friend. Just a few words about me, I do not want to steal too much time!
+                Well, my name is Omar, and I like to define myself first of all ummh..
+                a little man with big dreams.
+                <br><br>
+                I am an ambitious, curious, patient, meticulous young boy and I love to
+                experiment, discover and learn from mistakes, just like in programming.
+                Assiduous supporter of personal development, I try to live the life
+                continually improving myself.
+                <br><br>
+                At the moment I'm studying for the master of computer science in Cagliari,
+                I develop a desktop application to create mind maps and other applications.
             </div>
         </div>
     </div>
