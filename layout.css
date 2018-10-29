@@ -136,15 +136,17 @@ div#terminal-content {
     font-size: 15px;
 }
 
-div#projects > div {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+div#projects {
     margin-bottom: -20px;
 }
 
-a.project-box {
-    flex-grow: 1;
+div#projects > div {
+    display: flex;
+    align-items: stretch;
+}
+
+div#projects a.project-box {
+    flex: 1 0 200px;
     text-decoration: none;
     background-color: #f9f9f9;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
@@ -310,6 +312,10 @@ div#skills tr > td:first-child {
 
     div#content {
         padding: 0 18px 18px 18px;
+    }
+
+    div#projects > div {
+        flex-wrap: wrap;
     }
 
     ul#experience-timeline {
