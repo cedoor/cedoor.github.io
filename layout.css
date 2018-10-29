@@ -145,7 +145,7 @@ div#projects > div {
 }
 
 div#projects a.project-box {
-    flex: 1 0 200px;
+    flex: 1 0 160px;
     text-align: justify;
     line-height: 22px;
     text-decoration: none;
@@ -167,6 +167,10 @@ a.project-box img {
     position: relative;
     top: 8px;
     width: 35px;
+}
+
+a.project-box p {
+    margin-bottom: 0;
 }
 
 div#experience {
