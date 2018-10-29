@@ -153,7 +153,6 @@ window.onscroll = () => {
 }
 
 // Shortcuts
-
 window.onkeydown = (event) => {
   if (event.keyCode === 39) {
     app.experienceRight()
@@ -161,3 +160,18 @@ window.onkeydown = (event) => {
     app.experienceLeft()
   }
 }
+
+// Cookies
+window.addEventListener('load', function () {
+  window.cookieconsent.initialise({
+    'palette': {
+      'popup': {
+        'background': '#414141'
+      },
+      'button': {
+        'background': '#5f6d71'
+      }
+    },
+    'theme': 'edgeless'
+  })
+})
