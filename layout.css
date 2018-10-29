@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 /** Sidebar **/
 
 div#sidebar {
-    background-color: #244264;
+    background-color: #495457;
     width: 250px;
 }
 
@@ -71,7 +71,7 @@ div#index > a {
     text-decoration: none;
     font-size: 16px;
     margin: 10px 0;
-    border-bottom: 2px solid #244264;
+    border-bottom: 2px solid #495457;
     color: lightgray;
 }
 
@@ -199,7 +199,7 @@ ul#experience-timeline div.status h5 {
 }
 
 ul#experience-timeline i.fa {
-    color: #6b7e82;
+    color: #515d60;
     position: absolute;
 }
 
@@ -230,12 +230,14 @@ div#skills td {
 }
 
 div#skills td.skill-level > div {
+    position: relative;
+    top: 1px;
     height: 10px;
     background-color: #7e9398;
 }
 
 div#skills tr > td:first-child {
-    width: 100px;
+    width: 90px;
 }
 
 /** Media queries desktop **/
@@ -293,7 +295,7 @@ div#skills tr > td:first-child {
         display: block !important;
     }
 
-    span#open-menu,
+    div#open-menu,
     img#scroll-up {
         display: none;
     }
@@ -365,7 +367,7 @@ div#skills tr > td:first-child {
     div#open-menu > span {
         border-top: 40px solid transparent;
         border-bottom: 40px solid transparent;
-        border-left: 16px solid #75888d;
+        border-left: 16px solid #5f6d71;
     }
 
     div#open-menu > span > span {
@@ -378,7 +380,7 @@ div#skills tr > td:first-child {
 
     img#scroll-up {
         z-index: 3;
-        opacity: .5;
+        opacity: .6;
         position: fixed;
         bottom: 14px;
         right: 17px;
