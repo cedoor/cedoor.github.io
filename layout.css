@@ -135,10 +135,6 @@ div#terminal-content {
     font-size: 15px;
 }
 
-div#projects {
-    margin-bottom: -20px;
-}
-
 div#projects > div {
     display: flex;
     align-items: stretch;
@@ -173,20 +169,20 @@ a.project-box p {
     margin-bottom: 0;
 }
 
-div#experience {
+div.timeline {
     position: relative;
 }
 
-ul#experience-timeline {
+ul.timeline {
     overflow-x: hidden;
     list-style-type: none;
 }
 
-ul#experience-timeline > li {
+ul.timeline > li {
     flex: 0 0 auto;
 }
 
-ul#experience-timeline div.timestamp {
+ul.timeline div.timeline-header {
     display: flex;
     padding: 20px 40px;
     flex-direction: column;
@@ -194,18 +190,30 @@ ul#experience-timeline div.timestamp {
     font-weight: 100;
 }
 
-ul#experience-timeline div.status {
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
-    position: relative;
+div.timeline-header span.timeline-name {
+    font-size: 18px;
+    color: #3c3c3c;
 }
 
-ul#experience-timeline div.status h5 {
+div.timeline-header span.timeline-place {
+    color: #303030;
+    font-size: 14px;
+}
+
+ul.timeline div.timeline-timestamp {
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    position: relative;
+    color: #626262;
+    font-size: 14px;
+}
+
+ul.timeline div.timeline-timestamp span {
     margin: 0;
 }
 
-ul#experience-timeline i.fa {
+ul.timeline i.fa {
     color: #69797c;
     position: absolute;
 }
@@ -263,14 +271,14 @@ div#skills tr > td:first-child {
         margin-left: 250px;
     }
 
-    ul#experience-timeline {
+    ul.timeline {
         display: flex;
         align-items: center;
         margin: 0 60px;
         padding: 0;
     }
 
-    ul#experience-timeline i.fa {
+    ul.timeline i.fa {
         background-color: whitesmoke;
         top: -15px;
         left: 50%;
@@ -278,11 +286,11 @@ div#skills tr > td:first-child {
         margin-left: -20px;
     }
 
-    ul#experience-timeline div.status {
+    ul.timeline div.timeline-timestamp {
         border-top: 2px solid #D6DCE0;
     }
 
-    div#experience i.experience-navigator {
+    div.timeline i.timeline-navigator {
         position: absolute;
         top: 117px;
         cursor: pointer;
@@ -290,11 +298,11 @@ div#skills tr > td:first-child {
         color: #6c6c6c;
     }
 
-    div#experience i#experience-right {
+    div.timeline i.timeline-right {
         right: 8px;
     }
 
-    div#experience i#experience-left {
+    div.timeline i.timeline-left {
         left: 8px;
     }
 
@@ -323,37 +331,37 @@ div#skills tr > td:first-child {
         flex-wrap: wrap;
     }
 
-    ul#experience-timeline {
+    ul.timeline {
         padding: 20px 30px;
         margin: 0;
     }
 
-    ul#experience-timeline i.fa {
+    ul.timeline i.fa {
         background-color: white;
         padding: 10px 5px;
         top: -22px;
         left: -14px;
     }
 
-    ul#experience-timeline div.timestamp {
+    ul.timeline div.timeline-header {
         padding: 30px 40px 5px 40px;
     }
 
-    ul#experience-timeline div.status {
+    ul.timeline div.timeline-timestamp {
         padding: 5px 40px 40px 40px;
     }
 
-    ul#experience-timeline div.status {
+    ul.timeline div.timeline-timestamp {
         border-bottom: 1px dashed #D6DCE0;
     }
 
-    ul#experience-timeline div.status,
-    ul#experience-timeline div.timestamp {
+    ul.timeline div.timeline-timestamp,
+    ul.timeline div.timeline-header {
         border-left: 2px solid #D6DCE0;
     }
 
     div#sidebar, div#overlay,
-    div#experience i.experience-navigator {
+    div.timeline i.timeline-navigator {
         display: none;
     }
 

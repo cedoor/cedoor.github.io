@@ -4,12 +4,12 @@ const dom = {
   blinking: document.getElementsByClassName('blinking'),
   terminalText: document.getElementById('terminal-text'),
   scrollUp: document.getElementById('scroll-up'),
-  experienceTimeline: document.getElementById('experience-timeline'),
-  experienceRight: document.getElementById('experience-right'),
-  experienceLeft: document.getElementById('experience-left'),
+  experienceTimeline: document.querySelector('#experience > .timeline'),
+  educationTimeline: document.querySelector('#education > .timeline'),
   whoami: document.getElementById('whoami'),
   projects: document.getElementById('projects'),
   experience: document.getElementById('experience'),
+  education: document.getElementById('education'),
   skills: document.getElementById('skills')
 }
 
@@ -92,21 +92,21 @@ app.scrollUp = () => {
 }
 
 /**
- * Move the experience timeline to the right.
+ * Move the selected timeline to the right.
  */
-app.experienceRight = () => {
-  dom.experienceTimeline.scroll({
-    left: dom.experienceTimeline.scrollLeft + 250,
+app.timelineRight = (id) => {
+  dom[id + 'Timeline'].scroll({
+    left: dom[id + 'Timeline'].scrollLeft + 250,
     behavior: 'smooth'
   })
 }
 
 /**
- * Move the experience timeline to the left.
+ * Move the selected timeline to the left.
  */
-app.experienceLeft = () => {
-  dom.experienceTimeline.scroll({
-    left: dom.experienceTimeline.scrollLeft - 250,
+app.timelineLeft = (id) => {
+  dom[id + 'Timeline'].scroll({
+    left: dom[id + 'Timeline'].scrollLeft - 250,
     behavior: 'smooth'
   })
 }
@@ -155,9 +155,11 @@ window.onscroll = () => {
 // Shortcuts
 window.onkeydown = (event) => {
   if (event.keyCode === 39) {
-    app.experienceRight()
+    app.timelineRight('experience')
+    app.timelineRight('education')
   } else if (event.keyCode === 37) {
-    app.experienceLeft()
+    app.timelineLeft('experience')
+    app.timelineLeft('education')
   }
 }
 

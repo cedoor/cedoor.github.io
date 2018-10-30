@@ -41,6 +41,10 @@
                 <i class="fa fa-briefcase fa-fw"></i>
                 Experience
             </a>
+            <a href="" onclick="app.scrollTo(event, 'education')">
+                <i class="fa fa-book fa-fw"></i>
+                Education
+            </a>
             <a href="" onclick="app.scrollTo(event, 'skills')">
                 <i class="fa fa-bar-chart fa-fw"></i>
                 Skills
@@ -136,71 +140,101 @@
         </div>
     </div>
 
-    <div id="experience" class="content-box">
+    <div id="experience" class="content-box timeline">
         <h2 title="Experience">$ experience</h2>
-        <i id="experience-right" class="fa fa-2x fa-angle-right experience-navigator"
-           aria-hidden="true" onclick="app.experienceRight()"></i>
-        <i id="experience-left" class="fa fa-2x fa-angle-left experience-navigator"
-           aria-hidden="true" onclick="app.experienceLeft()"></i>
-        <ul id="experience-timeline">
+        <i class="fa fa-2x fa-angle-right timeline-navigator timeline-right"
+           aria-hidden="true" onclick="app.timelineRight('experience')"></i>
+        <i class="fa fa-2x fa-angle-left timeline-navigator timeline-left"
+           aria-hidden="true" onclick="app.timelineLeft('experience')"></i>
+        <ul class="timeline">
             <li>
-                <div class="timestamp">
-                    <span>Erasmus</span>
-                    <span>Murcia (Spain)</span>
+                <div class="timeline-header">
+                    <span class="timeline-name">Software Web Developer</span>
+                    <span class="timeline-place">Cagliari (Italy)</span>
                 </div>
-                <div class="status">
-                    <i class="fa fa-plane" aria-hidden="true"></i>
-                    <h5>02/09/2018 - Now</h5>
-                </div>
-            </li>
-            <li class="complete">
-                <div class="timestamp">
-                    <span class="author">Master's degree</span>
-                    <span class="date">Cagliari (Italy)</span>
-                </div>
-                <div class="status">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                    <h5>01/10/2017 - Now</h5>
-                </div>
-            </li>
-            <li class="complete">
-                <div class="timestamp">
-                    <span class="author">Bachelor's degree</span>
-                    <span class="date">Cagliari (Italy)</span>
-                </div>
-                <div class="status">
-                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                    <h5>25/11/2016</h5>
-                </div>
-            </li>
-            <li class="complete">
-                <div class="timestamp">
-                    <span class="author">Aaron Rodgers</span>
-                    <span class="date">11/15/2014</span>
-                </div>
-                <div class="status">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                    <h5>SIC Approval</h5>
-                </div>
-            </li>
-            <li class="complete">
-                <div class="timestamp">
-                    <span class="author">PAM Admin</span>
-                    <span class="date">TBD</span>
-                </div>
-                <div class="status">
-                    <i class="fa fa-plane" aria-hidden="true"></i>
-                    <h5>Shift Completed</h5>
-                </div>
-            </li>
-            <li class="complete">
-                <div class="timestamp">
-                    <span class="author">PAM Admin</span>
-                    <span class="date">11/15/2014</span>
-                </div>
-                <div class="status">
-                    <h5>Email Sent</h5>
+                <div class="timeline-timestamp">
                     <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    <span>10/2017 - Now</span>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">IT Consultant</span>
+                    <span class="timeline-place">Cagliari (Italy)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    <span>08/2017 - 10/2017</span>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">Internship</span>
+                    <span class="timeline-place">Cagliari (Italy)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    <span>02/2017 - 07/2017</span>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">Internship</span>
+                    <span class="timeline-place">Cagliari (Italy)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                    <span>04/2016 - 07/2016</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="education" class="content-box timeline">
+        <h2 title="Education">$ education</h2>
+        <i class="fa fa-2x fa-angle-right timeline-navigator timeline-right"
+           aria-hidden="true" onclick="app.timelineRight('education')"></i>
+        <i class="fa fa-2x fa-angle-left timeline-navigator timeline-left"
+           aria-hidden="true" onclick="app.timelineLeft('education')"></i>
+        <ul class="timeline">
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">Erasmus</span>
+                    <span class="timeline-place">Murcia (Spain)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-plane" aria-hidden="true"></i>
+                    <span>09/2018 - Now</span>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">Master's degree</span>
+                    <span class="timeline-place">Cagliari (Italy)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>09/2017 - Now</span>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">Bachelor's degree</span>
+                    <span class="timeline-place">Cagliari (Italy)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>09/2013 - 10/2016</span>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-header">
+                    <span class="timeline-name">Scientific high school</span>
+                    <span class="timeline-place">Carbonia (Italy)</span>
+                </div>
+                <div class="timeline-timestamp">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>09/2008 - 09/2013</span>
                 </div>
             </li>
         </ul>
