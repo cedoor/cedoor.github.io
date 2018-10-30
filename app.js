@@ -111,6 +111,87 @@ app.timelineLeft = (id) => {
   })
 }
 
+/**
+ *
+ * @param commands
+ */
+app.startTerminal = (commands) => {
+  const userInformations = 'cedoor'
+
+  let currentDirectory = '~'
+  let i = 0
+
+  function getHeading () {
+    return userInformations + '[ ' + currentDirectory + ' ]$ '
+  }
+
+  function writeCommand (name, callback) {
+    if (name !== '') {
+      dom.terminalText.innerHTML += name[0]
+
+      setTimeout(() => {
+        writeCommand(name.substring(1), callback)
+      }, 50)
+    } else {
+      setTimeout(callback, 300)
+    }
+  }
+
+  function run (command) {
+    i++
+
+    if (command === undefined) {
+      app.startTerminal(commands)
+    } else {
+      setTimeout(() => {
+        switch (command.name) {
+          case 'ls':
+          case 'whoami':
+          case 'ps aux':
+            writeCommand(command.name, () => {
+              dom.terminalText.innerHTML += '<br>' + command.output + '<br>' + getHeading()
+
+              run(commands[i])
+            })
+            break
+          case 'clear':
+            writeCommand(command.name, () => {
+              dom.terminalText.innerHTML = getHeading()
+
+              run(commands[i])
+            })
+            break
+          case 'cd':
+          case 'kill -9':
+            writeCommand(command.name + ' ' + command.argument, () => {
+              if (command.name === 'cd') {
+                switch (command.argument) {
+                  case '..':
+                    currentDirectory = currentDirectory.substring(0, currentDirectory.lastIndexOf('/'))
+                    break
+                  case '~':
+                    currentDirectory = '~'
+                    break
+                  default:
+                    currentDirectory += '/' + command.argument
+                }
+              }
+
+              dom.terminalText.innerHTML += '<br>' + getHeading()
+
+              run(commands[i])
+            })
+            break
+        }
+      }, 800)
+    }
+  }
+
+  dom.terminalText.innerHTML = getHeading()
+
+  run(commands[i])
+}
+
 /** Initialization of some behaviors **/
 
 // Cursor blinking
@@ -119,33 +200,6 @@ setInterval(() => {
     element.style.opacity = element.style.opacity === '0' ? '1' : '0'
   }
 }, 600)
-
-// Type writer
-let i = 0
-
-const text = dom.terminalText.innerText
-
-dom.terminalText.innerText = ''
-
-function typeWriter () {
-  if (i < text.length) {
-    const char = text.charAt(i)
-    dom.terminalText.innerHTML += char
-
-    let speed = 40
-    if (char === ',') {
-      speed = 200
-    } else if (char === '.' || char === '!') {
-      speed = 800
-    }
-
-    i++
-
-    setTimeout(typeWriter, speed)
-  }
-}
-
-setTimeout(typeWriter, 1000)
 
 // Taijitu rotation
 window.onscroll = () => {
@@ -177,3 +231,35 @@ window.addEventListener('load', function () {
     'theme': 'edgeless'
   })
 })
+
+// Terminal animation
+app.startTerminal([{
+  name: 'whoami',
+  output: 'cedoor'
+}, {
+  name: 'ls',
+  output: 'Programming Learning Running'
+}, {
+  name: 'clear'
+}, {
+  name: 'ps aux',
+  output: '1 tty2 Sl+ 2:10 distractions<br>2 tty2 Sl+ 1:30 concentration<br>3 tty2 Sl+ 3:20 relax'
+}, {
+  name: 'clear'
+}, {
+  name: 'kill -9',
+  argument: '1'
+},{
+  name: 'cd',
+  argument: 'Programming'
+},{
+  name: 'clear'
+}, {
+  name: 'ls',
+  output: 'JavaScript Python C Java'
+}, {
+  name: 'cd',
+  argument: '~'
+}, {
+  name: 'clear'
+}])
