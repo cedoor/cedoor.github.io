@@ -213,7 +213,7 @@ ul.timeline div.timeline-timestamp span {
     margin: 0;
 }
 
-ul.timeline i.fa {
+ul.timeline i.fas {
     color: #69797c;
     position: absolute;
 }
@@ -227,32 +227,25 @@ div#skills div.skill-box {
     padding: 0 10px 20px 10px;
 }
 
-div#skills div.skill-box {
-}
-
 div#skills div.skill-box h3 {
     margin: 0;
     padding-bottom: 10px;
 }
 
-div#skills table.skill {
-    padding: 0 10px;
-    width: 100%;
+div#skills div.skill-box h3 > i {
+    color: #69797c;
 }
 
-div#skills td {
-    padding: 2px 0;
+div#skills div.skill-box-list {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-div#skills td.skill-level > div {
-    position: relative;
-    top: 1px;
-    height: 10px;
-    background-color: #7e9398;
-}
-
-div#skills tr > td:first-child {
-    width: 90px;
+div#skills div.skill-box-list div {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #9c9c9c;
+    border-radius: 3px;
 }
 
 /** Media queries desktop **/
@@ -278,7 +271,7 @@ div#skills tr > td:first-child {
         padding: 0;
     }
 
-    ul.timeline i.fa {
+    ul.timeline i.fas {
         background-color: whitesmoke;
         top: -15px;
         left: 50%;
@@ -336,7 +329,7 @@ div#skills tr > td:first-child {
         margin: 0;
     }
 
-    ul.timeline i.fa {
+    ul.timeline i.fas {
         background-color: white;
         padding: 10px 5px;
         top: -22px;
