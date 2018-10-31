@@ -147,22 +147,21 @@ div#projects div.project-box {
     text-align: justify;
     line-height: 22px;
     text-decoration: none;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #9c9c9c;
     border-radius: 3px;
-    padding: 20px 25px;
+    padding: 15px 25px 20px 25px;
     margin: 0 10px 20px 10px;
     color: #4b4b4b;
 }
 
 div#projects div.project-links {
     position: absolute;
-    top: 38px;
+    top: 33px;
     right: 25px;
 }
 
 div#projects div.project-links > a {
-    color: #969696;
+    color: #69797c;
     text-decoration: none;
     margin-left: 5px;
 }
