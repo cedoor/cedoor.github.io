@@ -162,14 +162,17 @@ div#projects div.project-links {
 }
 
 div#projects div.project-links > a {
-    color: #8e8e8e;
+    color: #969696;
     text-decoration: none;
     margin-left: 5px;
 }
 
+div#projects div.project-links > a:hover {
+    color: #838383;
+}
+
 div#projects div.project-box > p > a {
-    color: #4d755a;
-    text-decoration: none;
+    color: #5f6d71;
 }
 
 div#projects div.project-box h3 {
