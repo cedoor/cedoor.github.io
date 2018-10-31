@@ -138,10 +138,12 @@ div#terminal-content {
 div#projects > div {
     display: flex;
     align-items: stretch;
+    flex-wrap: wrap;
 }
 
-div#projects a.project-box {
-    flex: 1 0 160px;
+div#projects div.project-box {
+    position: relative;
+    flex: 1 0 200px;
     text-align: justify;
     line-height: 22px;
     text-decoration: none;
@@ -150,22 +152,38 @@ div#projects a.project-box {
     border-radius: 3px;
     padding: 20px 25px;
     margin: 0 10px 20px 10px;
-    cursor: pointer;
     color: #4b4b4b;
 }
 
-a.project-box h3 {
+div#projects div.project-links {
+    position: absolute;
+    top: 38px;
+    right: 25px;
+}
+
+div#projects div.project-links > a {
+    color: #8e8e8e;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+div#projects div.project-box > p > a {
+    color: #4d755a;
+    text-decoration: none;
+}
+
+div#projects div.project-box h3 {
     color: #404040;
     margin: 0;
 }
 
-a.project-box img {
+div#projects div.project-box img {
     position: relative;
     top: 8px;
     width: 35px;
 }
 
-a.project-box p {
+div#projects div.project-box p {
     margin-bottom: 0;
 }
 
@@ -318,10 +336,6 @@ div#skills div.skill-box-list div {
 
     div#content {
         padding: 0 18px 18px 18px;
-    }
-
-    div#projects > div {
-        flex-wrap: wrap;
     }
 
     ul.timeline {

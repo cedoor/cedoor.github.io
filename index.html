@@ -82,7 +82,7 @@
     <div id="open-menu" onclick="app.openMenu()"><span><span>||</span></span></div>
 
     <div id="whoami" class="content-box">
-        <h2 title="About me">$ whoami</h2>
+        <h2 title="About me">Whoami</h2>
         <div>
             <div id="terminal">
                 <header>cedoor@cedoor-pc:~</header>
@@ -107,9 +107,17 @@
     </div>
 
     <div id="projects" class="content-box">
-        <h2 title="Projects">$ projects</h2>
+        <h2 title="Projects">Projects</h2>
         <div>
-            <a href="https://github.com/Mindmapp" target="_blank" class="project-box">
+            <div class="project-box">
+                <div class="project-links">
+                    <a href="https://github.com/Mindmapp" target="_blank">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://mindmapp.com" target="_blank">
+                        <i class="fas fa-home fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
                 <h3><img src="./images/mindmapp.png"> Mindmapp</h3>
                 <p>
                     Mindmapp is an open source desktop application to draw mind maps quickly and efficiently.
@@ -117,29 +125,42 @@
                     but maintaining the fundamental properties that make the mind maps of Tony
                     Buzan so efficient.
                 </p>
-            </a>
-            <a href="https://github.com/cedoor/scraper" target="_blank" class="project-box">
+            </div>
+            <div class="project-box">
+                <div class="project-links">
+                    <a href="https://github.com/cedoor/scraper" target="_blank">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
                 <h3><img src="./images/scraper.png"> Scraper</h3>
                 <p>
                     Scraper is an open source desktop application that allows you to scrape websites
                     graphically in a simple way. It is possible to write a JSON Object with a
-                    specific structure (x-ray like) and run an automated scraping that
-                    return a compact JSON downloadable.
+                    specific structure (<a href="https://github.com/matthewmueller/x-ray" target="_blank">x-ray</a>
+                    like) and run an automated scraping that return a compact JSON downloadable.
                 </p>
-            </a>
-            <a href="https://github.com/Unicapp" target="_blank" class="project-box">
+            </div>
+            <div class="project-box">
+                <div class="project-links">
+                    <a href="https://github.com/Unicapp" target="_blank">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://unicapp.it" target="_blank">
+                        <i class="fas fa-home fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
                 <h3><img src="./images/unicapp.png"> Unicapp</h3>
                 <p>
                     UnicApp is an open-source project that contains a set of multi-platform applications
                     to allow the students of University of Cagliari to check their profile. UnicApp is available
                     for Windows, Mac Os, Linux, Google Chrome and Telegram Bot.
                 </p>
-            </a>
+            </div>
         </div>
     </div>
 
     <div id="experience" class="content-box timeline">
-        <h2 title="Experience">$ experience</h2>
+        <h2 title="Experience">Experience</h2>
         <i class="fa fa-2x fa-angle-right timeline-navigator timeline-right"
            aria-hidden="true" onclick="app.timelineRight('experience')"></i>
         <i class="fa fa-2x fa-angle-left timeline-navigator timeline-left"
@@ -189,7 +210,7 @@
     </div>
 
     <div id="education" class="content-box timeline">
-        <h2 title="Education">$ education</h2>
+        <h2 title="Education">Education</h2>
         <i class="fas fa-2x fa-angle-right timeline-navigator timeline-right"
            aria-hidden="true" onclick="app.timelineRight('education')"></i>
         <i class="fas fa-2x fa-angle-left timeline-navigator timeline-left"
@@ -239,9 +260,9 @@
     </div>
 
     <div id="skills" class="content-box">
-        <h2 title="Skills">$ skills</h2>
+        <h2 title="Skills">Skills</h2>
         <div id="skills-languages" class="skill-box">
-            <h3><i class="fas fa-language" aria-hidden="true"></i> Languages</h3>
+            <h3><i class="fas fa-language fa-lg" aria-hidden="true"></i> Languages</h3>
             <div class="skill-box-list">
                 <div>Italian</div>
                 <div>English</div>
@@ -249,7 +270,7 @@
             </div>
         </div>
         <div id="skills-web-programming" class="skill-box">
-            <h3><i class="fas fa-code" aria-hidden="true"></i> Web programming</h3>
+            <h3><i class="fas fa-code fa-lg" aria-hidden="true"></i> Web programming</h3>
             <div class="skill-box-list">
                 <div>JavaScript</div>
                 <div>TypeScript</div>
@@ -258,7 +279,7 @@
             </div>
         </div>
         <div id="skills-blockchain" class="skill-box">
-            <h3><i class="fab fa-ethereum" aria-hidden="true"></i> Blockchain</h3>
+            <h3><i class="fab fa-ethereum fa-lg" aria-hidden="true"></i> Blockchain</h3>
             <div class="skill-box-list">
                 <div>Solidity</div>
                 <div>Web3</div>
