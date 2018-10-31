@@ -8,6 +8,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
 
 h1, h2, h3, h4, h5, h6, p, a {
     font-weight: 500;
+    margin: 0;
 }
 
 /** Scrollbar **/
@@ -139,6 +140,7 @@ div#projects > div {
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
+    margin-bottom: -10px;
 }
 
 div#projects div.project-box {
@@ -166,10 +168,6 @@ div#projects div.project-links > a {
     margin-left: 5px;
 }
 
-div#projects div.project-links > a:hover {
-    color: #838383;
-}
-
 div#projects div.project-box > p > a {
     color: #5f6d71;
 }
@@ -177,6 +175,7 @@ div#projects div.project-box > p > a {
 div#projects div.project-box h3 {
     color: #404040;
     margin: 0;
+    padding-bottom: 12px;
 }
 
 div#projects div.project-box img {
@@ -190,52 +189,70 @@ div#projects div.project-box p {
 }
 
 div.timeline {
-    position: relative;
-}
-
-ul.timeline {
-    overflow-x: hidden;
-    list-style-type: none;
-}
-
-ul.timeline > li {
-    flex: 0 0 auto;
-}
-
-ul.timeline div.timeline-header {
     display: flex;
-    padding: 20px 40px;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 100;
+    align-items: stretch;
 }
 
-div.timeline-header span.timeline-name {
-    font-size: 18px;
-    color: #3c3c3c;
+div.timeline > div.timeline-left {
+    flex: 0 0 180px;
+    border-right: 1px dashed #9c9c9c;
+    text-align: right;
 }
 
-div.timeline-header span.timeline-place {
-    color: #303030;
-    font-size: 14px;
+div.timeline > div {
+    border-bottom: 1px dashed #9c9c9c;
 }
 
-ul.timeline div.timeline-timestamp {
-    display: flex;
-    padding: 20px 40px;
-    justify-content: center;
+div.timeline div.timeline-box {
     position: relative;
-    color: #626262;
-    font-size: 14px;
+    height: 200px;
+    color: #404040;
 }
 
-ul.timeline div.timeline-timestamp span {
-    margin: 0;
-}
-
-ul.timeline i.fas {
-    color: #69797c;
+div.timeline div.timeline-box-icon {
     position: absolute;
+    right: -22px;
+    top: 30px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #b7b7b7;
+    border-radius: 40px;
+    color: #69797c;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+div.timeline div.timeline-box-icon > i {
+    line-height: 20px;
+}
+
+div.timeline div.timeline-left-box {
+    padding-top: 30px;
+    padding-right: 40px;
+}
+
+div.timeline div.timeline-right-box {
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+div.timeline h3.timeline-box-title {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+div.timeline p.timeline-box-text {
+    font-size: 15px;
+}
+
+div.timeline p.timeline-box-time {
+    font-size: 14px;
+}
+
+div.timeline p.timeline-box-place {
+    font-size: 13px;
+    padding-bottom: 10px;
 }
 
 div#skills {
@@ -284,41 +301,6 @@ div#skills div.skill-box-list div {
         margin-left: 250px;
     }
 
-    ul.timeline {
-        display: flex;
-        align-items: center;
-        margin: 0 60px;
-        padding: 0;
-    }
-
-    ul.timeline i.fas {
-        background-color: whitesmoke;
-        top: -15px;
-        left: 50%;
-        padding: 5px 10px;
-        margin-left: -20px;
-    }
-
-    ul.timeline div.timeline-timestamp {
-        border-top: 2px solid #D6DCE0;
-    }
-
-    div.timeline i.timeline-navigator {
-        position: absolute;
-        top: 117px;
-        cursor: pointer;
-        padding: 10px;
-        color: #6c6c6c;
-    }
-
-    div.timeline i.timeline-right {
-        right: 8px;
-    }
-
-    div.timeline i.timeline-left {
-        left: 8px;
-    }
-
     div#sidebar {
         display: block !important;
     }
@@ -340,37 +322,7 @@ div#skills div.skill-box-list div {
         padding: 0 18px 18px 18px;
     }
 
-    ul.timeline {
-        padding: 20px 30px;
-        margin: 0;
-    }
-
-    ul.timeline i.fas {
-        background-color: white;
-        padding: 10px 5px;
-        top: -22px;
-        left: -14px;
-    }
-
-    ul.timeline div.timeline-header {
-        padding: 30px 40px 5px 40px;
-    }
-
-    ul.timeline div.timeline-timestamp {
-        padding: 5px 40px 40px 40px;
-    }
-
-    ul.timeline div.timeline-timestamp {
-        border-bottom: 1px dashed #D6DCE0;
-    }
-
-    ul.timeline div.timeline-timestamp,
-    ul.timeline div.timeline-header {
-        border-left: 2px solid #D6DCE0;
-    }
-
-    div#sidebar, div#overlay,
-    div.timeline i.timeline-navigator {
+    div#sidebar, div#overlay {
         display: none;
     }
 
