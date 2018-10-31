@@ -1,3 +1,7 @@
+html {
+    background-color: whitesmoke;
+}
+
 body {
     max-width: 1400px;
 }
@@ -150,6 +154,7 @@ div#projects div.project-box {
     line-height: 22px;
     text-decoration: none;
     border: 1px solid #9c9c9c;
+    background-color: #f9f9f9;
     border-radius: 3px;
     padding: 15px 25px 20px 25px;
     margin: 0 10px 20px 10px;
@@ -189,24 +194,34 @@ div#projects div.project-box p {
 }
 
 div.timeline {
-    display: flex;
-    align-items: stretch;
-}
-
-div.timeline > div.timeline-left {
-    flex: 0 0 180px;
-    border-right: 1px dashed #9c9c9c;
-    text-align: right;
-}
-
-div.timeline > div {
     border-bottom: 1px dashed #9c9c9c;
 }
 
 div.timeline div.timeline-box {
-    position: relative;
-    height: 200px;
+    min-height: 120px;
+    display: flex;
+    align-items: stretch;
     color: #404040;
+}
+
+div.timeline div.timeline-box > div {
+    padding-top: 20px;
+}
+
+div.timeline > div:last-child > div {
+    padding-bottom: 20px;
+}
+
+div.timeline div.timeline-left-box {
+    position: relative;
+    flex: 0 0 130px;
+    border-right: 1px dashed #9c9c9c;
+    text-align: right;
+    padding-right: 30px;
+}
+
+div.timeline div.timeline-right-box {
+    padding-left: 30px;
 }
 
 div.timeline div.timeline-box-icon {
@@ -214,7 +229,7 @@ div.timeline div.timeline-box-icon {
     right: -22px;
     top: 30px;
     padding: 10px;
-    background-color: white;
+    background-color: #f9f9f9;
     border: 2px solid #b7b7b7;
     border-radius: 40px;
     color: #69797c;
@@ -225,16 +240,6 @@ div.timeline div.timeline-box-icon {
 
 div.timeline div.timeline-box-icon > i {
     line-height: 20px;
-}
-
-div.timeline div.timeline-left-box {
-    padding-top: 30px;
-    padding-right: 40px;
-}
-
-div.timeline div.timeline-right-box {
-    padding-top: 30px;
-    padding-left: 40px;
 }
 
 div.timeline h3.timeline-box-title {
@@ -283,15 +288,12 @@ div#skills div.skill-box-list div {
     padding: 10px;
     border: 1px solid #9c9c9c;
     border-radius: 3px;
+    background-color: #f9f9f9;
 }
 
 /** Media queries desktop **/
 
 @media only screen and (min-width: 992px) {
-    html {
-        background-color: whitesmoke;
-    }
-
     body {
         margin: 0 auto;
         box-shadow: 0 0 20px 2px #8A8A8A;
