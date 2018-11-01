@@ -146,6 +146,9 @@ div#projects > div {
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
+}
+
+div#projects > div:last-child {
     margin-bottom: -10px;
 }
 
