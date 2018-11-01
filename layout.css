@@ -115,7 +115,7 @@ div#whoami > div {
 }
 
 div#description {
-    margin-top: 20px;
+    padding-top: 20px;
     text-align: justify;
     color: #3c3c3c;
 }
@@ -174,7 +174,8 @@ div#projects div.project-links > a {
 }
 
 div#projects div.project-box > p > a {
-    color: #5f6d71;
+    text-decoration: none;
+    color: #275659;
 }
 
 div#projects div.project-box h3 {
@@ -197,6 +198,11 @@ div.timeline {
     border-bottom: 1px dashed #9c9c9c;
 }
 
+div.timeline a {
+    text-decoration: none;
+    color: #275659;
+}
+
 div.timeline div.timeline-box {
     min-height: 120px;
     display: flex;
@@ -214,10 +220,10 @@ div.timeline > div:last-child > div {
 
 div.timeline div.timeline-left-box {
     position: relative;
-    flex: 0 0 130px;
+    flex: 0 0 90px;
     border-right: 1px dashed #9c9c9c;
-    text-align: right;
-    padding-right: 30px;
+    text-align: center;
+    padding-right: 25px;
 }
 
 div.timeline div.timeline-right-box {
@@ -251,12 +257,12 @@ div.timeline p.timeline-box-text {
     font-size: 15px;
 }
 
-div.timeline p.timeline-box-time {
-    font-size: 14px;
+div.timeline p.timeline-box-time,
+div.timeline p.timeline-box-place {
+    font-size: 13px;
 }
 
 div.timeline p.timeline-box-place {
-    font-size: 13px;
     padding-bottom: 10px;
 }
 

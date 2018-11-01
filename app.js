@@ -4,8 +4,6 @@ const dom = {
   blinking: document.getElementsByClassName('blinking'),
   terminalText: document.getElementById('terminal-text'),
   scrollUp: document.getElementById('scroll-up'),
-  experienceTimeline: document.querySelector('#experience > .timeline'),
-  educationTimeline: document.querySelector('#education > .timeline'),
   whoami: document.getElementById('whoami'),
   projects: document.getElementById('projects'),
   experience: document.getElementById('experience'),
@@ -92,26 +90,6 @@ app.scrollUp = () => {
 }
 
 /**
- * Move the selected timeline to the right.
- */
-app.timelineRight = (id) => {
-  dom[id + 'Timeline'].scroll({
-    left: dom[id + 'Timeline'].scrollLeft + 250,
-    behavior: 'smooth'
-  })
-}
-
-/**
- * Move the selected timeline to the left.
- */
-app.timelineLeft = (id) => {
-  dom[id + 'Timeline'].scroll({
-    left: dom[id + 'Timeline'].scrollLeft - 250,
-    behavior: 'smooth'
-  })
-}
-
-/**
  *
  * @param commands
  */
@@ -131,7 +109,7 @@ app.startTerminal = (commands) => {
 
       setTimeout(() => {
         writeCommand(name.substring(1), callback)
-      }, 50)
+      }, 60)
     } else {
       setTimeout(callback, 300)
     }
@@ -183,7 +161,7 @@ app.startTerminal = (commands) => {
             })
             break
         }
-      }, 800)
+      }, 1500)
     }
   }
 
@@ -205,32 +183,6 @@ setInterval(() => {
 window.onscroll = () => {
   dom.scrollUp.style.transform = `rotate(${window.pageYOffset / 5}deg)`
 }
-
-// Shortcuts
-window.onkeydown = (event) => {
-  if (event.keyCode === 39) {
-    app.timelineRight('experience')
-    app.timelineRight('education')
-  } else if (event.keyCode === 37) {
-    app.timelineLeft('experience')
-    app.timelineLeft('education')
-  }
-}
-
-// Cookies
-window.addEventListener('load', function () {
-  window.cookieconsent.initialise({
-    'palette': {
-      'popup': {
-        'background': '#414141'
-      },
-      'button': {
-        'background': '#5f6d71'
-      }
-    },
-    'theme': 'edgeless'
-  })
-})
 
 // Terminal animation
 app.startTerminal([{
@@ -263,3 +215,18 @@ app.startTerminal([{
 }, {
   name: 'clear'
 }])
+
+// Cookies
+window.addEventListener('load', function () {
+  window.cookieconsent.initialise({
+    'palette': {
+      'popup': {
+        'background': '#414141'
+      },
+      'button': {
+        'background': '#5f6d71'
+      }
+    },
+    'theme': 'edgeless'
+  })
+})
