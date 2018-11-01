@@ -4,10 +4,10 @@
 [![](https://img.shields.io/david/cedoor/cedoor.github.io.svg?style=flat-square)](https://david-dm.org/cedoor/cedoor.github.io)
 [![](https://img.shields.io/david/dev/cedoor/cedoor.github.io.svg?style=flat-square)](https://david-dm.org/cedoor/cedoor.github.io?type=dev)
 
-My [webstite](https://cedoor.org/) with a CV style page and a blog. 
+My [webstite](https://cedoor.org/) with informations about me. 
 
 ## License
-* See [LICENSE](https://github.com/cedoor/cedoor.github.io/blob/dev/LICENSE) file
+* See [LICENSE](https://github.com/cedoor/cedoor.github.io/blob/dev/LICENSE) file.
 
 ## Contact
 #### Developer
