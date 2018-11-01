@@ -115,8 +115,10 @@ div#whoami > div {
 }
 
 div#description {
-    padding: 20px 5px 0 5px;
+    margin-top: 25px;
+    padding: 8px;
     text-align: justify;
+    line-height: 24px;
     color: #3c3c3c;
 }
 
@@ -151,7 +153,7 @@ div#projects div.project-box {
     position: relative;
     flex: 1 0 200px;
     text-align: justify;
-    line-height: 22px;
+    line-height: 24px;
     text-decoration: none;
     border: 1px solid #9c9c9c;
     background-color: #f9f9f9;
@@ -207,7 +209,7 @@ div.timeline div.timeline-box {
     min-height: 120px;
     display: flex;
     align-items: stretch;
-    color: #404040;
+    color: #3c3c3c;
 }
 
 div.timeline div.timeline-box > div {
@@ -254,7 +256,8 @@ div.timeline h3.timeline-box-title {
 }
 
 div.timeline p.timeline-box-text {
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 div.timeline p.timeline-box-time,
