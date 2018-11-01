@@ -90,7 +90,7 @@ app.scrollUp = () => {
 }
 
 /**
- *
+ * Start the terminal animation.
  * @param commands
  */
 app.startTerminal = (commands) => {
@@ -201,10 +201,10 @@ app.startTerminal([{
 }, {
   name: 'kill -9',
   argument: '1'
-},{
+}, {
   name: 'cd',
   argument: 'Programming'
-},{
+}, {
   name: 'clear'
 }, {
   name: 'ls',
