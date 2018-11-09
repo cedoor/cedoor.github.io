@@ -178,7 +178,7 @@ div#projects div.project-links > a {
     margin-left: 5px;
 }
 
-div#projects div.project-box > p > a {
+div#projects div.project-box > div.project-description > a {
     text-decoration: none;
     color: #275659;
 }
