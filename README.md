@@ -12,4 +12,5 @@ My [webstite](https://cedoor.dev/) with informations about me.
 ## Contact
 #### Developer
 * e-mail : me@cedoor.dev
-* Github : [@cedoor](https://github.com/cedoor)
+* github : [@cedoor](https://github.com/cedoor)
+* website : https://cedoor.dev
