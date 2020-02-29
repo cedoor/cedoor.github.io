@@ -1,15 +1,15 @@
 {
-    "name": "cedoor",
-    "version": "1.0.0",
-    "description": "Personal site with informations about me",
-    "author": "Omar Desogus <omardesogus9@gmail.com>",
-    "homepage": "https://github.com/cedoor/cedoor.github.io#readme",
-    "license": "MIT",
-    "scripts": {
-        "start": "live-server"
-    },
-    "devDependencies": {
-        "live-server": "1.2.1",
-        "standard": "11.0.1"
-    }
+  "name": "cedoor",
+  "version": "1.0.0",
+  "description": "Personal site with information about me",
+  "author": "Omar Desogus <me@cedoor.dev>",
+  "homepage": "https://github.com/cedoor/cedoor.github.io#readme",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "1.2.1",
+    "standard": "11.0.1"
+  }
 }
