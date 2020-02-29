@@ -189,26 +189,24 @@ app.startTerminal([{
   name: 'whoami',
   output: 'cedoor'
 }, {
-  name: 'ls',
-  output: 'Programming Learning Running'
-}, {
   name: 'clear'
+}, {
+  name: 'ls',
+  output: 'Programming Reading Running'
 }, {
   name: 'ps aux',
   output: '1 tty2 Sl+ 2:10 distractions<br>2 tty2 Sl+ 1:30 concentration<br>3 tty2 Sl+ 3:20 relax'
 }, {
-  name: 'clear'
-}, {
   name: 'kill -9',
   argument: '1'
+}, {
+  name: 'clear'
 }, {
   name: 'cd',
   argument: 'Programming'
 }, {
-  name: 'clear'
-}, {
   name: 'ls',
-  output: 'JavaScript Python C Java'
+  output: 'JavaScript Python Java'
 }, {
   name: 'cd',
   argument: '~'
