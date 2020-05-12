@@ -78,7 +78,7 @@ app.scrollTo = (event, id) => {
 app.scrollUp = () => {
   if (window.pageYOffset === 0) {
     window.scroll({
-      top: 2500,
+      top: 10000,
       behavior: 'smooth'
     })
   } else {
