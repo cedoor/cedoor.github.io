@@ -1,413 +1,400 @@
 <!DOCTYPE html>
 <html>
-    <title>Cedoor</title>
+<title>Cedoor</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hello friend, my name is Omar and I'm a curious, stubborn and meticulous programmer.">
-    <meta name="author" content="Omar Desogus">
-    <meta name="keywords" lang="en" content="omar, desogus, cedoor, mindmapp">
-    <meta name="language" content="en"/>
-    <meta name="rating" content="general"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hello friend, my name is Omar and I'm a curious, stubborn and meticulous programmer.">
+<meta name="author" content="Omar Desogus">
+<meta name="keywords" lang="en" content="omar, desogus, cedoor, mindmapp">
+<meta name="language" content="en"/>
+<meta name="rating" content="general"/>
 
-    <link rel="icon" type="image/png" href="https://cedoor.dev/images/taijitu.png">
-    <link rel="shortcut icon" type="image/png" href="https://cedoor.dev/images/taijitu.png"/>
-    <link rel="apple-touch-icon" type="image/png" href="https://cedoor.dev/images/taijitu.png" sizes="72x72"/>
-    <link rel="apple-touch-icon" type="image/png" href="https://cedoor.dev/images/taijitu.png" sizes="114x114"/>
-    <link rel="image_src" type="image/png" href="https://cedoor.dev/images/avatar.png"/>
+<link rel="icon" type="image/png" href="https://cedoor.dev/images/taijitu.png">
+<link rel="shortcut icon" type="image/png" href="https://cedoor.dev/images/taijitu.png"/>
+<link rel="apple-touch-icon" type="image/png" href="https://cedoor.dev/images/taijitu.png" sizes="72x72"/>
+<link rel="apple-touch-icon" type="image/png" href="https://cedoor.dev/images/taijitu.png" sizes="114x114"/>
+<link rel="image_src" type="image/png" href="https://cedoor.dev/images/avatar.png"/>
 
-    <meta property="og:type" content="profile"/>
-    <meta property="og:url" content="https://cedoor.dev"/>
-    <meta property="og:title" content="Cedoor"/>
-    <meta property="og:image" content="https://cedoor.dev/images/avatar300x200.png"/>
-    <meta property="og:description"
-          content="Hello friend, my name is Omar and I'm a curious, stubborn and meticulous programmer."/>
+<meta property="og:type" content="profile"/>
+<meta property="og:url" content="https://cedoor.dev"/>
+<meta property="og:title" content="Cedoor"/>
+<meta property="og:image" content="https://cedoor.dev/images/avatar300x200.png"/>
+<meta property="og:description"
+      content="Hello friend, my name is Omar and I'm a curious, stubborn and meticulous programmer."/>
 
-    <link rel="stylesheet" href="./layout.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
-                           integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
+<link rel="stylesheet" href="./layout.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+      integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"/>
 
-    <body>
-        <!-- Sidebar/menu -->
-        <div id="sidebar" class="animated faster">
-            <nav>
-                <div id="avatar" class="animated fast rollIn">
-                    <img src="./images/avatar.png">
-                </div>
-
-                <div id="contact" class="animated fast fadeIn">
-                    <p>Omar Desogus</p>
-                    <p>me@cedoor.dev</p>
-                </div>
-
-                <div id="index" class="animated fast fadeIn">
-                    <a href="" onclick="app.scrollTo(event, 'whoami')">
-                        <i class="fas fa-user fa-fw" aria-hidden="true"></i>
-                        Who am i?
-                    </a>
-                    <a href="" onclick="app.scrollTo(event, 'projects')">
-                        <i class="fas fa-rocket fa-fw" aria-hidden="true"></i>
-                        Projects
-                    </a>
-                    <a href="" onclick="app.scrollTo(event, 'experience')">
-                        <i class="fas fa-briefcase fa-fw" aria-hidden="true"></i>
-                        Experience
-                    </a>
-                    <a href="" onclick="app.scrollTo(event, 'education')">
-                        <i class="fas fa-book fa-fw" aria-hidden="true"></i>
-                        Education
-                    </a>
-                    <a href="" onclick="app.scrollTo(event, 'skills')">
-                        <i class="fas fa-chart-bar fa-fw" aria-hidden="true"></i>
-                        Skills
-                    </a>
-                </div>
-
-                <div id="socials" class="animated fast fadeIn">
-                    <a href="https://t.me/cedoor" target="_blank">
-                        <i class="fab fa-telegram" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/cedoor" target="_blank">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/cedoor" target="_blank">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </nav>
+<body>
+<!-- Sidebar/menu -->
+<div id="sidebar" class="animated faster">
+    <nav>
+        <div id="avatar" class="animated fast rollIn">
+            <img src="./images/avatar.png">
         </div>
 
-        <!-- Overlay effect when opening sidebar on small screens -->
-        <div id="overlay" class="animated faster" onclick="app.closeMenu()"></div>
+        <div id="contact" class="animated fast fadeIn">
+            <p>Omar Desogus</p>
+            <p>me@cedoor.dev</p>
+        </div>
 
-        <!-- Page content -->
-        <div id="content" class="animated fast fadeIn">
+        <div id="index" class="animated fast fadeIn">
+            <a href="" onclick="app.scrollTo(event, 'whoami')">
+                <i class="fas fa-user fa-fw" aria-hidden="true"></i>
+                Who am i?
+            </a>
+            <a href="" onclick="app.scrollTo(event, 'projects')">
+                <i class="fas fa-rocket fa-fw" aria-hidden="true"></i>
+                Projects
+            </a>
+            <a href="" onclick="app.scrollTo(event, 'experience')">
+                <i class="fas fa-briefcase fa-fw" aria-hidden="true"></i>
+                Experience
+            </a>
+            <a href="" onclick="app.scrollTo(event, 'education')">
+                <i class="fas fa-book fa-fw" aria-hidden="true"></i>
+                Education
+            </a>
+            <a href="" onclick="app.scrollTo(event, 'skills')">
+                <i class="fas fa-chart-bar fa-fw" aria-hidden="true"></i>
+                Skills
+            </a>
+        </div>
 
-            <!-- Button to scroll up the page -->
-            <img id="scroll-up" src="./images/taijitu.png" onclick="app.scrollUp()">
+        <div id="socials" class="animated fast fadeIn">
+            <a href="https://t.me/cedoor" target="_blank">
+                <i class="fab fa-telegram" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/cedoor" target="_blank">
+                <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/cedoor" target="_blank">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+        </div>
+    </nav>
+</div>
 
-            <!-- Mobile button to open the menu -->
-            <div id="open-menu" onclick="app.openMenu()"><span><span>||</span></span></div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div id="overlay" class="animated faster" onclick="app.closeMenu()"></div>
 
-            <div id="whoami" class="content-box">
-                <h2 title="About me">Whoami</h2>
-                <div>
-                    <div id="terminal">
-                        <header>cedoor@cedoor-pc:~</header>
-                        <div id="terminal-content">
-                            <span id="terminal-text"></span><span class="blinking">_</span>
-                        </div>
-                    </div>
-                    <div id="description">
-                        Hello friend. Just a few words about me, I don't want to steal too much time!
-                        Well, my name is Omar, and I like to define myself first of all umh..
-                        a little man with big dreams.
-                        I'm an ambitious, curious, patient, meticulous young programmer and I love to
-                        experiment, discover and learn from mistakes, just like in programming.
-                        Assiduous supporter of personal development, I try to live the life
-                        continually improving myself.
-                    </div>
-                </div>
-            </div>
+<!-- Page content -->
+<div id="content" class="animated fast fadeIn">
 
-            <div id="projects" class="content-box">
-                <h2 title="Projects">Projects</h2>
-                <div>
-                    <div class="project-box">
-                        <div class="project-links">
-                            <a href="https://github.com/Mindmapp" target="_blank">
-                                <i class="fab fa-github fa-lg" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://mindmapp.cedoor.dev" target="_blank">
-                                <i class="fas fa-rocket fa-lg" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://mmp.readthedocs.io/en/latest/" target="_blank">
-                                <i class="fas fa-book fa-lg" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <h3><img src="./images/mindmapp.png"> Mindmapp</h3>
-                        <div class="project-description">
-                            Mindmapp is an open source web application to draw mind maps quickly and efficiently.
-                            It was born with the intention to make the creation of mind maps extremely simple,
-                            but maintaining the fundamental properties that make the mind maps of Tony
-                            Buzan so efficient.
-                        </div>
-                    </div>
-                    <div class="project-box">
-                        <div class="project-links">
-                            <a href="https://github.com/movigo" target="_blank">
-                                <i class="fab fa-github fa-lg" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://movigo.cedoor.dev" target="_blank">
-                                <i class="fas fa-rocket fa-lg" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <h3><img src="./images/movigo.png"> Movigo</h3>
-                        <div class="project-description">
-                            Movigo is a JavaScript library that aims to offer an easy-to-use, modern, modular and extremely light tool for creating
-                            DOM animations using CSS keyframes in a more dynamic and flexible context. 
-                        </div>
-                    </div>
-                    <div class="project-box">
-                        <div class="project-links">
-                            <a href="https://github.com/cedoor/ceditor" target="_blank">
-                                <i class="fab fa-github fa-lg" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://ceditor.cedoor.dev" target="_blank">
-                                <i class="fas fa-rocket fa-lg" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <h3><img src="./images/ceditor.png"> Ceditor</h3>
-                        <div class="project-description">
-                            Ceditor is an online JavaScript/TypeScript editor to run and share the code with Github gists.
-                            Passing the id of the Github gist in the URL it's possible to load the code
-                            (TypeScript or JavaScript) directly into the Ace editor. The tool provides information
-                            on the gist and allows navigation of its associated files.
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Button to scroll up the page -->
+    <img id="scroll-up" src="./images/taijitu.png" onclick="app.scrollUp()">
 
-            <div id="experience" class="content-box">
-                <h2 title="Experience">Experience</h2>
+    <!-- Mobile button to open the menu -->
+    <div id="open-menu" onclick="app.openMenu()"><span><span>||</span></span></div>
 
-                <div class="timeline">
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-glasses" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://www.unica.it" target="_blank">University of Cagliari</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">03/2019</p>
-                            <p class="timeline-box-time">05/2019</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Post Graduate Research Assistant</h3>
-                            <p class="timeline-box-text">
-                            I studied Ethereum technologies and I worked in the design and implementation of an
-                            an agri-food traceability system based on p2p technologies.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-code-branch" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://github.com/cedoor" target="_blank">Self employed</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">10/2017</p>
-                            <p class="timeline-box-time">Present</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Web Developer</h3>
-                            <p class="timeline-box-text">
-                            I've followed several open source projects on Github working mainly on
-                            Web and Blockchain technologies. 
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-edit" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://www.flosslab.com/" target="_blank">Flosslab</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">08/2017</p>
-                            <p class="timeline-box-time">10/2017</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">IT Consultant</h3>
-                            <p class="timeline-box-text">
-                            I worked in the development of multiplatform mobile applications for an
-                            important e-commerce. I studied Angular and Ionic, analyzing how Cordova works
-                            and all the phases of mobile deploying.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-briefcase" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://www.flosslab.com/" target="_blank">Flosslab</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">02/2017</p>
-                            <p class="timeline-box-time">07/2017</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Internship</h3>
-                            <p class="timeline-box-text">
-                            I studied and worked with client-side web technologies like
-                            Angular, Webpack, Bootstrap, with server-side technologies like
-                            Java, Groovy, Grails, Gradle, PostgreSQL, Node and Odoo, and
-                            with mobile technologies using Ionic and Angular.
-                            For the first time I was able to study the peer-to-peer and the Blockchain
-                            world using Geth, Web3, Truffle and Solidity with Ethereum, Bitcoin tools and
-                            also IPFS, Dat and Swarm.
-                            I was able to establish excellent relations with the team, knowing very good
-                            people with a lot of skills.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-briefcase" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="http://www.sinossi.it/en/" target="_blank">Sinossi</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">04/2016</p>
-                            <p class="timeline-box-time">07/2016</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Internship</h3>
-                            <p class="timeline-box-text">
-                            I studied web technologies like Angular 1.x, Bootstrap and Node.
-                            I analyzed several internal software and created a graphical tool
-                            for data analysis. I was able to study and understand how D3 works by creating
-                            a web application of an interactive bubble chart with Material Design.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="education" class="content-box">
-                <h2 title="Education">Education</h2>
-
-                <div class="timeline">
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-book" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://www.unica.it" target="_blank">University of Cagliari</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">09/2017</p>
-                            <p class="timeline-box-time">Present</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Master's degree</h3>
-                            <p class="timeline-box-text">
-                            I studied Cybersecurity, I learned C ++ and Qt with the course of Geometric
-                            Algorithms and deepened the Blockchain technology.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-plane" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://www.um.es" target="_blank">University of Murcia</a>
-                            </h4>
-                            <p class="timeline-box-place">(Murcia)</p>
-                            <p class="timeline-box-time">09/2018</p>
-                            <p class="timeline-box-time">02/2019</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Erasmus</h3>
-                            <p class="timeline-box-text">
-                            I studied Networks and Telematics, I studied Spanish language and I improved my English.
-                            I consider the Erasmus experience not only a discovery of different languages,
-                            cultures and places, but also a discovery of oneself.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-box">
-                        <div class="timeline-left-box">
-                            <div class="timeline-box-icon">
-                                <i class="fas fa-user-graduate" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="timeline-box-company">
-                                <a href="https://www.unica.it" target="_blank">University of Cagliari</a>
-                            </h4>
-                            <p class="timeline-box-place">(Cagliari)</p>
-                            <p class="timeline-box-time">09/2013</p>
-                            <p class="timeline-box-time">10/2016</p>
-                        </div>
-                        <div class="timeline-right-box">
-                            <h3 class="timeline-box-title">Bachelor's degree</h3>
-                            <p class="timeline-box-text">
-                            I started to really get interested in Computer Science only in the Bachelor's degree,
-                            in which I was able to study the main programming languages, paradigms, mathematics,
-                            hardware and network architectures, databases and the software engineering.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="skills" class="content-box">
-                <h2 title="Skills">Skills</h2>
-                <div id="skills-languages" class="skill-box">
-                    <h3><i class="fas fa-language" aria-hidden="true"></i> Human languages</h3>
-                    <div class="skill-box-list">
-                        <div>Italian</div>
-                        <div>English</div>
-                        <div>Spanish</div>
-                    </div>
-                </div>
-                <div id="skills-pragramming-languages" class="skill-box">
-                    <h3><i class="fas fa-code" aria-hidden="true"></i> Pragramming languages</h3>
-                    <div class="skill-box-list">
-                        <div>JavaScript</div>
-                        <div>TypeScript</div>
-                        <div>Python</div>
-                    </div>
-                </div>
-                <div id="skills-web-technologies" class="skill-box">
-                    <h3><i class="fas fa-globe" aria-hidden="true"></i> Web technologies</h3>
-                    <div class="skill-box-list">
-                        <div>Angular</div>
-                        <div>React</div>
-                        <div>D3</div>
-                        <div>Ionic</div>
-                        <div>Node</div>
-                        <div>Electron</div>
-                    </div>
-                </div>
-                <div id="skills-peer-to-peer" class="skill-box">
-                    <h3><i class="fa fa-users" aria-hidden="true"></i> Peer-to-peer technologies</h3>
-                    <div class="skill-box-list">
-                        <div>Ethereum</div>
-                        <div>IPFS</div>
-                    </div>
-                </div>
-                <div id="skills-ethereum" class="skill-box">
-                    <h3><i class="fab fa-ethereum" aria-hidden="true"></i> Ethereum technologies</h3>
-                    <div class="skill-box-list">
-                        <div>Geth</div>
-                        <div>Solidity</div>
-                        <div>OpenZeppelin</div>
-                        <div>Web3.js</div>
-                        <div>Truffle</div>
-                    </div>
-                </div> 
+    <div id="whoami" class="content-box">
+        <h2 title="About me">Whoami</h2>
+        <div id="terminal">
+            <header>cedoor@cedoor-pc:~</header>
+            <div id="terminal-content">
+                <span id="terminal-text"></span><span class="blinking">_</span>
             </div>
         </div>
-    </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-    <script type="text/javascript" src="./app.js"></script>
+    </div>
+
+    <div id="projects" class="content-box">
+        <h2 title="Projects">Projects</h2>
+        <div>
+            <div class="project-box">
+                <div class="project-links">
+                    <a href="https://github.com/Mindmapp" target="_blank">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://mindmapp.cedoor.dev" target="_blank">
+                        <i class="fas fa-rocket fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://mmp.readthedocs.io/en/latest/" target="_blank">
+                        <i class="fas fa-book fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <h3><img src="./images/mindmapp.png"> Mindmapp</h3>
+                <div class="project-description">
+                    Mindmapp is an open source web application to draw mind maps quickly and efficiently.
+                    It was born with the intention to make the creation of mind maps extremely simple,
+                    but maintaining the fundamental properties that make the mind maps of Tony
+                    Buzan so efficient.
+                </div>
+            </div>
+            <div class="project-box">
+                <div class="project-links">
+                    <a href="https://github.com/movigo" target="_blank">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://movigo.cedoor.dev" target="_blank">
+                        <i class="fas fa-rocket fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <h3><img src="./images/movigo.png"> Movigo</h3>
+                <div class="project-description">
+                    Movigo is a JavaScript library that aims to offer an easy-to-use, modern, modular and extremely
+                    light tool for creating
+                    DOM animations using CSS keyframes in a more dynamic and flexible context.
+                </div>
+            </div>
+            <div class="project-box">
+                <div class="project-links">
+                    <a href="https://github.com/cedoor/ceditor" target="_blank">
+                        <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <h3><img src="./images/ceditor.png"> Ceditor</h3>
+                <div class="project-description">
+                    Ceditor is an online JavaScript/TypeScript editor to run and share the code with Github gists.
+                    Passing the id of the Github gist in the URL it's possible to load the code
+                    (TypeScript or JavaScript) directly into the Ace editor. The tool provides information
+                    on the gist and allows navigation of its associated files.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience" class="content-box">
+        <h2 title="Experience">Experience</h2>
+
+        <div class="timeline">
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-code-branch" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://github.com/cedoor" target="_blank">Self employed</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">10/2017</p>
+                    <p class="timeline-box-time">Present</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Web Developer</h3>
+                    <p class="timeline-box-text">
+                        I've followed several open source projects on Github working mainly on
+                        Web and Blockchain technologies.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-glasses" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://www.unica.it" target="_blank">University of Cagliari</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">03/2019</p>
+                    <p class="timeline-box-time">05/2019</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Post Graduate Research Assistant</h3>
+                    <p class="timeline-box-text">
+                        I studied Ethereum technologies and I worked in the design and implementation of an
+                        an agri-food traceability system based on p2p technologies.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-edit" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://www.flosslab.com/" target="_blank">Flosslab</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">08/2017</p>
+                    <p class="timeline-box-time">10/2017</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Information Technology Consultant</h3>
+                    <p class="timeline-box-text">
+                        I worked in the development of multiplatform mobile applications for an
+                        important e-commerce. I studied Angular and Ionic, analyzing how Cordova works
+                        and all the phases of mobile deploying.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://www.flosslab.com/" target="_blank">Flosslab</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">02/2017</p>
+                    <p class="timeline-box-time">07/2017</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Post-graduate training internship</h3>
+                    <p class="timeline-box-text">
+                        I studied and worked with client-side web technologies like
+                        Angular, Webpack, Bootstrap, with server-side technologies like
+                        Java, Groovy, Grails, Gradle, PostgreSQL, Node and Odoo, and
+                        with mobile technologies using Ionic and Angular.
+                        For the first time I was able to study the peer-to-peer and the Blockchain
+                        world using Geth, Web3, Truffle and Solidity with Ethereum, Bitcoin tools and
+                        also IPFS, Dat and Swarm.
+                        I was able to establish excellent relations with the team, knowing very good
+                        people with a lot of skills.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="http://www.sinossi.it/en/" target="_blank">Sinossi</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">04/2016</p>
+                    <p class="timeline-box-time">07/2016</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">University internship</h3>
+                    <p class="timeline-box-text">
+                        I studied web technologies like Angular 1.x, Bootstrap and Node.
+                        I analyzed several internal software and created a graphical tool
+                        for data analysis. I was able to study and understand how D3 works by creating
+                        a web application of an interactive bubble chart with Material Design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="education" class="content-box">
+        <h2 title="Education">Education</h2>
+
+        <div class="timeline">
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://www.unica.it" target="_blank">University of Cagliari</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">09/2017</p>
+                    <p class="timeline-box-time">Present</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Master's degree</h3>
+                    <p class="timeline-box-text">
+                        I studied Cybersecurity, I learned C ++ and Qt with the course of Geometric
+                        Algorithms and deepened the Blockchain technology.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-plane" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://www.um.es" target="_blank">University of Murcia</a>
+                    </h4>
+                    <p class="timeline-box-place">(Murcia)</p>
+                    <p class="timeline-box-time">09/2018</p>
+                    <p class="timeline-box-time">02/2019</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Erasmus</h3>
+                    <p class="timeline-box-text">
+                        I studied Networks and Telematics, I studied Spanish language and I improved my English.
+                        I consider the Erasmus experience not only a discovery of different languages,
+                        cultures and places, but also a discovery of oneself.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-box">
+                <div class="timeline-left-box">
+                    <div class="timeline-box-icon">
+                        <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                    </div>
+                    <h4 class="timeline-box-company">
+                        <a href="https://www.unica.it" target="_blank">University of Cagliari</a>
+                    </h4>
+                    <p class="timeline-box-place">(Cagliari)</p>
+                    <p class="timeline-box-time">09/2013</p>
+                    <p class="timeline-box-time">10/2016</p>
+                </div>
+                <div class="timeline-right-box">
+                    <h3 class="timeline-box-title">Bachelor's degree</h3>
+                    <p class="timeline-box-text">
+                        I started to really get interested in Computer Science only in the Bachelor's degree,
+                        in which I was able to study the main programming languages, paradigms, mathematics,
+                        hardware and network architectures, databases and the software engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills" class="content-box">
+        <h2 title="Skills">Skills</h2>
+        <div id="skills-languages" class="skill-box">
+            <h3><i class="fas fa-language" aria-hidden="true"></i> Human languages</h3>
+            <div class="skill-box-list">
+                <div>Italian</div>
+                <div>English</div>
+                <div>Spanish</div>
+            </div>
+        </div>
+        <div id="skills-pragramming-languages" class="skill-box">
+            <h3><i class="fas fa-code" aria-hidden="true"></i> Pragramming languages</h3>
+            <div class="skill-box-list">
+                <div>JavaScript</div>
+                <div>TypeScript</div>
+                <div>Python</div>
+            </div>
+        </div>
+        <div id="skills-web-technologies" class="skill-box">
+            <h3><i class="fas fa-globe" aria-hidden="true"></i> Web technologies</h3>
+            <div class="skill-box-list">
+                <div>Angular</div>
+                <div>React</div>
+                <div>D3</div>
+                <div>Ionic</div>
+                <div>Node</div>
+                <div>Electron</div>
+            </div>
+        </div>
+        <div id="skills-peer-to-peer" class="skill-box">
+            <h3><i class="fa fa-users" aria-hidden="true"></i> Peer-to-peer technologies</h3>
+            <div class="skill-box-list">
+                <div>Ethereum</div>
+                <div>IPFS</div>
+            </div>
+        </div>
+        <div id="skills-ethereum" class="skill-box">
+            <h3><i class="fab fa-ethereum" aria-hidden="true"></i> Ethereum technologies</h3>
+            <div class="skill-box-list">
+                <div>Geth</div>
+                <div>Solidity</div>
+                <div>OpenZeppelin</div>
+                <div>Web3.js</div>
+                <div>Truffle</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script type="text/javascript" src="./app.js"></script>
 </html>

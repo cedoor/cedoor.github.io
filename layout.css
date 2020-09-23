@@ -115,18 +115,6 @@ div.content-box > h2 {
     padding: 20px 0 15px 0;
 }
 
-div#whoami > div {
-    padding: 0 10px;
-}
-
-div#description {
-    margin-top: 25px;
-    padding: 8px;
-    text-align: justify;
-    line-height: 24px;
-    color: #3c3c3c;
-}
-
 div#terminal {
     min-height: 185px;
     background-color: #2b2b2b;
