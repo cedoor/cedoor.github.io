@@ -1,6 +1,6 @@
 # :boy: Cedoor
 
-[![](https://img.shields.io/github/license/cedoor/cedoor.github.io.svg?style=flat-square)](https://github.com/cedoor/cedoor.github.io/blob/dev/LICENSE)
+[![](https://img.shields.io/github/license/cedoor/cedoor.github.io.svg?style=flat-square)](https://github.com/cedoor/cedoor.github.io/blob/master/LICENSE)
 [![](https://img.shields.io/david/cedoor/cedoor.github.io.svg?style=flat-square)](https://david-dm.org/cedoor/cedoor.github.io)
 [![](https://img.shields.io/david/dev/cedoor/cedoor.github.io.svg?style=flat-square)](https://david-dm.org/cedoor/cedoor.github.io?type=dev)
 
