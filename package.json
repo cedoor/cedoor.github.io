@@ -1,8 +1,12 @@
 {
-	"name": "cedoor",
+	"name": "cedoor-website",
 	"version": "1.0.0",
-	"description": "My personal website",
-	"author": "Omar Desogus <me@cedoor.dev>",
+	"description": "My personal website.",
+	"author": {
+		"name": "Omar Desogus",
+		"email": "me@cedoor.dev",
+		"url": "https://cedoor.dev"
+	},
 	"homepage": "https://github.com/cedoor/cedoor.github.io#readme",
 	"license": "MIT",
 	"scripts": {

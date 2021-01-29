@@ -7,13 +7,12 @@ html {
 }
 
 body {
-	color: #d3d3d3;
+	color: #e5e5e5;
 	font-family: Hack, monospace;
 	padding: 0 10px;
 }
 
 a {
-	color: #d3d3d3;
 	text-decoration: none;
 }
 
@@ -66,19 +65,4 @@ body > div:first-child {
 	height: 20px;
 	padding: 0 2px;
 	background-color: #24292e;
-}
-
-#projects > a {
-	text-align: center;
-	flex: 1;
-	padding: 0 10px;
-}
-
-#projects > a > img {
-	height: 70px;
-}
-
-#projects > a > p {
-	font-size: 15px;
-	margin-top: 5px;
 }
