@@ -20,16 +20,17 @@
 ## Table of Contents
 
 - 🔬 Development
-    - Rules
-        - [Commits](https://github.com/cedoor/cedoor/tree/main/git#commits-rules)
-        - [Branches](https://github.com/cedoor/cedoor/tree/main/git#branch-rules)
+  - Rules
+    - [Commits](https://github.com/cedoor/cedoor/tree/main/git#commits-rules)
+    - [Branches](https://github.com/cedoor/cedoor/tree/main/git#branch-rules)
 - 🧾 [MIT License](https://github.com/cedoor/cedoor.github.io/blob/main/LICENSE)
 - ☎️ [Contacts](#contacts)
-    - [Developers](#developers)
+  - [Developers](#developers)
 
 ## Contacts
 
 ### Developers
+
 - e-mail : me@cedoor.dev
 - github : [@cedoor](https://github.com/cedoor)
 - website : https://cedoor.dev
