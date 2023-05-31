@@ -15,7 +15,6 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'me@cedoor.dev',
   github: 'https://github.com/cedoor',
-  twitter: 'https://twitter.com/cedoor_',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
