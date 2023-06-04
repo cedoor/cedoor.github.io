@@ -1,22 +1,22 @@
-import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer/source-files'
-import readingTime from 'reading-time'
+import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files'
 import path from 'path'
+import readingTime from 'reading-time'
 // Remark packages
+import {
+  extractTocHeadings,
+  remarkCodeTitles,
+  remarkExtractFrontmatter,
+  remarkImgToJsx,
+} from 'pliny/mdx-plugins.js'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
-import {
-  remarkExtractFrontmatter,
-  remarkCodeTitles,
-  remarkImgToJsx,
-  extractTocHeadings,
-} from 'pliny/mdx-plugins.js'
 // Rehype packages
-import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeKatex from 'rehype-katex'
 import rehypeCitation from 'rehype-citation'
-import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeKatex from 'rehype-katex'
 import rehypePresetMinify from 'rehype-preset-minify'
+import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug'
 
 const root = process.cwd()
 
@@ -36,6 +36,19 @@ const computedFields: ComputedFields = {
   },
   toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
 }
+
+export const NowActivities = defineDocumentType(() => ({
+  name: 'NowActivities',
+  filePathPattern: 'now/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    priority: { type: 'number', required: true },
+    icon: { type: 'string' },
+    layout: { type: 'string' },
+  },
+  computedFields,
+}))
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -77,7 +90,7 @@ export const Authors = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Authors],
+  documentTypes: [NowActivities, Blog, Authors],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [
