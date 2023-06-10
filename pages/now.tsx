@@ -1,5 +1,6 @@
 import { MDXComponents } from '@/components/MDXComponents'
 import { PageSEO } from '@/components/SEO'
+import siteMetadata from '@/data/siteMetadata'
 import { allNowActivities } from 'contentlayer/generated'
 import { InferGetStaticPropsType } from 'next'
 import Link from 'next/link'
@@ -14,7 +15,10 @@ export const getStaticProps = async () => {
 export default function Now({ allNowActivities }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <PageSEO title="Now page" description="What I'm focused on at this point in my life." />
+      <PageSEO
+        title={`Now - ${siteMetadata.author}`}
+        description="What I'm focused on at this point in my life."
+      />
 
       <div className="prose max-w-none pb-4 pt-8 text-gray-500 dark:text-gray-400">
         This is my&nbsp;
