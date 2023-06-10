@@ -16,7 +16,7 @@ export default function NowLayout({ children, content }: Props) {
         {title}
       </h2>
 
-      <div className="prose max-w-none pb-8 pt-8 dark:prose-dark">{children}</div>
+      <div className="prose max-w-none pb-4 pt-8 dark:prose-dark">{children}</div>
     </div>
   )
 }

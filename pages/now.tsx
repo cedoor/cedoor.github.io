@@ -16,7 +16,7 @@ export default function Now({ allNowActivities }: InferGetStaticPropsType<typeof
     <>
       <PageSEO title="Now page" description="What I'm focused on at this point in my life." />
 
-      <div className="prose max-w-none pt-8 text-gray-500 dark:text-gray-400">
+      <div className="prose max-w-none pb-4 pt-8 text-gray-500 dark:text-gray-400">
         This is my&nbsp;
         <Link href="https://nownownow.com/about" rel="nofollow" target="_blank">
           now page
