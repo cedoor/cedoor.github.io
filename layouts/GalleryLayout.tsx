@@ -22,7 +22,7 @@ export default function GalleryLayout({
               className="rounded-md"
             />
 
-            <p className="px-2 py-3 italic text-gray-300">{image.description}</p>
+            <p className="px-2 py-3 italic text-gray-500 dark:text-gray-400">{image.description}</p>
           </div>
         )
       })}
