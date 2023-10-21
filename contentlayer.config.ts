@@ -37,6 +37,17 @@ const computedFields: ComputedFields = {
   toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
 }
 
+export const Image = defineDocumentType(() => ({
+  name: 'Image',
+  filePathPattern: 'images/**/*.json',
+  contentType: 'data',
+  fields: {
+    category: { type: 'string', required: true },
+    src: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+  },
+}))
+
 export const NowActivities = defineDocumentType(() => ({
   name: 'NowActivities',
   filePathPattern: 'now/**/*.mdx',
@@ -90,7 +101,7 @@ export const Authors = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [NowActivities, Blog, Authors],
+  documentTypes: [Image, NowActivities, Blog, Authors],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [

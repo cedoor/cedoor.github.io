@@ -11,10 +11,10 @@ export default function NowLayout({ children, content }: Props) {
 
   return (
     <div className="pt-8">
-      <h2 className="text-2xl font-bold leading-8 tracking-tight">
+      <h4 className="sm:text-1xl md:text-1xl text-2xl capitalize tracking-tight text-gray-900 dark:text-gray-100">
         {icon && <span>{icon}&nbsp;&nbsp;</span>}
         {title}
-      </h2>
+      </h4>
 
       <div className="prose max-w-none pb-4 pt-8 dark:prose-dark">{children}</div>
     </div>
