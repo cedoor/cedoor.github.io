@@ -12,7 +12,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/cedoor/cedoor.github.io',
   siteLogo: '/static/images/avatar.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/banner.png',
   email: 'me@cedoor.dev',
   github: 'https://github.com/cedoor',
   locale: 'en-US',
