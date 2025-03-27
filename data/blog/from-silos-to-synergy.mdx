@@ -1,0 +1,182 @@
+---
+title: From silos to synergy
+date: '2025-01-20'
+tags: ['cryptography', 'interoperability', 'standards', 'adoption']
+summary: Bridging the gap between cryptographic protocols and real-world applications.
+bibliography: references-data.bib
+---
+
+*Special thanks to [0xjei](https://github.com/0xjei), [Andy Guzman](https://x.com/AndyGuzmanEth), [Zoey](https://x.com/0xZoey), Ki Chong Tran, [Vivian Plasencia](https://github.com/vplasencia) and others for help and discussions.*
+
+___
+
+## **Takeaways**
+
+- **Challenges**: The main obstacles for privacy protocols are interoperability, lack of standards, and developer accessibility.
+- **Emerging solutions**: POD2 and SelfAttestHub offer different approaches to address these issues, with POD2 focusing on general-purpose cryptography and SelfAttestHub on identity and verifiable credentials.
+- **Goals**: Both solutions aim to make protocols more modular, composable, and interoperable.
+- **Potential synergies**: While distinct, POD2 and SelfAttestHub could complement each other in privacy-driven ecosystems.
+
+___
+
+Over the past few months, I’ve explored digital identity, learning from experts, understanding key challenges, and evaluating privacy technologies in current systems. The lack of interoperability, standards, documentation, and developer tools appears to be the main obstacle hindering the adoption of privacy-focused technologies. This is especially true for protocols that fall under what 0xPARC calls "[**Programmable Cryptography**](https://0xparc.org/blog/programmable-cryptography-1)" [@ProgrammableCryptography], namely those protocols that mark a shift from specialized cryptographic systems, like public-key encryption and digital signatures, to more general-purpose ones. These include zkSNARKs, MPC, FHE, Witness Encryption, and Obfuscation.
+
+That said, it was reassuring to see that many people and organizations are actually already actively working to overcome these challenges. Efforts range from promoting the adoption of specifications to creating comprehensive documentation, improving the developer experience, and establishing format standards. Most importantly, there is a gradual but essential **process of abstraction** underway, which aims to make these protocols accessible to a broader audience without any background in cryptography, while also enabling a paradigm shift in how we approach them. Instead of treating them as isolated tools, abstraction allows us to think of them as interoperable components that can be combined to create more powerful, multi-faceted privacy solutions.
+
+This article aims to clarify the topic by exploring two recently emerged solutions that have notable similarities but also important differences. While they might seem like alternatives, they could actually complement each other: **POD2** by 0xPARC and **SelfAttestHub** by PSE.
+
+But before moving forward, let’s go back to the origins and examine the challenges that inspired these solutions.
+
+## From concept to reality
+
+If we were to identify a common thread running through all the issues, it would likely be the challenge of making a **real-world impact**. At its core, this means bridging the gap between "Programmable Cryptography" protocols and the mainstream digital ecosystem, that is the everyday apps people actually use. But this isn't a sudden realization that emerged in recent months, but rather a growing awareness that has developed over the years, driven by the gradual maturation of development tools made possible through the combined efforts of individual contributors and teams.
+
+The origins of these protocols go back around 40 years, to when Micali, Yao and co published the first research on [zero-knowledge proofs](https://doi.org/10.1145/22145.22178) [@ZeroKnowledgeProof] and [multi-party computation](https://doi.org/10.1109/SFCS.1982.38) [@MPC]. For a long time, these ideas stayed in the world of theory, understood only by a small circle of researchers. Things started to change when a few bold developers decided to turn theory into practice, creating domain-specific languages (DSLs) like Circom and other tools, which in turn paved the way for a range of protocols built on top of them.
+
+Over the past five years, various teams, working more or less independently, have then focused on implementing new protocols. Their efforts have gradually improved the **developer experience**, enhanced **documentation**, and expanded both the range of use cases and the community of [developers involved](https://www.developerreport.com/developer-report?s=2054-monthly-active-developers-support-zero-knowledge-zk-ecosystems) [@CryptoDeveloperReport].
+
+However, it’s still not enough to reach critical mass and make these technologies mainstream. We’re still just getting started. So, what are the challenges we face today?
+
+## Understanding the core challenges
+
+We need to move forward on three fronts in parallel: developer experience, interoperability and adoption.
+
+### Developer experience
+
+[Developers, developers, developers](https://www.youtube.com/watch?v=Vhh_GeBPOhs)! A lot has been achieved, but we still need more cryptography developers to make existing tools even simpler for the broader developer community, especially in mobile and web environments. We need greater **abstraction**, hiding unnecessary complexity, and making cryptography accessible to everyone, not just a small niche of enthusiasts and experts.
+
+I’ve personally spent the past few years working on this through [Semaphore](https://semaphore.pse.dev/), and I still believe it’s absolutely essential.
+
+### **Interoperability**
+
+Although we’re starting to see some progress, most projects continue to operate in silos, within an environment that remains too fragmented, lacking both coordination and a clear overarching vision.
+
+What we need is **composability**, along with meta-protocols and infrastructures built around modular components, drawing inspiration from a well-known success story: Ethereum, with its smart contracts and EIPs.
+
+We also need a streamlined system of specifications and standards. The [work done by ZK-ID](https://pse-team.notion.site/ZK-ID-Retrospective-10ed57e8dd7e80258146ce4bcef0ee16) by PSE [@ZKIDRetro], from which SelfAttestHub was born, has made it clear that the lack of standards and coordination is the main reason why not only ZK protocols but the entire digital identity space remains highly fragmented today.
+
+### **Adoption**
+
+We need to experiment and build real-world applications, gather feedback from developers and people with diverse backgrounds, and showcase how these protocols can be applied through practical examples, **education**, and **outreach**. Projects like [Cursive](https://www.cursive.team/) and [Zupass](https://zupass.org/) are great examples of how to move forward.
+
+Last but not least, we must closely monitor the progress of governments and institutions in the field of digital identity. It's essential to advocate for the use of privacy-focused technologies and ensure that the protocols we develop are compatible with the standards that will ultimately be adopted. We cannot predict whether the future will revolve around W3C standards, X.509 certificates, or an entirely new paradigm. What we do know is that we must be prepared to support it, no matter what form it takes.
+
+## **PODs**
+
+To describe POD2, it's essential to first define the concept of a POD as envisioned by 0xPARC and understand its first implementation, POD1.
+
+A [POD](https://pod.org/) is defined as a standard for cryptographic data and enables secure data storage and sharing with integrity guarantees, supporting a more interoperable and privacy-preserving internet. Users can share verifiable, unaltered data, with cryptographic operations allowing redaction, transformation, and aggregation while preserving end-to-end verifiability.
+
+To a user, a POD is a piece of cryptographic data attested by some issuing authority. A POD can serve as proof of event attendance, a secure message, a collectible badge, or even an item in a role-playing game. For a developer, a POD object is a key-value store that can hold any signed data.
+
+### POD1
+
+POD1 is the first implementation of this concept, and it can in this case be described in detail since it was successfully used at the last Devcon in Bangkok in November 2024. If you attended Devcon, you likely scanned a QR code for your ticket using the Zupass app and may have collected [crypto frogs](https://frogcrypto.xyz/). All of these were PODs.
+
+When a POD1 is issued, its entries (key-value pairs) are hashed as part of a Merkle tree, precisely a LeanIMT. The root of that tree is signed by the issuer, and the so-called GPC (General Purpose Circuits) allows developers to generate zero-knowledge proofs from a simple proof configuration (i.e. a human-readable JSON format). GPCs can then prove properties of one POD or several PODs together. Additionally, PODs can be proven to be owned by the prover using a Semaphore identity.
+
+### POD2
+
+POD2 is the natural evolution of POD1, addressing three key limitations of the original version:
+
+1. **Need for issuer alignment**: POD1 requires data attesters to change the way they issue data. Specifically, credential issuers must adopt the POD1 infrastructure and its technologies (e.g. EdDSA with BabyJubjub). This dependency limits adoption, interoperability, and scalability.
+2. **Single-round computation**: POD1 is constrained to a single round of computation. Once a proof is generated using GPC, the output cannot be used as input for further computations. In other words, it is not possible to chain PODs together, as each operates in isolation.
+3. **Limited multi-party computation**: POD1 does not support use cases where multiple parties want to collaborate in generating proofs while keeping their respective inputs private. This limitation prevents more advanced privacy-preserving multi-party workflows.
+
+The solution proposed in POD2 shifts the approach from handling data issuance and signing within its system to enabling the import of any externally issued cryptographic data. This data is then converted into a format compatible with the POD ecosystem through a specialized component known as the “Introduction Gadget.”
+
+For example, imagine a crypto frog generated at Devcon — essentially, a zero-knowledge Groth16 proof created using GPC and POD1. Through the Introduction Gadget, this proof is transformed into a POD2-compatible proof, meaning it now adheres to a proving system that can be fully integrated within the POD2 ecosystem.
+
+In addition, POD2 introduces new cryptographic primitives, like recursive proofs and MPC (Multi-Party Computation), or potentially FHE (Fully Homomorphic Encryption). This evolution allows for composable proofs, where the output of one POD can serve as the input for another. And each POD can receive multiple inputs from different parties, enabling the creation of verifiable and interoperable computational graphs.
+
+This composability clearly unlocks a world of possibilities for more complex workflows and seamless cross-party interactions within the POD2 ecosystem.
+
+![POD architecture](/static/images/pod-arch.png)]
+
+Building on the foundation established with GPC in POD1, which aims to abstract the complexity of writing zero-knowledge circuits, POD2 also introduces a new paradigm called the "zk Logic Virtual Machine" (zk-LVM). This approach shifts the underlying concept of zkVMs from "circuits proving the state transition of a CPU architecture" (CPU model) to "circuits proving the correctness of logical operations on statements" (Logic model).
+
+The core idea is to let developers write circuits using a predefined set of logical statements like ValueOf, Equal, NotEqual, and GreaterThan within a specialized logic programming language (like LISP), eliminating the need to deal with the low-level complexity of circuit design.
+
+The concepts behind POD2 are still being explored, but the vision is clear. It aims to create a composable system that leverages new cryptographic primitives and technologies to import the vast array of real-world data into an ecosystem where advanced computations on encrypted data can be performed. At the same time, it seeks to provide developers with intuitive, easy-to-use development tools, significantly lowering the barrier to entry for building privacy-preserving applications.
+
+If you want to dive deeper into PODs, I highly recommend checking out these resources from the 0xPARC website and Devcon in Bangkok:
+
+- Programmable Cryptography (Part 1): https://0xparc.org/blog/programmable-cryptography-1
+- POD1 workshop: https://www.youtube.com/watch?v=gWoVrIO1tIE
+- POD2 workshop: https://www.youtube.com/watch?v=5C8SovQZnqY
+- POD2 talk: https://www.youtube.com/watch?v=Qob-AsX0mxY&t=795s
+
+## SelfAttestHub
+
+While [SelfAttestHub](https://hackmd.io/@meyanis/BJjh3X2JJl) [@SelfAttestHub] is built on principles similar to POD, it emerges from ZK-ID's research in digital identity and the alignment of some PSE projects. By identifying key challenges in the Self-Sovereign Identity (SSI) space, the team proposed a solution that enables PSE's data provenance projects (e.g. AnonAadhaar, OpenPassport, TLSNotary, ZKEmail) to coexist within an on-chain infrastructure while maintaining full compatibility with the VCs/DIDs standards ecosystem. The core objective is to provide a shared interface, ensuring that PSE proofs can be seamlessly consumed and utilized by identity providers in real-world applications.
+
+A key aspect of this infrastructure is the use of blockchain as a Verifiable Data Registry (VDR), which is crucial for SSI. It provides a decentralized, tamper-proof trust layer that enables users to control their identities through Decentralized Identifiers (DIDs), anchor cryptographic proofs, and manage revocation registries in a secure, transparent, and privacy-preserving manner.
+
+### Iden3-inspired approach
+
+Building on this foundation, SelfAttestHub's approach, inspired by Iden3, shifts proof verification to smart contracts. Users generate identity proofs client-side and submit them to smart contracts, which act as decentralized issuers. These contracts verify the proof and add users to on-chain groups, allowing verifiers to check membership status without re-verifying the original proofs. The verification process is managed through a unique verifier contract, streamlining proof validation and ensuring a unified, consistent approach to verification across different groups and use cases.
+
+To enable selective disclosure, SelfAttestHub uses a two-level Merkle tree structure:
+
+- **Identity tree**: Represents a user's identity attributes. The attributes (like birthdate, gender, and address) are stored off-chain as a Verifiable Credential (VC) in plain text. These attributes are hashed into a Merkle tree, with the Merkle root serving as part of the identity commitment added to the on-chain claim tree.
+- **Claim tree**: An on-chain tree whose leaves are identity tree roots. Users can add their identity tree roots using provenance proofs (like AnonAadhaar) and later generate proofs of membership on behalf of them. This on-chain Merkle tree allows verifiers to check a user's membership status within a specific claim tree.
+
+When a verifier requests specific attributes, the user generates an identity proof with the corresponding Merkle proof for the requested attribute. This is shared as a Verifiable Presentation, allowing the verifier to check if the user's identity root matches the one previously committed on-chain, ensuring privacy and data integrity.
+
+![SelfAttestHub Architecture](https://hackmd.io/_uploads/rJXpeXQHkl.png)
+
+### Building the ultimate PSE modular infrastructure
+
+Alongside the progress made by the ZK-ID team, several teams within PSE also started exploring ways to integrate multiple PSE projects beyond the context of SSI and W3C standards. An example of this is Sinu's [proposal](https://hackmd.io/@sinuio/Byo7xxhZC) [@BootstrappingIdentitySets] to bootstrap private Identity Sets (i.e., Semaphore groups) using TLSNotary.
+
+This vision of connecting multiple protocols within a modular, shared infrastructure, rather than maintaining isolated and non-interoperable projects, clearly aligns with the approach of SelfAttestHub. In fact, SelfAttestHub itself could potentially be built entirely using PSE protocols. For example, one promising approach is to use Semaphore groups (LeanIMT) instead of Iden3's Sparse Merkle Trees for the claim tree, and leverage POD1 for the identity tree.
+
+The main challenge would undoubtedly be to preserve essential SSI properties such as selective disclosure, recovery, and revocation. However, let's assume these issues can be addressed with a PSE-driven solution. With this in mind, let's engage in a experiment to conceptually design this solution:
+
+1. **Excubiae** can serve as the entry point for accessing Semaphore groups. In this architecture, gatekeepers act as components that import external cryptographic data. This approach establishes a controlled entry mechanism, ensuring that only users with valid external data can gain access to the relevant Semaphore groups.
+2. **Semaphore** can function as a Verifiable Data Registry (VDR) for credentials. Once users are admitted into groups through the gatekeepers, they can anonymously prove their membership in a group. This, in effect, allows them to demonstrate possession of the credentials that the group represents. By doing so, Semaphore enables efficient provability of external cryptographic data within an interoperable on-chain ecosystem, all under a single verifier.
+3. **TLSNotary**, **ZKEmail**, **AnonAadhaar**, and other data provenance protocols can be utilized either individually or in combination to construct gatekeepers. These gatekeepers can bootstrap various Semaphore groups, offering multiple pathways for users to prove their credentials. This modular approach enhances flexibility, allowing for different data sources to contribute to the creation of anonymity sets while maintaining privacy-preserving principles.
+4. As mentioned above, **POD1** could be used to enable selective disclosure by following a flow similar to the one described above with the identity tree.
+
+An interesting feature is that once gatekeepers are established to grant access to Semaphore groups, those same groups can then be used in combination to create new gatekeepers.
+
+Imagine a user utilizes AnonAadhaar to join a Semaphore group representing Indian citizens over the age of 18. Later, the user also joins a second Semaphore group that represents individuals who have a valid driver's license. By combining the proof of membership from both of these groups, the user can gain access to a new group that represents "Indian citizens over 18 with a valid driver's license." Instead of having to prove both credentials separately, the user only needs to provide proof of membership in this new combined group, effectively demonstrating possession of both credentials in a single step.
+
+In a way, it's similar to recursive proofs. The proof generated from one Semaphore group can serve as an input (or condition) to join another Semaphore group, and this process can be repeated iteratively, enabling the creation of increasingly complex credential compositions.
+
+![SelfAttestHub PSE Architecture](/static/images/self-attest-hub-arch.png)]
+
+At this point, some clear similarities with POD2 begin to emerge, which will be described below.
+
+For a deeper understanding of the ideas behind this solution, I recommend reading the following articles:
+
+- ZK-ID - Retrospective: [https://pse-team.notion.site/ZK-ID-Retrospective-10ed57e8dd7e80258146ce4bcef0ee16#10ed57e8dd7e80b884e3df91727b37d4](https://www.notion.so/10ed57e8dd7e80258146ce4bcef0ee16?pvs=21)
+- SelfAttestHub: A Port From ProgCrypto to Verifiable Credentials: https://hackmd.io/@wFJY6cGcRfmvPHiQ5VYP6w/BJjh3X2JJl
+- Bootstrapping Private Identity Sets: https://hackmd.io/@sinuio/Byo7xxhZC
+
+## Commonalities and Differences
+
+As highlighted in the previous sections, SelfAttestHub and POD2 are two distinct solutions with notable similarities and differences, yet they have the potential to be complementary. Both aim to tackle key challenges related to interoperability and composability, but while they share a common goal of enabling seamless workflows, they diverge significantly in their design choices and probably target use cases.
+
+### Key similarities
+
+- **Data Importation**: Both solutions aim to create a system for importing external data into a composable ecosystem.
+- **Bridging Components**: Each solution has a component that serves as a bridge between external cryptographic data and the internal ecosystem — Excubiae Gatekeepers in SelfAttestHub and Introduction Gadgets in POD2.
+- **Universal Proof Verification**: Once the data is imported, all proofs within the ecosystem can be verified through a single, universal verifier.
+
+### Major differences
+
+- **Blockchain Dependency**: POD2 is not inherently tied to the blockchain and can function as a standalone system. In contrast, SelfAttestHub relies on the blockchain to provide a decentralized and tamper-proof infrastructure.
+- **Use of Decentralized Identity (DID) and Verifiable Credentials (VCs)**: Both solutions can be extended with an additional layer to support standards like DIDs and VCs. However, within Self-Sovereign Identity (SSI), a Verifiable Data Registry (VDR) is essential, and SelfAttestHub is natively built on a ledger, whereas POD2 operates independently of one.
+- **Composability Mechanisms**: POD2 achieves composability through recursive proofs, while SelfAttestHub achieves it through Semaphore groups.
+- **Privacy and Anonymity**: SelfAttestHub introduces anonymity sets, which provide or make it easier to provide useful privacy properties such as unlinkability, revocation, recovery, identity management. These properties are not guaranteed by POD2 by default.
+
+## Conclusions
+
+The convergence of programmable cryptography and self-sovereign identity (SSI) highlights shared challenges like interoperability, standardization, and developer accessibility. POD2 and SelfAttestHub might present two distinct yet complementary approaches. POD2 focuses on a composable, general-purpose cryptographic system, while SelfAttestHub offers an on-chain infrastructure for privacy-preserving identity systems. Both solutions aim to abstract complexity, foster interoperability, and increase accessibility for developers and users.
+
+By aligning these efforts, the privacy-tech ecosystem can accelerate adoption, unlock composability, and enable a new generation of modular, privacy-preserving applications.
+
+## References
+
+[^ref]
