@@ -13,7 +13,7 @@ export default function Gallery({ allImages }: InferGetStaticPropsType<typeof ge
     <>
       <PageSEO
         title={`Gallery - ${siteMetadata.author}`}
-        description="A collection of AI-crafted gallery images."
+        description="Moments captured and imagined."
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
@@ -21,7 +21,7 @@ export default function Gallery({ allImages }: InferGetStaticPropsType<typeof ge
             Gallery
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            A collection of AI-crafted gallery images.
+            Moments captured and imagined.
           </p>
         </div>
         <div className="container pb-10 pt-2">
