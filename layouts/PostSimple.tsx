@@ -61,7 +61,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                   <div className="pt-4 xl:pt-8">
                     <Link
                       href={`/${prev.path}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="font-bold text-link-500 hover:text-link-600 dark:text-link-500 dark:hover:text-link-600"
                       aria-label={`Previous post: ${prev.title}`}
                     >
                       &larr; {prev.title}
@@ -72,7 +72,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                   <div className="pt-4 xl:pt-8">
                     <Link
                       href={`/${next.path}`}
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="font-bold text-link-500 hover:text-link-600 dark:text-link-500 dark:hover:text-link-600"
                       aria-label={`Next post: ${next.title}`}
                     >
                       {next.title} &rarr;

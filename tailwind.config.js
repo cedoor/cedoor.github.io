@@ -31,7 +31,16 @@ module.exports = {
         sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
-        primary: colors.stone,
+        // Gruvbox-inspired blue accent
+        primary: {
+          400: '#5a9a9a',
+          500: '#458588', // Gruvbox blue-like
+          600: '#3d7375',
+        },
+        link: {
+          500: 'var(--link-500)',
+          600: 'var(--link-600)',
+        },
         gray: colors.neutral,
       },
       typography: (theme) => ({
@@ -39,11 +48,13 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.link.500'),
+              fontWeight: '700',
+              textDecoration: 'none',
               '&:hover': {
-                color: `${theme('colors.primary.600')} !important`,
+                color: theme('colors.link.600'),
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.link.500') },
             },
             h1: {
               fontWeight: '700',
@@ -107,11 +118,13 @@ module.exports = {
           css: {
             color: theme('colors.gray.300'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.link.500'),
+              fontWeight: '700',
+              textDecoration: 'none',
               '&:hover': {
-                color: `${theme('colors.primary.400')} !important`,
+                color: theme('colors.link.600'),
               },
-              code: { color: theme('colors.primary.400') },
+              code: { color: theme('colors.link.500') },
             },
             h1: {
               fontWeight: '700',
