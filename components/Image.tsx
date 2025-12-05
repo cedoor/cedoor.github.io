@@ -21,7 +21,7 @@ const Image = ({ src, ...rest }: ImageProps) => {
     if (src.includes('?theme-aware') || src.includes('&theme-aware')) {
       const basePath = src.split('?')[0].split('&')[0]
       const isDark = resolvedTheme === 'dark'
-      
+
       // Insert -dark before file extension if dark theme
       const extensionMatch = basePath.match(/\.(png|jpg|jpeg|svg|webp)$/i)
       if (extensionMatch && isDark) {
