@@ -9,14 +9,14 @@ interface Props {
 
 function ProjectCard({ project }: { project: ProjectData }) {
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded-md border border-gray-200 bg-[#f9f8f5] p-4 dark:border-gray-700 dark:bg-[#222220] md:p-5">
+    <div className="flex w-full flex-col overflow-hidden rounded-md border border-gray-300 bg-[#f9f8f5] p-4 dark:border-gray-700 dark:bg-[#222220] md:p-5">
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-2">
         {project.subtitle && (
-          <span className="text-xs text-gray-400 dark:text-gray-500">{project.subtitle}</span>
+          <span className="text-xs text-gray-500 dark:text-gray-500">{project.subtitle}</span>
         )}
-        <p className="ml-auto text-xs text-gray-400 dark:text-gray-500">{project.dateRange}</p>
+        <p className="ml-auto text-xs text-gray-500 dark:text-gray-500">{project.dateRange}</p>
       </div>
-      <div className="mb-3 h-px bg-gray-200 dark:bg-gray-700" />
+      <div className="mb-3 h-px bg-gray-300 dark:bg-gray-700" />
       <div className="mb-1 flex items-center justify-between">
         <h2 className="text-lg font-bold leading-tight text-gray-900 dark:text-gray-100">
           {project.title}
@@ -55,7 +55,7 @@ export default function ProjectsLayout({ projects }: Props) {
     <div className="relative">
       {/* Vertical spine */}
       <div
-        className="absolute inset-y-0 left-5 w-px bg-gray-200 dark:bg-gray-700 md:left-1/2 md:-translate-x-1/2"
+        className="absolute inset-y-0 left-5 w-px bg-gray-300 dark:bg-gray-700 md:left-1/2 md:-translate-x-1/2"
         aria-hidden
       />
 
@@ -70,17 +70,17 @@ export default function ProjectsLayout({ projects }: Props) {
             >
               {/* Circle on spine */}
               <div
-                className="absolute left-5 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-200 bg-[#f9f8f5] dark:border-gray-700 dark:bg-[#222220] md:left-1/2"
+                className="absolute left-5 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-300 bg-[#f9f8f5] dark:border-gray-700 dark:bg-[#222220] md:left-1/2"
                 aria-hidden
               />
               {/* Connector: mobile (spine → card) */}
               <div
-                className="absolute left-5 top-1/2 z-[5] h-px w-7 -translate-y-1/2 bg-gray-200 dark:bg-gray-700 md:hidden"
+                className="absolute left-5 top-1/2 z-[5] h-px w-7 -translate-y-1/2 bg-gray-300 dark:bg-gray-700 md:hidden"
                 aria-hidden
               />
               {/* Connector: desktop (circle → card, direction depends on side) */}
               <div
-                className={`absolute top-1/2 z-[5] hidden h-px w-8 -translate-y-1/2 bg-gray-200 dark:bg-gray-700 md:block ${
+                className={`absolute top-1/2 z-[5] hidden h-px w-8 -translate-y-1/2 bg-gray-300 dark:bg-gray-700 md:block ${
                   isRight ? 'left-1/2' : 'right-1/2'
                 }`}
                 aria-hidden
