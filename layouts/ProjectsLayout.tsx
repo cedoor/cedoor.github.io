@@ -61,7 +61,7 @@ export default function ProjectsLayout({ projects }: Props) {
 
       <ul className="relative">
         {projects.map((project, i) => {
-          const isRight = i % 2 === 0
+          const isRight = i % 2 === 1
           return (
             <li
               key={project.title}
