@@ -1,6 +1,6 @@
 export interface ProjectSkill {
   label: string
-  color: 'primary' | 'emerald' | 'amber' | 'violet' | 'rose' | 'sky' | 'slate'
+  color: 'primary' | 'emerald' | 'amber' | 'violet' | 'rose' | 'sky' | 'slate' | 'teal' | 'indigo'
 }
 
 import type { ReactNode } from 'react'
@@ -15,51 +15,140 @@ export interface ProjectData {
   repoUrl?: string
 }
 
-/** Most recent first */
 const projectsData: ProjectData[] = [
   {
     title: 'Enclave',
     subtitle: 'Gnosis Guild',
-    dateRange: 'Jan 2024 - Present',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    dateRange: 'Sep 2025 - Present',
+    description: (
+      <>
+        After a roughly 5-month break last year, I resumed working on what is without a doubt the
+        most complex project I&apos;ve ever been part of, and the steepest learning curve I&apos;ve
+        experienced, alongside extremely talented cryptographers and engineers. Enclave is a{' '}
+        <b>distributed network for verifiable confidential computation</b> where <b>FHE</b>,{' '}
+        <b>MPC</b>, <b>ZK</b>, <b>blockchain</b>, and <b>mechanism design</b> all converge. The idea
+        is to provide infrastructure that enables computation on <b>encrypted data</b> contributed
+        by multiple users, a technology with the potential to fundamentally change how sensitive
+        information is shared and used across organizations and industries.
+      </>
+    ),
     skills: [
       { label: 'Zero-Knowledge', color: 'violet' },
+      { label: 'Full Homomorphic Encryption', color: 'violet' },
+      { label: 'Multi-Party Computation', color: 'violet' },
+      { label: 'Research', color: 'amber' },
       { label: 'Rust', color: 'slate' },
-      { label: 'Cryptography', color: 'primary' },
     ],
+    repoUrl: 'https://github.com/gnosisguild/enclave',
   },
   {
     title: 'MPC Framework',
     subtitle: 'PSE (Ethereum Foundation)',
     dateRange: 'Jan 2025 - Feb 2025',
-    description:
-      'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat.',
+    description: (
+      <>
+        Although I only worked on it for a couple of months, this project gave me the chance to
+        study{' '}
+        <a href="https://mpc.pse.dev/" target="_blank" rel="noopener noreferrer">
+          MPC
+        </a>{' '}
+        (Multi-Party Computation) and use <b>Rust</b> for the first time. MPC Framework makes
+        building MPC circuits dramatically simpler, thanks to a DSL called{' '}
+        <a
+          href="https://github.com/privacy-ethereum/summon"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Summon
+        </a>{' '}
+        for boolean circuits and a plug-in architecture for different backends. In my opinion one of
+        the most well-executed projects at PSE, largely thanks to{' '}
+        <a href="https://github.com/voltrevo" target="_blank" rel="noopener noreferrer">
+          Andrew Morris
+        </a>
+        .
+      </>
+    ),
+    skills: [
+      { label: 'Multi-Party Computation', color: 'violet' },
+      { label: 'Rust', color: 'slate' },
+    ],
+    repoUrl: 'https://github.com/privacy-ethereum/mpc-framework',
+  },
+  {
+    title: 'ZK-ID',
+    subtitle: 'PSE (Ethereum Foundation)',
+    dateRange: 'Jul 2024 - Nov 2024',
+    description: (
+      <>
+        <a href="https://pse.dev/projects/zk-id" target="_blank" rel="noopener noreferrer">
+          ZK-ID
+        </a>{' '}
+        is a team advancing the use of <b>zero-knowledge proofs</b> in digital identity systems
+        which I contributed to from its inception, shortly before <b>Devcon SEA</b>. The goal was to
+        coordinate efforts toward making ZK technologies interoperable and standardized. What struck
+        me the most was realizing how many people, organizations, and institutions are already
+        working to make the Internet a better place.
+      </>
+    ),
     skills: [
       { label: 'Identity', color: 'emerald' },
       { label: 'Community', color: 'amber' },
+      { label: 'Zero-Knowledge', color: 'violet' },
     ],
+    repoUrl: 'https://github.com/privacy-ethereum/zkID',
   },
   {
     title: 'Zupass',
     subtitle: '0xPARC',
-    dateRange: 'Jan 2022 - Dec 2023',
-    description:
-      'Curabitur pretium tincidunt lacus. Nulla facilisi. Ut fringilla suscipit mauris sit amet tempor.',
+    dateRange: 'Sep 2023 - Oct 2023',
+    description: (
+      <>
+        Zupass, conceived before <b>Devconnect IST</b> and later used at that and many other events,
+        is a platform built to store and manage <b>PCDs</b>, an abstraction similar to W3C&apos;s{' '}
+        <a
+          href="https://www.w3.org/TR/vc-data-model-2.0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          verifiable credentials
+        </a>{' '}
+        that allows anyone to verify a claim through a proof (ZK or any other cryptography). The PCD
+        used for authentication was based on{' '}
+        <a href="https://semaphore.pse.dev/" target="_blank" rel="noopener noreferrer">
+          Semaphore
+        </a>
+        . It was a pleasure contributing to this project with the{' '}
+        <a href="https://0xparc.org/" target="_blank" rel="noopener noreferrer">
+          0xPARC
+        </a>{' '}
+        team, who have played a substantial role in promoting{' '}
+        <a
+          href="https://0xparc.org/writings/programmable-cryptography-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Programmable Cryptography
+        </a>
+        , a second generation of cryptographic primitives that includes <b>ZK</b>, <b>MPC</b>,{' '}
+        <b>FHE</b>, and <b>iO</b>.
+      </>
+    ),
     skills: [
-      { label: 'Programmable Crypto', color: 'primary' },
-      { label: 'Proofs', color: 'violet' },
+      { label: 'Zero-Knowledge', color: 'violet' },
+      { label: 'Community', color: 'amber' },
     ],
+    repoUrl: 'https://github.com/proofcarryingdata/zupass',
   },
   {
     title: 'ZK-Kit',
     subtitle: 'PSE (Ethereum Foundation)',
-    dateRange: 'Jan 2023 - Dec 2024',
+    dateRange: 'Jan 2022 - Nov 2024',
     description: (
       <>
         ZK-Kit was a project I deeply invested myself in, born from the realization that while{' '}
         <b>zero-knowledge technologies</b> were maturing rapidly, there was still a lack of solid,
-        well-built, secure, and documented <b>development tools</b>. The idea was to build a set of
+        secure, and well-documented <b>development tools</b>. The idea was to build a set of
         libraries that met high <b>production standards</b>, but also a digital meeting place for
         programmers interested in contributing. Implementations included various Merkle trees, Baby
         Jubjub, Poseidon, and utilities initially built in <b>JavaScript</b>, <b>Solidity</b>, and{' '}
@@ -68,7 +157,7 @@ const projectsData: ProjectData[] = [
     ),
     skills: [
       { label: 'Community', color: 'amber' },
-      { label: 'Developer Experience', color: 'emerald' },
+      { label: 'Developer Experience', color: 'indigo' },
     ],
     repoUrl: 'https://github.com/zk-kit',
   },
@@ -108,7 +197,7 @@ const projectsData: ProjectData[] = [
     ),
     skills: [
       { label: 'Privacy', color: 'violet' },
-      { label: 'Anonymity', color: 'primary' },
+      { label: 'Anonymity', color: 'teal' },
       { label: 'Community', color: 'amber' },
     ],
     repoUrl: 'https://github.com/privacy-ethereum/taz-apps',
@@ -196,7 +285,7 @@ const projectsData: ProjectData[] = [
     skills: [
       { label: 'Blockchain', color: 'primary' },
       { label: 'Zero-Knowledge', color: 'violet' },
-      { label: 'Research', color: 'violet' },
+      { label: 'Research', color: 'amber' },
     ],
     repoUrl: 'https://github.com/cedoor/elekton-dapp',
   },
@@ -218,8 +307,8 @@ const projectsData: ProjectData[] = [
     ),
     skills: [
       { label: 'Blockchain', color: 'primary' },
-      { label: 'Research', color: 'violet' },
-      { label: 'Mobile', color: 'sky' },
+      { label: 'Research', color: 'amber' },
+      { label: 'Mobile', color: 'slate' },
     ],
   },
   {

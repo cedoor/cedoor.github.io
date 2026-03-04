@@ -55,7 +55,7 @@ export default function ProjectsLayout({ projects }: Props) {
     <div className="relative">
       {/* Vertical spine */}
       <div
-        className="absolute inset-y-0 left-5 w-px bg-gray-300 dark:bg-gray-700 md:left-1/2 md:-translate-x-1/2"
+        className="absolute inset-y-0 hidden w-px bg-gray-300 dark:bg-gray-700 md:left-1/2 md:block md:-translate-x-1/2"
         aria-hidden
       />
 
@@ -70,12 +70,12 @@ export default function ProjectsLayout({ projects }: Props) {
             >
               {/* Circle on spine */}
               <div
-                className="absolute left-5 top-1/2 z-10 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-300 bg-[#f9f8f5] dark:border-gray-700 dark:bg-[#222220] md:left-1/2"
+                className="absolute top-1/2 z-10 hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-300 bg-[#f9f8f5] dark:border-gray-700 dark:bg-[#222220] md:left-1/2 md:block"
                 aria-hidden
               />
               {/* Connector: mobile (spine → card) */}
               <div
-                className="absolute left-5 top-1/2 z-[5] h-px w-7 -translate-y-1/2 bg-gray-300 dark:bg-gray-700 md:hidden"
+                className="absolute left-5 top-1/2 z-[5] hidden h-px w-7 -translate-y-1/2 bg-gray-300 dark:bg-gray-700"
                 aria-hidden
               />
               {/* Connector: desktop (circle → card, direction depends on side) */}
@@ -93,7 +93,7 @@ export default function ProjectsLayout({ projects }: Props) {
                * - Desktop left: constrained to left half, card flush-right with right padding
                */}
               <div
-                className={`ml-12 py-2 md:ml-0 md:py-0 ${
+                className={`py-2 md:py-0 ${
                   isRight
                     ? 'md:ml-[50%] md:w-1/2 md:pl-8'
                     : 'md:flex md:w-1/2 md:justify-end md:pr-8'
