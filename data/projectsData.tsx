@@ -17,14 +17,14 @@ export interface ProjectData {
 
 const projectsData: ProjectData[] = [
   {
-    title: 'Enclave',
+    title: 'TheInterfold',
     subtitle: 'Gnosis Guild',
     dateRange: 'Sep 2025 - Present',
     description: (
       <>
         After a roughly 5-month break last year, I resumed working on what is without a doubt the
         most complex project I&apos;ve ever been part of, and the steepest learning curve I&apos;ve
-        experienced, alongside extremely talented cryptographers and engineers. Enclave is a{' '}
+        experienced, alongside extremely talented cryptographers and engineers. TheInterfold is a{' '}
         <b>distributed network for verifiable confidential computation</b> where <b>FHE</b>,{' '}
         <b>MPC</b>, <b>ZK</b>, <b>blockchain</b>, and <b>mechanism design</b> all converge. The idea
         is to provide infrastructure that enables computation on <b>encrypted data</b> contributed
