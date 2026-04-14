@@ -52,29 +52,11 @@ function ProjectCard({ project }: { project: ProjectData }) {
 
 export default function ProjectsLayout({ projects }: Props) {
   return (
-    <div className="relative xl:pl-5">
-      <div
-        className="absolute bottom-0 left-0 top-0 hidden w-px bg-gray-300 dark:bg-gray-700 xl:block"
-        aria-hidden
-      />
+    <div>
       <ul className="space-y-6">
         {projects.map((project, index) => (
-          <li key={project.title} className="relative list-none xl:pl-7">
-            <div
-              className="absolute -left-5 top-1/2 hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-gray-300 bg-[#f9f8f5] dark:border-gray-700 dark:bg-[#222220] xl:block"
-              aria-hidden
-            />
-            <div
-              className="absolute -left-3.5 top-1/2 hidden h-px w-[2.625rem] -translate-y-1/2 bg-gray-300 dark:bg-gray-700 xl:block"
-              aria-hidden
-            />
+          <li key={project.title} className="list-none">
             <ProjectCard project={project} />
-            {index < projects.length - 1 && (
-              <div
-                className="absolute left-1/2 top-full h-6 w-px -translate-x-1/2 bg-gray-300 dark:bg-gray-700 xl:hidden"
-                aria-hidden
-              />
-            )}
           </li>
         ))}
       </ul>
