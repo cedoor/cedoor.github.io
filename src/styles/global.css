@@ -903,6 +903,30 @@ a {
   margin: 0.5em 0;
 }
 
+.prose .themed-illustration {
+  margin: 0.5em 0;
+}
+
+.prose .themed-illustration img {
+  margin: 0;
+}
+
+.prose .themed-illustration__light {
+  display: none;
+}
+
+.prose .themed-illustration__dark {
+  display: block;
+}
+
+[data-theme='light'] .prose .themed-illustration__light {
+  display: block;
+}
+
+[data-theme='light'] .prose .themed-illustration__dark {
+  display: none;
+}
+
 .prose hr {
   border: none;
   border-top: 1px solid var(--border);

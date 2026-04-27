@@ -1,0 +1,27 @@
+---
+export interface Props {
+  lightSrc: string
+  darkSrc: string
+  alt: string
+}
+
+const { lightSrc, darkSrc, alt } = Astro.props
+---
+
+<div class="themed-illustration">
+  <img
+    class="themed-illustration__light"
+    src={lightSrc}
+    alt={alt}
+    loading="lazy"
+    decoding="async"
+  />
+  <img
+    class="themed-illustration__dark"
+    src={darkSrc}
+    alt=""
+    loading="lazy"
+    decoding="async"
+    aria-hidden="true"
+  />
+</div>
