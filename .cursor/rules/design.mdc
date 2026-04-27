@@ -12,21 +12,21 @@ Two variants — dark (default) and light — controlled by a `data-theme="light
 
 CSS custom properties are declared in `src/styles/global.css`:
 
-| Token | Dark | Light | Use |
-|---|---|---|---|
-| `--bg` | `#282828` | `#fafaf7` | Page background |
-| `--bg-hard` | `#1d2021` | `#f4f3ee` | Elevated surfaces, code blocks |
-| `--surface` | `#3c3836` | `#ececea` | Cards, skill badges |
-| `--text` | `#ebdbb2` | `#2b2b2b` | Primary text |
-| `--text-soft` | `#d5c4a1` | `#3c3836` | Body prose |
-| `--muted` | `#928374` | `#7c6f64` | Meta, labels, nav |
-| `--faint` | `#665c54` | `#bdb6ac` | Inactive nav links, captions |
-| `--border` | `#3c3836` | `#e6e4df` | Dividers |
-| `--border-strong` | `#504945` | `#d6d3cc` | Active borders, skill badges |
-| `--orange` | `#fe8019` | `#af3a03` | Accent (default), now arrows |
-| `--yellow` | `#fabd2f` | `#b57614` | Alternate accent |
-| `--blue` | `#83a598` | `#076678` | Alternate accent |
-| `--accent` | `var(--orange)` | `var(--orange)` | Current accent color |
+| Token             | Dark            | Light           | Use                            |
+| ----------------- | --------------- | --------------- | ------------------------------ |
+| `--bg`            | `#282828`       | `#fafaf7`       | Page background                |
+| `--bg-hard`       | `#1d2021`       | `#f4f3ee`       | Elevated surfaces, code blocks |
+| `--surface`       | `#3c3836`       | `#ececea`       | Cards, skill badges            |
+| `--text`          | `#ebdbb2`       | `#2b2b2b`       | Primary text                   |
+| `--text-soft`     | `#d5c4a1`       | `#3c3836`       | Body prose                     |
+| `--muted`         | `#928374`       | `#7c6f64`       | Meta, labels, nav              |
+| `--faint`         | `#665c54`       | `#bdb6ac`       | Inactive nav links, captions   |
+| `--border`        | `#3c3836`       | `#e6e4df`       | Dividers                       |
+| `--border-strong` | `#504945`       | `#d6d3cc`       | Active borders, skill badges   |
+| `--orange`        | `#fe8019`       | `#af3a03`       | Accent (default), now arrows   |
+| `--yellow`        | `#fabd2f`       | `#b57614`       | Alternate accent               |
+| `--blue`          | `#83a598`       | `#076678`       | Alternate accent               |
+| `--accent`        | `var(--orange)` | `var(--orange)` | Current accent color           |
 
 ## Typography
 
@@ -35,6 +35,7 @@ CSS custom properties are declared in `src/styles/global.css`:
 - No sans-serif anywhere. No Inter, no system-ui.
 
 Typical sizes:
+
 - Page `h1`: 22px (20px at ≤560px)
 - Bio / prose body: 16–17px, `line-height: 1.85`
 - Nav links / labels: 11–12px
@@ -42,18 +43,18 @@ Typical sizes:
 
 ## Layout
 
-- Single column, `max-width: 660px`, `margin: 0 auto`.
+- Single column; shell width `--shell-max` (660px base, up to 860px from 1400px viewport), `margin: 0 auto`.
 - Shell padding: 32px sides → 22px (≤720px) → 20px (≤560px) → 18px (≤420px).
 - Nav: `padding-top: 56px`, `padding-bottom: 64px`.
 - Footer: `margin-top: 96px`.
 
 ## Responsive breakpoints
 
-| Breakpoint | Changes |
-|---|---|
-| `≤720px` | Shell padding tightens, nav/footer spacing compresses |
-| `≤560px` | Blog rows reflow to 2-line grid, gallery 3→2 columns, nav links hidden, hamburger shown |
-| `≤420px` | Shell padding further reduced, timeline indent tightens |
+| Breakpoint | Changes                                                                                 |
+| ---------- | --------------------------------------------------------------------------------------- |
+| `≤720px`   | Shell padding tightens, nav/footer spacing compresses                                   |
+| `≤560px`   | Blog rows reflow to 2-line grid, gallery 3→2 columns, nav links hidden, hamburger shown |
+| `≤420px`   | Shell padding further reduced, timeline indent tightens                                 |
 
 ## CSS conventions
 

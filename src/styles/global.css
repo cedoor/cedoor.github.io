@@ -20,6 +20,8 @@
 
   --font-serif: 'Lora', Georgia, serif;
   --font-mono: 'IBM Plex Mono', monospace;
+
+  --shell-max: 660px;
 }
 
 [data-theme='light'] {
@@ -88,9 +90,27 @@ a {
 /* ── Shell ────────────────────────────────────────────────────────────────── */
 
 .shell {
-  max-width: 660px;
+  max-width: var(--shell-max);
   margin: 0 auto;
   padding: 0 32px;
+}
+
+@media (min-width: 960px) {
+  :root {
+    --shell-max: 740px;
+  }
+}
+
+@media (min-width: 1120px) {
+  :root {
+    --shell-max: 800px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --shell-max: 860px;
+  }
 }
 
 /* ── Nav ──────────────────────────────────────────────────────────────────── */
