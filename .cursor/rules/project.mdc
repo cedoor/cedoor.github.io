@@ -1,0 +1,65 @@
+---
+description: Project purpose, stack, and file layout for cedoor.github.io
+alwaysApply: true
+---
+
+# Project: cedoor.dev
+
+Personal website for Omar (cedoor) — a software engineer focused on privacy and programmable cryptography. The design is minimal, personality-driven, and warm. Not corporate. Not a portfolio template.
+
+## Stack
+
+| Tool | Role |
+|---|---|
+| Astro 6 (static output) | Page rendering and routing |
+| React 18 | Interactive islands (`client:load`): Nav, BlogSearch |
+| MDX | Blog post authoring |
+| pnpm | Package manager |
+| Prettier | Formatting |
+
+Vite is Astro's bundler — no separate Vite config needed.
+
+## Pages
+
+| Route | File | Notes |
+|---|---|---|
+| `/` | `src/pages/index.astro` | About: avatar, bio, Now section |
+| `/projects` | `src/pages/projects.astro` | Timeline of 11 projects, newest first |
+| `/blog` | `src/pages/blog/index.astro` | Searchable list via `BlogSearch` React component |
+| `/blog/[slug]` | `src/pages/blog/[...slug].astro` | MDX post rendered via Astro content layer |
+| `/gallery` | `src/pages/gallery.astro` | Photo grid |
+
+## File layout
+
+```
+src/
+  components/
+    Nav.tsx            # React (client:load) — theme toggle, hamburger, active link
+    BlogSearch.tsx     # React (client:load) — filters posts by title/date/tag
+  content/
+    blog/              # MDX files; file name = slug
+  content.config.ts    # Astro 6 content layer (glob loader)
+  data/
+    projects.ts        # All 11 projects with HTML description strings
+    gallery.ts         # 4 gallery items with src + caption
+  layouts/
+    BaseLayout.astro   # HTML shell: anti-FOUC script, Nav, footer, slot
+  pages/               # (see routes above)
+  styles/
+    global.css         # All design tokens and component styles
+  utils/
+    reading-time.ts    # readingTime(body) + formatDate(date)
+public/
+  static/
+    images/            # avatar.jpg, gallery photos, greco illustrations
+    favicons/
+```
+
+## Dev commands
+
+```
+pnpm dev       # start dev server
+pnpm build     # production build to dist/
+pnpm preview   # preview production build
+pnpm format    # prettier --write .
+```

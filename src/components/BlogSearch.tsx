@@ -1,0 +1,84 @@
+import { useState, useMemo } from 'react'
+
+export interface PostMeta {
+  slug: string
+  title: string
+  date: string
+  readTime: string
+  tags: string[]
+}
+
+interface BlogSearchProps {
+  posts: PostMeta[]
+}
+
+export default function BlogSearch({ posts }: BlogSearchProps) {
+  const [query, setQuery] = useState('')
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return posts
+    return posts.filter(
+      (p) =>
+        p.title.toLowerCase().includes(q) ||
+        p.date.toLowerCase().includes(q) ||
+        p.tags.some((t) => t.toLowerCase().includes(q))
+    )
+  }, [query, posts])
+
+  return (
+    <>
+      <div className="blog-search-wrap">
+        <span className="blog-search-icon" aria-hidden="true">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="7" cy="7" r="4.5" />
+            <path d="M10.5 10.5 14 14" />
+          </svg>
+        </span>
+        <input
+          className="blog-search-input"
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="search posts…"
+          aria-label="Search posts"
+        />
+        {query && (
+          <button
+            className="blog-search-clear"
+            type="button"
+            onClick={() => setQuery('')}
+            aria-label="Clear search"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
+      {filtered.length === 0 ? (
+        <p className="blog-empty">no posts match &ldquo;{query}&rdquo;</p>
+      ) : (
+        <ul className="blog-list">
+          {filtered.map((post) => (
+            <li key={post.slug}>
+              <a className="blog-row" href={`/blog/${post.slug}`}>
+                <span className="blog-date">{post.date}</span>
+                <span className="blog-title">{post.title}</span>
+                <span className="blog-read">{post.readTime}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+  )
+}

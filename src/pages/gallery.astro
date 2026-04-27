@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import GalleryLightbox from '../components/GalleryLightbox'
+import gallery from '../data/gallery'
+---
+
+<BaseLayout title="Gallery" currentPath="/gallery">
+  <article>
+    <header class="page-header">
+      <h1 class="page-h1">Gallery</h1>
+      <p class="page-subtitle">Things seen, mostly out of focus.</p>
+    </header>
+
+    <GalleryLightbox client:load items={gallery} />
+  </article>
+</BaseLayout>

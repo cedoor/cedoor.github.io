@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import BlogSearch from '../../components/BlogSearch'
+import { readingTime, formatDate } from '../../utils/reading-time'
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft)
+
+const posts = allPosts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .map((post) => ({
+    slug: post.id.replace(/\.mdx?$/, ''),
+    title: post.data.title,
+    date: formatDate(post.data.date),
+    readTime: readingTime(post.body ?? ''),
+    tags: post.data.tags,
+  }))
+---
+
+<BaseLayout title="Blog" currentPath="/blog">
+  <article>
+    <header class="page-header">
+      <h1 class="page-h1">Writing</h1>
+      <p class="page-subtitle">Essays, notes, and things worth sharing.</p>
+    </header>
+
+    <BlogSearch client:load posts={posts} />
+  </article>
+</BaseLayout>

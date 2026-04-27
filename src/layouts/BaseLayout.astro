@@ -1,0 +1,89 @@
+---
+import '../styles/global.css'
+import Nav from '../components/Nav'
+
+interface Props {
+  title?: string
+  description?: string
+  currentPath: string
+  hasMath?: boolean
+  ogType?: 'website' | 'article'
+}
+
+const {
+  title = 'cedoor.dev',
+  description = 'Software engineer focused on privacy and programmable cryptography.',
+  currentPath,
+  hasMath = false,
+  ogType = 'website',
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const ogTitle = title === 'cedoor.dev' ? title : `${title} — cedoor.dev`
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="cedoor.dev" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={description} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <title>{ogTitle}</title>
+    <link rel="icon" href="/static/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title="cedoor.dev" href="/rss.xml" />
+
+    <!-- Anti-FOUC: set theme before first paint -->
+    <script is:inline>
+      ;(function () {
+        const t = localStorage.getItem('theme')
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light')
+      })()
+    </script>
+
+    {
+      hasMath && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+          crossorigin="anonymous"
+        />
+      )
+    }
+  </head>
+  <body>
+    <div class="shell">
+      <Nav client:load currentPath={currentPath} />
+      <main>
+        <slot />
+      </main>
+      <footer class="footer">
+        <span class="footer-text">© 2026</span>
+        <div class="footer-links">
+          <a class="footer-link" href="https://github.com/cedoor">GitHub</a>
+          <a class="footer-link" href="mailto:me@cedoor.dev">Email</a>
+          <a class="footer-link footer-rss" href="/rss.xml" aria-label="RSS feed">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <circle cx="3" cy="13" r="2"></circle>
+              <path d="M1 7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5V7z"></path>
+              <path d="M1 3a11 11 0 0 1 11 11h-2A9 9 0 0 0 1 5V3z"></path>
+            </svg>
+            RSS
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

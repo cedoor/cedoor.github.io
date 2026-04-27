@@ -1,0 +1,84 @@
+---
+description: Blog content authoring, MDX schema, and Astro 6 content layer usage
+globs: src/content/**/*.{md,mdx}, src/content.config.ts, src/pages/blog/**/*.astro
+alwaysApply: false
+---
+
+# Content
+
+## Blog posts
+
+Posts live in `src/content/blog/`. The file name is the slug (e.g. `greco.mdx` → `/blog/greco`).
+
+### Frontmatter schema
+
+```yaml
+---
+title: string # required
+date: 'YYYY-MM-DD' # required; coerced to Date
+tags: [string] # optional; used for search and post-tag display
+summary: string # optional; used as <meta description>
+bibliography: string # optional; logical name of the shared bib (file: src/data/references-data.bib, processed at build time by rehype-citation)
+images: [string] # optional; list of og-image paths
+draft: boolean # optional; defaults to false — draft posts are excluded from build
+---
+```
+
+### LaTeX
+
+Math is supported via `remark-math` + `rehype-katex`. KaTeX CSS is loaded from CDN only on posts whose raw body contains `$$`, `\[`, or `\(` — detected automatically in `[...slug].astro`.
+
+- Inline math: `$...$`
+- Display math: `$$...$$`
+
+### Images
+
+Place images in `public/static/images/` and reference them with an absolute path: `![alt](/static/images/example.png)`. Do not add query strings (e.g. `?theme-aware`) — they are not processed by Astro.
+
+For theme-adaptive illustrations, provide two files (`example.png` and `example-dark.png`) and render them conditionally in MDX with a custom component if needed. Do not rely on query-string hacks.
+
+## Content layer (Astro 6)
+
+The collection is defined in `src/content.config.ts` using the `glob` loader:
+
+```typescript
+import { glob } from 'astro/loaders'
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+  schema: z.object({ ... })
+})
+```
+
+### Key API differences from Astro 4 legacy collections
+
+| Legacy (Astro ≤4)                     | Astro 6                                                 |
+| ------------------------------------- | ------------------------------------------------------- |
+| `src/content/config.ts`               | `src/content.config.ts`                                 |
+| `entry.slug`                          | `entry.id.replace(/\.mdx?$/, '')`                       |
+| `entry.render()`                      | `import { render } from 'astro:content'; render(entry)` |
+| `type: 'content'` in defineCollection | `loader: glob(...)`                                     |
+
+### Usage in pages
+
+```typescript
+// blog/index.astro
+const posts = await getCollection('blog', ({ data }) => !data.draft)
+const slug = post.id.replace(/\.mdx?$/, '')
+
+// blog/[...slug].astro
+import { render } from 'astro:content'
+const { Content } = await render(post)
+```
+
+## Static data (not MDX)
+
+Projects and gallery items are TypeScript files under `src/data/`, not content collections.
+
+- `src/data/projects.ts` — `Project[]` with HTML string descriptions (rendered via `set:html` in Astro)
+- `src/data/gallery.ts` — `GalleryItem[]` with `src` and `description`
+
+HTML in project descriptions uses `<b>`, `<a>`, `<br>` — no script tags, no events.
+
+## Reading time
+
+Calculated in `src/utils/reading-time.ts` from `post.body` (raw MDX string) at ~200 words/minute. `post.body` may be `undefined` for some loader configurations — always use `post.body ?? ''`.

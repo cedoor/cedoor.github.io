@@ -1,0 +1,106 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { formatDate, readingTime } from '../../utils/reading-time'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft)
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.mdx?$/, '') },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+const postReadingTime = readingTime(post.body ?? '')
+
+const hasMath =
+  (post.body ?? '').includes('$$') ||
+  (post.body ?? '').includes('\\[') ||
+  (post.body ?? '').includes('\\(')
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.summary}
+  currentPath="/blog"
+  hasMath={hasMath}
+  ogType="article"
+>
+  <article>
+    <a class="post-back" href="/blog">← writing</a>
+
+    <header class="post-header">
+      <h1 class="page-h1">{post.data.title}</h1>
+      <div class="post-meta">
+        <span class="post-date">{formatDate(post.data.date)}</span>
+        <span class="post-read">{postReadingTime}</span>
+        {
+          post.data.tags.length > 0 && (
+            <div class="post-tags">
+              {post.data.tags.map((tag: string) => (
+                <span class="post-tag">{tag}</span>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<script>
+  // Link inline citation spans to their bibliography entries.
+  // Single:  citation--{key}--{n}        → (n) links to #bib-{key}
+  // Multi:   citation--{k1}--{k2}--{n}  → (n1,n2,...) each number links to its bib entry
+  document.querySelectorAll('span[id^="citation--"]').forEach((span) => {
+    const parts = span.id.split('--')
+    // last segment is the counter (may be empty for multi-cite); keys are everything in between
+    const keys = parts.slice(1, parts[parts.length - 1].match(/^\d+$/) ? -1 : undefined)
+    const numbers = span.textContent?.replace(/[()]/g, '').split(',').map((s) => s.trim()) ?? []
+
+    if (keys.length <= 1) {
+      // single citation
+      const a = document.createElement('a')
+      a.href = `#bib-${keys[0]}`
+      a.innerHTML = span.innerHTML
+      span.replaceChildren(a)
+    } else {
+      // multi-citation: wrap each number in a link to the matching bib entry
+      const linked = keys
+        .map((key, i) => `<a href="#bib-${key}">${numbers[i] ?? key}</a>`)
+        .join(',')
+      span.innerHTML = `(${linked})`
+    }
+  })
+
+  // Make bibliography URLs clickable external links.
+  document.querySelectorAll('.csl-right-inline').forEach((el) => {
+    el.innerHTML = el.innerHTML.replace(
+      /(https?:\/\/[^\s<]+)/g,
+      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>',
+    )
+  })
+
+  document.querySelectorAll('pre').forEach((pre) => {
+    const btn = document.createElement('button')
+    btn.textContent = 'Copy'
+    btn.className = 'copy-btn'
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code')?.textContent ?? ''
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied!'
+        setTimeout(() => {
+          btn.textContent = 'Copy'
+        }, 2000)
+      })
+    })
+    pre.appendChild(btn)
+  })
+</script>
