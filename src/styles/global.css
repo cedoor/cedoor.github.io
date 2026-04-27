@@ -972,6 +972,13 @@ a {
   font-size: 1em;
 }
 
+.prose .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* ── Gallery ──────────────────────────────────────────────────────────────── */
 
 .gallery-grid {
