@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import ScrollToTop from '../../components/ScrollToTop.astro'
 import { formatDate, readingTime } from '../../utils/reading-time'
 
 export async function getStaticPaths() {
@@ -53,6 +54,8 @@ const hasMath =
       <Content />
     </div>
   </article>
+
+  <ScrollToTop />
 </BaseLayout>
 
 <script>

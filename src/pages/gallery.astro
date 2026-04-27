@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import GalleryLightbox from '../components/GalleryLightbox'
+import ScrollToTop from '../components/ScrollToTop.astro'
 import gallery from '../data/gallery'
 ---
 
@@ -13,4 +14,6 @@ import gallery from '../data/gallery'
 
     <GalleryLightbox client:load items={gallery} />
   </article>
+
+  <ScrollToTop />
 </BaseLayout>

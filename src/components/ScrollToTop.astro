@@ -1,0 +1,22 @@
+<button type="button" class="to-top" id="to-top" hidden aria-label="Back to top">↑</button>
+
+<script>
+  const toTop = document.getElementById('to-top')
+  if (toTop) {
+    const threshold = () => Math.max(500, window.innerHeight)
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop
+      toTop.toggleAttribute('hidden', y < threshold())
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
+    toTop.addEventListener('click', () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.scrollTop = 0
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    })
+  }
+</script>
