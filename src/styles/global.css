@@ -22,6 +22,7 @@
   --font-mono: 'IBM Plex Mono', monospace;
 
   --shell-max: 660px;
+  --nav-offset: 80px;
 }
 
 [data-theme='light'] {
@@ -47,6 +48,11 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: var(--nav-offset);
+  scrollbar-gutter: stable;
 }
 
 html,
@@ -95,6 +101,10 @@ a {
   padding: 0 32px;
 }
 
+.shell > main {
+  padding-top: var(--nav-offset);
+}
+
 @media (min-width: 960px) {
   :root {
     --shell-max: 740px;
@@ -116,14 +126,21 @@ a {
 /* ── Nav ──────────────────────────────────────────────────────────────────── */
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 56px;
-  padding-bottom: 64px;
+  width: min(100%, var(--shell-max));
+  transform: translateX(-50%);
+  padding: 20px 32px;
   gap: 24px;
-  position: relative;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  background: var(--bg);
+  transition: background 200ms ease;
 }
 
 .nav-logo {
@@ -1078,13 +1095,16 @@ a {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --nav-offset: 72px;
+  }
+
   .shell {
     padding: 0 22px;
   }
 
   .nav {
-    padding-top: 36px;
-    padding-bottom: 48px;
+    padding: 18px 22px;
   }
 
   .footer {
@@ -1117,6 +1137,11 @@ a {
 @media (max-width: 560px) {
   .shell {
     padding: 0 20px;
+  }
+
+  .nav {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .nav-links {
@@ -1170,6 +1195,8 @@ a {
   }
 
   .nav {
+    padding-left: 18px;
+    padding-right: 18px;
     gap: 14px;
   }
 
