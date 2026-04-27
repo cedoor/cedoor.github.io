@@ -49,7 +49,11 @@ const ogTitle = title === 'cedoor.dev' ? title : `${title} — cedoor.dev`
     <script is:inline>
       ;(function () {
         const t = localStorage.getItem('theme')
-        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light')
+        if (t === 'dark') {
+          document.documentElement.removeAttribute('data-theme')
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light')
+        }
       })()
     </script>
 

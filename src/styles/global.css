@@ -3,6 +3,7 @@
 /* ── Theme tokens ─────────────────────────────────────────────────────────── */
 
 :root {
+  color-scheme: dark;
   --bg: #282828;
   --bg-hard: #1d2021;
   --surface: #3c3836;
@@ -26,6 +27,7 @@
 }
 
 [data-theme='light'] {
+  color-scheme: light;
   --bg: #fafaf7;
   --bg-hard: #f4f3ee;
   --surface: #ececea;

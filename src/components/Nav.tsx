@@ -17,12 +17,10 @@ function isActive(href: string, currentPath: string) {
 }
 
 export default function Nav({ currentPath }: NavProps) {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
     setIsDark(document.documentElement.getAttribute('data-theme') !== 'light')
   }, [])
 
@@ -80,21 +78,8 @@ export default function Nav({ currentPath }: NavProps) {
           aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
           onClick={toggleTheme}
         >
-          {/* Show sun in dark mode (to switch to light), moon in light mode */}
-          {mounted && !isDark ? (
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M13 9.5A5 5 0 0 1 6.5 3a.5.5 0 0 0-.7-.6A6 6 0 1 0 13.6 10.2a.5.5 0 0 0-.6-.7Z" />
-            </svg>
-          ) : (
+          {/* Moon: light (switch to dark). Sun: dark (switch to light). */}
+          {isDark ? (
             <svg
               width="12"
               height="12"
@@ -107,6 +92,19 @@ export default function Nav({ currentPath }: NavProps) {
             >
               <circle cx="8" cy="8" r="2.6" />
               <path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1" />
+            </svg>
+          ) : (
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M13 9.5A5 5 0 0 1 6.5 3a.5.5 0 0 0-.7-.6A6 6 0 1 0 13.6 10.2a.5.5 0 0 0-.6-.7Z" />
             </svg>
           )}
         </button>
