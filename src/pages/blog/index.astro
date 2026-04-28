@@ -12,6 +12,7 @@ const posts = allPosts
   .map((post) => ({
     slug: post.id.replace(/\.mdx?$/, ''),
     title: post.data.title,
+    summary: post.data.summary ?? '',
     date: formatDate(post.data.date),
     readTime: readingTime(post.body ?? ''),
     tags: post.data.tags,

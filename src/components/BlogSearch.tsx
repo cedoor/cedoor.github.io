@@ -3,6 +3,7 @@ import { useState, useMemo, useRef } from 'react'
 export interface PostMeta {
   slug: string
   title: string
+  summary: string
   date: string
   readTime: string
   tags: string[]
@@ -22,6 +23,7 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
     return posts.filter(
       (p) =>
         p.title.toLowerCase().includes(q) ||
+        p.summary.toLowerCase().includes(q) ||
         p.date.toLowerCase().includes(q) ||
         p.tags.some((t) => t.toLowerCase().includes(q))
     )
@@ -92,7 +94,10 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
             <li key={post.slug} style={{ animationDelay: `${i * 40}ms` }}>
               <a className="blog-row" href={`/blog/${post.slug}`}>
                 <span className="blog-date">{post.date}</span>
-                <span className="blog-title">{post.title}</span>
+                <span className="blog-main">
+                  <span className="blog-title">{post.title}</span>
+                  {post.summary ? <span className="blog-summary">{post.summary}</span> : null}
+                </span>
                 <span className="blog-read">{post.readTime}</span>
               </a>
             </li>
