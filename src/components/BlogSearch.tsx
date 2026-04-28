@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef } from 'react'
 
 export interface PostMeta {
   slug: string
@@ -14,6 +14,7 @@ interface BlogSearchProps {
 
 export default function BlogSearch({ posts }: BlogSearchProps) {
   const [query, setQuery] = useState('')
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -28,7 +29,16 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
 
   return (
     <>
-      <div className="blog-search-wrap">
+      <form
+        role="search"
+        className={
+          query.trim() ? 'blog-search-wrap blog-search-wrap--has-query' : 'blog-search-wrap'
+        }
+        onSubmit={(e) => {
+          e.preventDefault()
+          inputRef.current?.blur()
+        }}
+      >
         <span className="blog-search-icon" aria-hidden="true">
           <svg
             width="13"
@@ -45,10 +55,20 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
           </svg>
         </span>
         <input
+          ref={inputRef}
           className="blog-search-input"
           type="text"
+          name="blog-search"
+          inputMode="search"
+          enterKeyHint="search"
+          autoComplete="off"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key !== 'Enter' && e.key !== 'Go') return
+            e.preventDefault()
+            ;(e.target as HTMLInputElement).blur()
+          }}
           placeholder="search posts…"
           aria-label="Search posts"
         />
@@ -62,7 +82,7 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
             ✕
           </button>
         )}
-      </div>
+      </form>
 
       {filtered.length === 0 ? (
         <p className="blog-empty">no posts match &ldquo;{query}&rdquo;</p>

@@ -709,9 +709,13 @@ a {
   align-items: center;
 }
 
+.blog-search-wrap--has-query .blog-search-input {
+  padding-right: 40px;
+}
+
 .blog-search-icon {
   position: absolute;
-  left: 12px;
+  left: 13px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--faint);
@@ -719,18 +723,24 @@ a {
   pointer-events: none;
 }
 
+/* 16px+ on the control and placeholder avoids iOS Safari auto-zoom on focus. */
 .blog-search-input {
   width: 100%;
-  padding: 10px 12px 10px 34px;
+  min-width: 0;
+  padding: 11px 12px 11px 36px;
   background: transparent;
   border: 1px solid var(--border);
   border-radius: 4px;
   color: var(--text);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 1.25;
   letter-spacing: 0.02em;
   outline: none;
   transition: border-color 120ms ease;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
 }
 
 .blog-search-input:focus {
@@ -739,6 +749,8 @@ a {
 
 .blog-search-input::placeholder {
   color: var(--faint);
+  font-size: 16px;
+  opacity: 1;
 }
 
 .blog-search-clear {
@@ -1430,6 +1442,32 @@ a {
 
   .timeline-item {
     padding-left: 0;
+  }
+
+  .blog-search-input {
+    padding: 12px 12px 12px 38px;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .blog-search-wrap--has-query .blog-search-input {
+    padding-right: 44px;
+  }
+
+  .blog-search-icon {
+    left: 14px;
+  }
+
+  .blog-search-clear {
+    right: 4px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
   }
 }
 
