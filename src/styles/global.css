@@ -578,6 +578,26 @@ a {
   border-color: var(--accent);
 }
 
+.timeline-item:first-child .timeline-node::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: node-ping 3s ease-out infinite;
+}
+
+@keyframes node-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
 .timeline-meta {
   display: flex;
   align-items: baseline;
