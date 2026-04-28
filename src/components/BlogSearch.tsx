@@ -68,8 +68,8 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
         <p className="blog-empty">no posts match &ldquo;{query}&rdquo;</p>
       ) : (
         <ul className="blog-list">
-          {filtered.map((post) => (
-            <li key={post.slug}>
+          {filtered.map((post, i) => (
+            <li key={post.slug} style={{ animationDelay: `${i * 40}ms` }}>
               <a className="blog-row" href={`/blog/${post.slug}`}>
                 <span className="blog-date">{post.date}</span>
                 <span className="blog-title">{post.title}</span>

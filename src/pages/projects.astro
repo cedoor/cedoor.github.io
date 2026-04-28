@@ -44,6 +44,9 @@ const pastProjects = projects.filter((p) => !p.active)
                     <h2 class="project-title">{project.title}</h2>
 
                     <p class="project-body" set:html={project.description} />
+                    <button class="project-expand-btn" type="button" hidden>
+                      view more
+                    </button>
 
                     <div class="project-skills">
                       {project.skills.map((skill) => (
@@ -106,6 +109,9 @@ const pastProjects = projects.filter((p) => !p.active)
             <h2 class="project-title">{project.title}</h2>
 
             <p class="project-body" set:html={project.description} />
+            <button class="project-expand-btn" type="button" hidden>
+              view more
+            </button>
 
             <div class="project-skills">
               {project.skills.map((skill) => (
@@ -175,4 +181,36 @@ const pastProjects = projects.filter((p) => !p.active)
       tab.addEventListener('click', () => setActiveTab(i))
     })
   }
+
+  function refreshCarouselHeight() {
+    if (!track || !container) return
+    const panels = track.querySelectorAll<HTMLElement>('.parallel-panel')
+    const activeIndex = [...tabs].findIndex((t) => t.classList.contains('active'))
+    const idx = activeIndex >= 0 ? activeIndex : 0
+    requestAnimationFrame(() => {
+      container!.style.height = `${panels[idx].scrollHeight}px`
+    })
+  }
+
+  document.querySelectorAll<HTMLElement>('.project-body').forEach((body) => {
+    const btn = body.nextElementSibling as HTMLButtonElement
+    if (!btn?.classList.contains('project-expand-btn')) return
+
+    const naturalHeight = body.scrollHeight
+    body.classList.add('is-clamped')
+    const clampedHeight = body.clientHeight
+
+    if (naturalHeight <= clampedHeight) {
+      body.classList.remove('is-clamped')
+      return
+    }
+
+    btn.hidden = false
+    btn.addEventListener('click', () => {
+      const expanding = body.classList.contains('is-clamped')
+      body.classList.toggle('is-clamped')
+      btn.textContent = expanding ? 'view less' : 'view more'
+      if (body.closest('.parallel-panel')) refreshCarouselHeight()
+    })
+  })
 </script>
