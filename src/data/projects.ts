@@ -6,16 +6,18 @@ export interface Project {
   skills: string[]
   repoUrl?: string
   siteUrl?: string
+  active?: boolean
 }
 
 const projects: Project[] = [
   {
     title: 'TheInterfold',
     company: 'Gnosis Guild',
-    dateRange: 'Sep 2025 — Present',
+    dateRange: 'Sep 2025 — Apr 2026',
     description: `After a roughly 5-month break last year, I resumed working on what is without a doubt the
       most complex project I've ever been part of, and the steepest learning curve I've experienced,
-      alongside extremely talented cryptographers and engineers. TheInterfold is a
+      alongside extremely talented cryptographers and engineers.
+      <a href="https://www.theinterfold.com/">TheInterfold</a> is a
       <b>distributed network for verifiable confidential computation</b> where <b>FHE</b>,
       <b>MPC</b>, <b>ZK</b>, <b>blockchain</b>, and <b>mechanism design</b> all converge. The idea
       is to provide infrastructure that enables computation on <b>encrypted data</b> contributed by
@@ -29,6 +31,28 @@ const projects: Project[] = [
       'Rust',
     ],
     repoUrl: 'https://github.com/gnosisguild/enclave',
+    siteUrl: 'https://www.theinterfold.com/',
+  },
+  {
+    title: 'Squid',
+    company: 'Personal Project',
+    dateRange: 'Apr 2026 — Present',
+    description: `<a href="https://squid.cedoor.dev/">Squid</a> grew out of my work on TheInterfold, where I spent a lot of time wrestling with
+      <b>fully homomorphic encryption</b> and the rough edges of the tools available. It is an
+      ergonomic <b>Rust</b> wrapper for <a href="https://github.com/poulpy-fhe/poulpy">Poulpy</a>,
+      a high-performance FHE library built on <b>RLWE encryption over the Torus</b>, adopting the
+      bivariate polynomial representation proposed in
+      <a href="https://eprint.iacr.org/2023/771">Revisiting Key Decomposition Techniques for FHE</a>
+      and drawing on <a href="https://eprint.iacr.org/2018/758">CHIMERA</a> for unifying different
+      schemes under a common plaintext space. Squid hides the complexity of scratch memory management
+      and scheme lifecycle transitions, letting developers focus on writing FHE programs rather than
+      managing low-level state. It also ships as <b>squid-js</b>, with <b>WebAssembly</b> and
+      <b>Node.js</b> bindings, bringing fully homomorphic encryption within reach of the broader
+      JavaScript ecosystem.`,
+    skills: ['Rust', 'Fully Homomorphic Encryption', 'Research'],
+    repoUrl: 'https://github.com/cedoor/squid',
+    siteUrl: 'https://squid.cedoor.dev/',
+    active: true,
   },
   {
     title: 'MPC Framework',

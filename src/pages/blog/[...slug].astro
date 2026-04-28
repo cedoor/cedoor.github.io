@@ -66,7 +66,11 @@ const hasMath =
     const parts = span.id.split('--')
     // last segment is the counter (may be empty for multi-cite); keys are everything in between
     const keys = parts.slice(1, parts[parts.length - 1].match(/^\d+$/) ? -1 : undefined)
-    const numbers = span.textContent?.replace(/[()]/g, '').split(',').map((s) => s.trim()) ?? []
+    const numbers =
+      span.textContent
+        ?.replace(/[()]/g, '')
+        .split(',')
+        .map((s) => s.trim()) ?? []
 
     if (keys.length <= 1) {
       // single citation
@@ -87,7 +91,7 @@ const hasMath =
   document.querySelectorAll('.csl-right-inline').forEach((el) => {
     el.innerHTML = el.innerHTML.replace(
       /(https?:\/\/[^\s<]+)/g,
-      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>',
+      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
     )
   })
 

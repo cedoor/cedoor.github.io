@@ -435,6 +435,61 @@ a {
 
 /* ── Timeline (Projects) ──────────────────────────────────────────────────── */
 
+.parallel-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.parallel-tabs-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--faint);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.parallel-tab {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0 6px 8px;
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition: color 120ms ease;
+}
+
+.parallel-tab:hover {
+  color: var(--text);
+}
+
+.parallel-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.parallel-panels {
+  overflow: hidden;
+  transition: height 280ms ease;
+}
+
+.parallel-panels-track {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 280ms ease;
+}
+
+.parallel-panel {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 .timeline {
   position: relative;
   padding-left: 0;
@@ -477,6 +532,26 @@ a {
 .timeline-item:first-child .timeline-node {
   background: var(--accent);
   border-color: var(--accent);
+}
+
+.timeline-item:first-child .timeline-node::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: node-ping 3s ease-out infinite;
+}
+
+@keyframes node-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }
 
 .timeline-meta {
