@@ -17,6 +17,8 @@
   --orange: #fe8019;
   --blue: #83a598;
   --accent: var(--blue);
+  --selection-bg: color-mix(in srgb, var(--accent) 62%, var(--surface));
+  --selection-text: var(--text);
   --stripe: rgba(235, 219, 178, 0.06);
 
   --font-serif: 'Lora', Georgia, serif;
@@ -49,6 +51,8 @@
   --blue: #076678;
   --stripe: rgba(60, 56, 54, 0.06);
   --accent: var(--blue);
+  --selection-bg: color-mix(in srgb, var(--accent) 38%, var(--bg-hard));
+  --selection-text: var(--text);
 }
 
 /* ── Reset ────────────────────────────────────────────────────────────────── */
@@ -94,8 +98,8 @@ body {
 }
 
 ::selection {
-  background: var(--orange);
-  color: var(--bg-hard);
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 a {
