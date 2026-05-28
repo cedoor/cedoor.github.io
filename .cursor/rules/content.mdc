@@ -79,6 +79,18 @@ Projects and gallery items are TypeScript files under `src/data/`, not content c
 
 HTML in project descriptions uses `<b>`, `<a>`, `<br>` — no script tags, no events.
 
+## Writing style
+
+When generating or editing blog prose, avoid overweighted AI writing patterns:
+
+- No em dashes (`—`) and no hyphens used as sentence pauses (` - `). Restructure the sentence instead.
+- No filler openers: "It's worth noting that", "It's important to remember that", "Certainly", "Of course", "Notably", "Importantly".
+- No excessive bullet lists. Use prose. Bullets only when items are genuinely enumerable and parallel.
+- No nested bullets.
+- No closing summary paragraphs that restate what was just said.
+- Do not use very short punchy sentences for emphasis. The author prefers slightly longer, more flowing sentences.
+- The author is not a native English speaker. Keep vocabulary simple and direct.
+
 ## Reading time
 
 Calculated in `src/utils/reading-time.ts` from `post.body` (raw MDX string) at ~200 words/minute. `post.body` may be `undefined` for some loader configurations — always use `post.body ?? ''`.
