@@ -8,9 +8,10 @@ export const bio = [
 ]
 
 export const nowItems = [
-  { text: 'Studying Rust & Cryptography' },
-  { text: 'Reading "Surveillance Capitalism" by Shoshana Zuboff' },
-  { text: 'Listening to Floating Points' },
+  { text: 'Working on <a href="https://nesso.how" target="_blank" rel="noreferrer">Nesso</a>' },
+  { text: 'Studying knowledge graphs and information architecture' },
+  { text: 'Reading "Surveillance Capitalism" by Zuboff and "First Person Singular" by Murakami' },
+  { text: 'Listening to Jon Hopkins' },
   { text: 'Vipassana meditation' },
   { text: 'Street photography' },
 ]
