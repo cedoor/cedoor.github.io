@@ -34,6 +34,25 @@ const projects: Project[] = [
     siteUrl: 'https://www.theinterfold.com/',
   },
   {
+    title: 'Nesso',
+    company: 'Personal Project',
+    dateRange: 'May 2026 — Present',
+    description: `<a href="https://nesso.how/">Nesso</a> is an app for active learning built around
+      typed knowledge graphs, where nodes are ideas and edges are the typed semantic relations you
+      draw between them. Instead of absorbing answers passively, you draw connections and choose what
+      each link means: <b>causes</b> versus <b>enables</b>, <b>subtype-of</b> versus
+      <b>instance-of</b>, across <b>52 relation types</b> in eight categories. Every concept carries
+      <b>spaced-repetition</b> state via <b>FSRS</b>. On top of the graph, a primarily
+      <b>local AI</b> layer is being built to guide the learner, informed by graph analysis
+      algorithms. In some ways, Nesso is a spiritual successor to <b>Mindmapp</b>, my first
+      open-source project, built years later in response to what most modern learning platforms get wrong:
+      passive consumption, no research backing, locked data, zero ownership.`,
+    skills: ['Knowledge Graph', 'AI', 'Open Source', 'Learning'],
+    repoUrl: 'https://github.com/nesso-how/nesso',
+    siteUrl: 'https://nesso.how/',
+    active: true,
+  },
+  {
     title: 'Squid',
     company: 'Personal Project',
     dateRange: 'Apr 2026 — Present',
@@ -201,7 +220,7 @@ const projects: Project[] = [
       The project was later forked by <a href="https://b310.de">B310</a> into
       <a href="https://github.com/b310-digital/teammapper">TeamMapper</a>, a collaborative mind
       mapping tool now used for free by <b>public schools in Germany</b>.`,
-    skills: ['Open Source', 'Frontend'],
+    skills: ['Open Source', 'Frontend', 'Learning'],
     repoUrl: 'https://github.com/cedoor/mindmapp',
   },
 ]
