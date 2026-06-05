@@ -1,0 +1,22 @@
+---
+title: Beyond technical debt
+date: '2026-06-05'
+tags: ['technology', 'ai', 'notes']
+summary: A few notes on keeping your hand on the wheel when delegating to AI.
+draft: false
+---
+
+Every developer has run into **technical debt** at some point, the small compromises you make when speed matters more than quality, telling yourself "yea.. let's do that tomorrow, we'll have time". Yet the bill always arrives. In the best case it is days or weeks of refactoring, in the worst a project that is cheaper to rewrite from scratch than to keep patching in one corner after another.
+
+Thinking about how little effort it takes now to implement a feature, fix a bug or do research with AI, I realized there is another debt that carries even more weight today, an **understanding debt**.
+
+> Ok, the hallowed Stack Overflow existed, but the gap between their answer and your problem still forced you to think.
+
+Understanding debt is not postponing a refactor or a missing test, but the study and the deeper understanding of the very thing we are working on. The kind of understanding that gives you the clarity to make decisions with confidence, not just with hope. How do you know if the AI picked the right hashing algorithm if you don't even understand the difference between hashing and encryption?
+
+AI already has deep knowledge of the subject. So why can't it simply pay this debt for us? Today the AI can surface options and summarize trade-offs, but deciding which answer fits your context, your constraints, your risk tolerance requires a model you built yourself. Delegating to AI works once you have built enough of a foundation to judge the result on its merits. The value of building that foundation is not knowing the facts themselves. The AI can give you those anytime. It is knowing how to ask the right questions, connecting dots across the problem, weighing alternatives that at first glance look equivalent. That is judgment, and its absence is exactly the interest you pay on understanding debt.
+
+Like technical debt, understanding debt can also be repaid. But by the time you do, the decisions made on the wrong foundation have already shaped everything around them. It kind of compounds faster: each wrong assumption quietly narrows the design space for every decision that follows, until the architecture you have is not the one you were trying to build, or worse, until the system is technically broken in ways you never saw coming.
+
+So how do we know when to slow down and take the time to deepen, connect, and actually understand? Usually, by the time the cracks start showing, it is already too late. It makes more sense to ask yourself a simple question at every step: **if the AI turned out to be wrong here, would I notice?**
+
