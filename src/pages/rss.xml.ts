@@ -47,7 +47,7 @@ export async function GET(context: APIContext) {
 
   return rss({
     title: 'cedoor.dev',
-    description: 'Software engineer focused on privacy and programmable cryptography.',
+    description: 'Software engineer focused on privacy, programmable cryptography, and learning tools.',
     site: site,
     items,
   })
