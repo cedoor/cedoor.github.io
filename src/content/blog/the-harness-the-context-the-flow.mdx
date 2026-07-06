@@ -1,0 +1,55 @@
+---
+title: The harness, the context, the flow
+date: '2026-07-03'
+tags: ['technology', 'ai', 'agents']
+summary: A practical framework for putting AI agents to work in modern software engineering.
+bibliography: references-data.bib
+---
+
+import ThemedIllustration from '../../components/ThemedIllustration.astro'
+
+According to JetBrains' developer survey from January 2026, 90% of developers were using at least one AI tool at work, a figure Google's DORA report had already put at the same 90% a few months earlier, up 14 points in a single year [@JetBrainsAIPulse2026] [@DORA2025]. However, that kind of growth comes with exactly the implications you would expect from a technology disruptive enough to reshape the whole development process and fast enough to make keeping up with it genuinely hard. DORA's own report agrees on something sharper than raw adoption, pointing out that "AI amplifies the quality of the engineering system it operates within" [@DORA2025]: strong teams get stronger and the cracks in a struggling one only widen.
+
+In my view the difference comes down to discipline and structure, the same gap practitioners like Kent Beck have been describing: augmented coding, deliberate and test driven, against what he calls vibe coding, accepting whatever comes back without much scrutiny [@Beck2025].
+
+What software engineers can, and in my view should, focus on now more than in the pre-AI era is exactly the kind of work that gives real leverage: re-engineering how software actually gets built now, with a deep study of what gets called the **harness**, its **context** and a structured **agentic workflow**. Execution today can be delegated almost entirely to agents, so the time that frees up can and should go into understanding how those agents should execute.
+
+AI does not ask us to throw out what we know about building software. The old principles do not die with agents in the loop, they get re-instantiated for a team that now includes them. What follows is my attempt at that re-instantiation, a **structured method** rather than a bag of habits, built on three pillars. The first is the harness itself, the material the rest is built from. The other two are the decisions that shape it most: what each agent gets to know (their context), and how the task flows end to end, agents doing their part and a human holding the gate at the points that matter.
+
+## What the harness is made of
+
+Too many people still focus on the model itself, on what it can do in the abstract, and not nearly enough on what surrounds it: the infrastructure every major AI lab is now building to connect models to each other and to the world outside. That infrastructure, what people now call the harness, is mostly hidden complexity, invisible to the end user, and it already powers the products everyone uses every day. Even an ordinary chatbot today runs on infrastructure that lets it hold a conversation with the right expertise for whatever topic comes up, and reach for tools when it needs to touch its own memory or pull something from the web to keep its context current.
+
+At work it cannot stay hidden. It has to be understood, and it has to be deliberately built and kept up by the people using it, so the AI stays tuned to whatever project it is actually working on. The evidence that it matters is not subtle. Artificial Analysis took a single model, Claude Opus 4.7, and ran it through three different coding harnesses (Opencode, Cursor CLI, and Claude Code), and its score on their agent index ranged from 65 down to 57, the same model doing clearly better or worse depending on nothing but the scaffolding around it [@ArtificialAnalysisAgents].
+
+The first step is understanding exactly what it is: it is not one setting you turn up or down, it is a handful of separate mechanisms, and each one controls a different lever over what the model knows or what it is allowed to do.
+
+Some of them decide what the model knows before it starts. **Memory** is the part that persists across sessions, the facts the agent carries forward so it does not meet the project fresh every morning, holding on to what a person would simply remember from one day to the next. **Skills** are procedures it can pull in on demand, a written how-to for a recurring task, loaded only when that task comes up rather than sitting in the context of every call. And then there is the context you assemble for the task itself, which turns out to be the hardest of the three and gets its own pillar below.
+
+Others decide what it can do, and where it is stopped. **Hooks** are deterministic code that fires on an event, before or after a tool call, to check something or block it outright. A hook is not advice the model can reason its way around, it is code that runs no matter what the model would have preferred, which is exactly what you want for a rule that must never bend. The tooling sits alongside them, the tests and linters and type checks that hand the agent a hard yes or no instead of an opinion it can argue with.
+
+The last group decides who does the work. **Sub-agents** are separate instances, each with its own context window and its own job, so the reviewer is not soaked in the builder's reasoning and the planner is not dragging the executor's diff around with it. **Dynamic routing** is the choice of which model or which agent takes which step, a small fast one for the mechanical parts and a stronger one where the judgment actually matters.
+
+Put together these decide three things, what the model knows, what it can do, and who does what. Two of them carry most of the design weight. The first is what each role is allowed to know, which turns out to have no single answer, and the second is the order the roles run in. The next two pillars take those in turn.
+
+## The context each agent gets
+
+The key to a good output is a good input, and the input that matters most is the context an agent has while executing a task, which should not be the same from one task to the next. When a person carries a change from idea to merge, they quietly switch hats. They think loosely while brainstorming, narrowly while implementing, and adversarially while reviewing. An agentic workflow should make those hats explicit: a brainstorming agent, a planner, an executor, a couple of reviewers. And the moment they are separate the question stops being how much context to load and becomes which slice each one needs. The executor writing the code needs almost everything: the rules, the surrounding code, the history of why it looks the way it does. A reviewer checking for plain bugs needs the diff and little else. A reviewer checking project constraints needs the rules and the reasoning behind them, but not the whole codebase.
+
+That caution already shows up in practice, just without a name attached to it. 76% of developers will not let AI near deployment and monitoring, 69% keep it away from project planning, and 59% avoid using it for code review [@StackOverflowSurvey2025]. The instinct is right, people are already rationing trust by role. What is missing is the reasoning that would turn the instinct into a rule you could apply on purpose instead of by feel.
+
+The way I decide comes down to a single question: what standard is this step judged against? If the standard lives in the tooling, the thing compiles or it does not, the tests pass or they do not, the step needs almost no context, only the ability to run the check. If the standard is a universal engineering one, whether there is a bug or a needless duplication, the step needs light context, and the diff alone is often enough. If the standard is specific to this project, its architecture, its banned patterns, its idioms, the step needs the full picture. The builder always gets the full picture, because it is the one creating something, so the rule really governs the checkers around it.
+
+Put every role and every layer on one grid and the shape of the method shows up at a glance.
+
+<ThemedIllustration
+  lightSrc="/static/images/matrix-light.svg"
+  darkSrc="/static/images/matrix-dark.svg"
+  alt="A grid of seven agent roles against seven context layers. Each cell marks whether an agent reads a layer in full or in part, produces it, or executes it. The Tooling column stands apart because it only ever shows execute states, a feedback loop or a blocking gate, never a static read."
+/>
+
+Seven agent roles against seven context layers: full reads, scoped reads, and a Tooling column that never reads at all, only executes, as a feedback loop or as a gate.
+
+## References
+
+[^ref]

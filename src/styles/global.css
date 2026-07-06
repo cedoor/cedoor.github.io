@@ -1105,6 +1105,8 @@ a {
 
 .prose .themed-illustration img {
   margin: 0;
+  width: 100%;
+  height: auto;
 }
 
 .prose .themed-illustration__light {
