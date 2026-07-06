@@ -24,31 +24,54 @@ At work it cannot stay hidden. It has to be understood, and it has to be deliber
 
 The first step is understanding exactly what it is: it is not one setting you turn up or down, it is a handful of separate mechanisms, and each one controls a different lever over what the model knows or what it is allowed to do.
 
-Some of them decide what the model knows before it starts. **Memory** is the part that persists across sessions, the facts the agent carries forward so it does not meet the project fresh every morning, holding on to what a person would simply remember from one day to the next. **Skills** are procedures it can pull in on demand, a written how-to for a recurring task, loaded only when that task comes up rather than sitting in the context of every call. And then there is the context you assemble for the task itself, which turns out to be the hardest of the three and gets its own pillar below.
+### MCP
 
-Others decide what it can do, and where it is stopped. **Hooks** are deterministic code that fires on an event, before or after a tool call, to check something or block it outright. A hook is not advice the model can reason its way around, it is code that runs no matter what the model would have preferred, which is exactly what you want for a rule that must never bend. The tooling sits alongside them, the tests and linters and type checks that hand the agent a hard yes or no instead of an opinion it can argue with.
+One of them sits apart from the rest. **MCP**, the Model Context Protocol, is not about organizing what the model already has, it is the wire it uses to reach anything outside itself: a tool, a database, another service. It is also the one piece of this list that has already become a real standard: Anthropic opened it, and OpenAI, Google, Microsoft and others now build to the same protocol. In practice a project rarely needs more than a couple that actually matter: one that pulls in current documentation for whatever libraries the code depends on, or others that let the agent talk to services the project already relies on directly: a database, a ticket tracker, a deployment API.
 
-The last group decides who does the work. **Sub-agents** are separate instances, each with its own context window and its own job, so the reviewer is not soaked in the builder's reasoning and the planner is not dragging the executor's diff around with it. **Dynamic routing** is the choice of which model or which agent takes which step, a small fast one for the mechanical parts and a stronger one where the judgment actually matters.
+### Persisted memory
 
-Put together these decide three things, what the model knows, what it can do, and who does what. Two of them carry most of the design weight. The first is what each role is allowed to know, which turns out to have no single answer, and the second is the order the roles run in. The next two pillars take those in turn.
+Two of the rest sit in the background on every task, there to be read rather than rebuilt from scratch each time, though neither gets there the same way. One is what persists across sessions (most providers call it just **memory**), but it is mostly the provider's own doing, whatever the model decided on its own was worth remembering, resurfacing later without anyone having to ask. The other persists too, but only because people, or AI instructed by people, put it there (**rules** on Cursor, or **custom instructions** on Copilot): the project's own constraints, its architecture, its banned patterns, its idioms. That is arguably what keeps a project genuinely yours in the AI era, the intent no model can infer from the code alone, written down so an agent has to understand it rather than guess at it.
+
+### Repetitive tasks
+
+Two more only show up at a specific moment instead of sitting in the background the whole time. **Skills** are procedures pulled in on demand, a written how-to for a recurring task, called up by a command or by the agent's own judgment that this is the moment for it. **Hooks** are scripts that fire on a coded event instead, before or after a tool call, to check something, block it outright, or set off an action of its own, like an automatic commit.
+
+As a rule, if a task keeps recurring and can be done by a model, write a skill for it. If the same task could run as a plain script with no AI involved, and it needs to fire on a specific event rather than be called up on demand, that is what a hook is for.
+
+### Agents
+
+The last one is about where work happens rather than what happens in it. **Sub-agents** are separate instances, called by the main agent, each with its own context window and its own job, so the reviewer does not inherit the builder's reasoning and the planner is not dragging the executor's diff around with it. Isolating the box is the easy part, what goes inside each one is the harder question, and it gets its own pillar next.
 
 ## The context each agent gets
 
-The key to a good output is a good input, and the input that matters most is the context an agent has while executing a task, which should not be the same from one task to the next. When a person carries a change from idea to merge, they quietly switch hats. They think loosely while brainstorming, narrowly while implementing, and adversarially while reviewing. An agentic workflow should make those hats explicit: a brainstorming agent, a planner, an executor, a couple of reviewers. And the moment they are separate the question stops being how much context to load and becomes which slice each one needs. The executor writing the code needs almost everything: the rules, the surrounding code, the history of why it looks the way it does. A reviewer checking for plain bugs needs the diff and little else. A reviewer checking project constraints needs the rules and the reasoning behind them, but not the whole codebase.
+The key to a good output is a good input, and the input that matters most is the quality of the context an agent has while executing a task, which does not need to be the same from one task to the next. When a person carries a change from idea to merge, they quietly switch hats. They think loosely while brainstorming, narrowly while implementing, and adversarially while reviewing. An agentic workflow should make those hats explicit too, and once it does the question stops being how much context to load and becomes which slice each one needs.
 
-That caution already shows up in practice, just without a name attached to it. 76% of developers will not let AI near deployment and monitoring, 69% keep it away from project planning, and 59% avoid using it for code review [@StackOverflowSurvey2025]. The instinct is right, people are already rationing trust by role. What is missing is the reasoning that would turn the instinct into a rule you could apply on purpose instead of by feel.
+Every project ends up needing its own mix of agents depending on the task, but it helps to start from a simple base, the phases a workflow generally moves through today:
 
-The way I decide comes down to a single question: what standard is this step judged against? If the standard lives in the tooling, the thing compiles or it does not, the tests pass or they do not, the step needs almost no context, only the ability to run the check. If the standard is a universal engineering one, whether there is a bug or a needless duplication, the step needs light context, and the diff alone is often enough. If the standard is specific to this project, its architecture, its banned patterns, its idioms, the step needs the full picture. The builder always gets the full picture, because it is the one creating something, so the rule really governs the checkers around it.
+- **Brainstorming**: the task gets explored, placed in the project's context, challenged, checked against the project's own requirements, and prioritized, usually the step that takes a backlog item from a rough draft to something structured enough to act on.
+- **Planning**: turns a settled task into an actual plan, which defines how it should be built given the codebase as it stands today and whatever constraints apply.
+- **Execution**: the plan turns into actual code.
+- **Internal review**: the code gets checked from several angles at once, quality, correctness, bugs, security, before anyone outside the loop sees it.
+- **Documentation**: whatever explains the change gets updated, the harness's own memory, the comments in the code, the docs on the site.
+- **External review**: the pull request opens and waits on whatever review still has to happen outside the loop.
+
+Once the phases are identified, it helps to categorize the context agents actually need to work through them:
+
+- **Task description**: the GitHub issue, the specific ask for this task.
+- **Plan**: how the task will actually get built, written once the task description is settled, based on the current state of the codebase and its constraints.
+- **Codebase**: the code that already exists around the change, everything except the change itself.
+- **Diff**: that change, the part actually being built or reviewed.
+- **Persisted memory**: what the project already knows and carries forward, both what the model picked up on its own and what people wrote down as rules or instructions for that project.
+- **History**: why the code got to look the way it does, not what it is now but how it got there (a changelog, parts of the git log).
 
 Put every role and every layer on one grid and the shape of the method shows up at a glance.
 
 <ThemedIllustration
   lightSrc="/static/images/matrix-light.svg"
   darkSrc="/static/images/matrix-dark.svg"
-  alt="A grid of seven agent roles against seven context layers. Each cell marks whether an agent reads a layer in full or in part, produces it, or executes it. The Tooling column stands apart because it only ever shows execute states, a feedback loop or a blocking gate, never a static read."
+  alt="A grid of five agent roles against six context layers. Each cell marks whether an agent reads a layer in full or in part, creates it, updates it, or has no relationship to it at all."
+  caption="Five agent roles against six context layers: full reads, scoped reads, layers created from scratch, and layers only updated, the shape of what each role actually needs."
 />
-
-Seven agent roles against seven context layers: full reads, scoped reads, and a Tooling column that never reads at all, only executes, as a feedback loop or as a gate.
 
 ## References
 
