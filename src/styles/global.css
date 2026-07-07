@@ -1100,11 +1100,13 @@ a {
 }
 
 .prose .themed-illustration {
-  margin: 0.5em 0;
+  margin: 0.5em 0 1.8em;
 }
 
 .prose .themed-illustration img {
   margin: 0;
+  width: 100%;
+  height: auto;
 }
 
 .prose .themed-illustration__light {
@@ -1121,6 +1123,15 @@ a {
 
 [data-theme='light'] .prose .themed-illustration__dark {
   display: none;
+}
+
+.prose .themed-illustration figcaption {
+  margin-top: 0.75em;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  text-align: center;
 }
 
 .prose hr {

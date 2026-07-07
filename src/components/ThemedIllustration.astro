@@ -3,12 +3,13 @@ export interface Props {
   lightSrc: string
   darkSrc: string
   alt: string
+  caption?: string
 }
 
-const { lightSrc, darkSrc, alt } = Astro.props
+const { lightSrc, darkSrc, alt, caption } = Astro.props
 ---
 
-<div class="themed-illustration">
+<figure class="themed-illustration">
   <img
     class="themed-illustration__light"
     src={lightSrc}
@@ -24,4 +25,5 @@ const { lightSrc, darkSrc, alt } = Astro.props
     decoding="async"
     aria-hidden="true"
   />
-</div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

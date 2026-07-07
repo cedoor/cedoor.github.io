@@ -35,7 +35,7 @@ Math is supported via `remark-math` + `rehype-katex`. KaTeX CSS is loaded from C
 
 Place images in `public/static/images/` and reference them with an absolute path: `![alt](/static/images/example.png)`. Do not add query strings (e.g. `?theme-aware`) — they are not processed by Astro.
 
-For theme-adaptive illustrations, provide two files (`example.png` and `example-dark.png`) and render them conditionally in MDX with a custom component if needed. Do not rely on query-string hacks.
+For theme-adaptive illustrations, provide two files (`example.png` and `example-dark.png`, or `example-light.svg`/`example-dark.svg` for a light/dark pair) and render them with `src/components/ThemedIllustration.astro`, which toggles visibility via `[data-theme='light']` CSS rather than JS. Props: `lightSrc`, `darkSrc`, `alt` (required, describes the image for screen readers), `caption` (optional, rendered as a `<figcaption>` below the figure, styled via `.prose .themed-illustration figcaption` in `global.css`). Do not rely on query-string hacks, and do not add a plain paragraph under the illustration for a description, use `caption` instead.
 
 ## Content layer (Astro 6)
 
