@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1332.3914"
+   height="924.8488"
+   viewBox="-47.2741 -60.0921 1332.3914 924.8488"
+   font-family="'IBM Plex Mono', 'Courier New', monospace"
+   version="1.1"
+   id="svg56"
+   sodipodi:docname="workflow-pipeline-dark.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview56"
+     pagecolor="#282828"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="false"
+     inkscape:zoom="1.0114943"
+     inkscape:cx="802.2784"
+     inkscape:cy="403.36363"
+     inkscape:window-width="1512"
+     inkscape:window-height="921"
+     inkscape:window-x="1920"
+     inkscape:window-y="33"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg56" />
+  <defs
+     id="defs2">
+    <marker
+       id="ag"
+       markerWidth="13"
+       markerHeight="13"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 9,5 0,10 Z"
+         fill="#928374"
+         id="path1" />
+    </marker>
+    <marker
+       id="ao"
+       markerWidth="17"
+       markerHeight="17"
+       refX="11"
+       refY="6"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 12,6 0,12 Z"
+         fill="#928374"
+         id="path2" />
+    </marker>
+    <marker
+       id="ag-1"
+       markerWidth="13"
+       markerHeight="13"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 9,5 0,10 Z"
+         fill="#928374"
+         id="path1-8" />
+    </marker>
+    <marker
+       id="ag-5"
+       markerWidth="13"
+       markerHeight="13"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 9,5 0,10 Z"
+         fill="#928374"
+         id="path1-0" />
+    </marker>
+    <marker
+       id="ag-5-1"
+       markerWidth="13"
+       markerHeight="13"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 9,5 0,10 Z"
+         fill="#928374"
+         id="path1-0-5" />
+    </marker>
+    <marker
+       id="ag-5-1-2"
+       markerWidth="13"
+       markerHeight="13"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 9,5 0,10 Z"
+         fill="#928374"
+         id="path1-0-5-7" />
+    </marker>
+    <marker
+       id="ag-5-1-24"
+       markerWidth="13"
+       markerHeight="13"
+       refX="8.5"
+       refY="5"
+       orient="auto"
+       markerUnits="userSpaceOnUse">
+      <path
+         d="M 0,0 9,5 0,10 Z"
+         fill="#928374"
+         id="path1-0-5-9" />
+    </marker>
+  </defs>
+  <path
+     d="m 94.34611,190.28848 c -1.97277,35.6098 12.51048,71.12893 48.39294,97.65968"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.95276"
+     marker-end="url(#ag)"
+     id="path3"
+     inkscape:transform-center-x="-7.5302971"
+     inkscape:transform-center-y="-8.6373162"
+     sodipodi:nodetypes="cc"
+     style="stroke:#928374;stroke-opacity:1" />
+  <path
+     d="m 287.97326,367.29253 c 32.02273,-10.82954 70.42335,-10.66024 101.30773,10.5589"
+     fill="none"
+     stroke="#928374"
+     stroke-width="2"
+     marker-end="url(#ag)"
+     id="path4"
+     sodipodi:nodetypes="cc"
+     style="stroke:#928374;stroke-opacity:1" />
+  <path
+     d="m 605.85943,380.89754 c 32.02273,-10.82954 70.42335,-10.66024 101.30773,10.5589"
+     fill="none"
+     stroke="#928374"
+     stroke-width="2"
+     marker-end="url(#ag-5)"
+     id="path4-1"
+     sodipodi:nodetypes="cc"
+     style="marker-end:url(#ag-5);stroke:#928374;stroke-opacity:1" />
+  <rect
+     x="8.0744095"
+     y="0.75"
+     width="176"
+     height="176"
+     rx="88"
+     fill="none"
+     stroke="#504945"
+     stroke-width="1.5"
+     id="rect7"
+     style="fill:none;fill-opacity:1;stroke:#504945;stroke-opacity:1" />
+  <text
+     x="16.889267"
+     y="15.583435"
+     font-family="Lora, Georgia, serif"
+     font-size="26px"
+     font-weight="500"
+     fill="#83a598"
+     id="text7">1</text>
+  <text
+     x="97.063049"
+     y="81.852287"
+     text-anchor="middle"
+     font-size="15px"
+     font-weight="500"
+     letter-spacing="0.08em"
+     fill="#ebdbb2"
+     id="text8"
+     style="font-size:16px">BRAINSTORMING</text>
+  <rect
+     x="59.204407"
+     y="106.75001"
+     width="73.739998"
+     height="20"
+     rx="4"
+     fill="#3c3836"
+     stroke="#504945"
+     stroke-width="1"
+     id="rect8"
+     style="fill:#3c3836;fill-opacity:1;stroke:#504945;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     x="96.074417"
+     y="120.75001"
+     text-anchor="middle"
+     font-size="11px"
+     font-weight="500"
+     fill="#d5c4a1"
+     id="text9"
+     style="font-size:14.6667px">GLM 5.2</text>
+  <circle
+     cx="95.292343"
+     cy="179.01324"
+     fill="none"
+     stroke="#8ec07c"
+     stroke-width="2"
+     id="circle9"
+     r="21" />
+  <circle
+     cx="95.292343"
+     cy="175.01324"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="circle10"
+     r="4" />
+  <path
+     d="m 88.29233,190.01322 q 7,-10 14,0"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path10" />
+  <rect
+     x="86.903961"
+     y="290.42044"
+     width="176"
+     height="176"
+     rx="88"
+     fill="none"
+     stroke="#504945"
+     stroke-width="1.5"
+     id="rect7-8"
+     style="fill:none;fill-opacity:1;stroke:#504945;stroke-opacity:1" />
+  <text
+     x="93.741562"
+     y="301.29932"
+     font-family="Lora, Georgia, serif"
+     font-size="26px"
+     font-weight="500"
+     fill="#83a598"
+     id="text7-0">2</text>
+  <text
+     x="175.89261"
+     y="371.52274"
+     text-anchor="middle"
+     font-size="15px"
+     font-weight="500"
+     letter-spacing="0.08em"
+     fill="#ebdbb2"
+     id="text8-2"
+     style="font-size:16px">PLANNING</text>
+  <rect
+     x="118.58549"
+     y="393.32993"
+     width="115.10854"
+     height="25.283314"
+     rx="6.2440214"
+     fill="#3c3836"
+     stroke="#504945"
+     stroke-width="1"
+     id="rect8-4"
+     style="fill:#3c3836;fill-opacity:1;stroke:#504945;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     x="177.86989"
+     y="410.96021"
+     text-anchor="middle"
+     font-size="11px"
+     font-weight="500"
+     fill="#d5c4a1"
+     id="text9-8"
+     dx="0 0 0 0 0 0 0 0 0 0"
+     style="font-size:14.6667px"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="177.86989"
+       y="410.96021">Deepseek V4</tspan></text>
+  <circle
+     cx="267.79749"
+     cy="368.0174"
+     fill="none"
+     stroke="#8ec07c"
+     stroke-width="2"
+     id="circle9-3"
+     r="21" />
+  <circle
+     cx="267.79749"
+     cy="364.0174"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="circle10-9"
+     r="4" />
+  <path
+     d="m 260.79746,379.01738 q 7,-10 14,0"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path10-0" />
+  <rect
+     x="405.73099"
+     y="303.98245"
+     width="176"
+     height="176"
+     rx="88"
+     fill="none"
+     stroke="#504945"
+     stroke-width="1.5"
+     id="rect7-8-5"
+     style="fill:none;fill-opacity:1;stroke:#504945;stroke-opacity:1" />
+  <text
+     x="419.48904"
+     y="311.89542"
+     font-family="Lora, Georgia, serif"
+     font-size="26px"
+     font-weight="500"
+     fill="#83a598"
+     id="text7-0-2">3</text>
+  <rect
+     x="439.59882"
+     y="403.84882"
+     width="115.10854"
+     height="25.283314"
+     rx="6.2440214"
+     fill="#3c3836"
+     stroke="#504945"
+     stroke-width="1"
+     id="rect8-4-2"
+     style="fill:#3c3836;fill-opacity:1;stroke:#504945;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     x="498.88324"
+     y="421.4791"
+     text-anchor="middle"
+     font-size="11px"
+     font-weight="500"
+     fill="#d5c4a1"
+     id="text9-8-0"
+     dx="0 0 0 0 0 0 0 0 0 0"
+     style="font-size:14.6667px"><tspan
+       sodipodi:role="line"
+       id="tspan2-6"
+       x="498.88324"
+       y="421.4791">Deepseek V4</tspan></text>
+  <text
+     x="494.7196"
+     y="385.08475"
+     text-anchor="middle"
+     font-size="15px"
+     font-weight="500"
+     letter-spacing="0.08em"
+     fill="#ebdbb2"
+     id="text8-2-2"
+     style="font-size:16px">EXECUTION</text>
+  <circle
+     cx="195.40506"
+     cy="32.356922"
+     fill="#928374"
+     stroke="none"
+     id="circle11"
+     r="3.5999999" />
+  <text
+     x="205.40506"
+     y="36.356922"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text11"
+     style="font-size:14.6667px">Codebase, Persisted memory, History</text>
+  <circle
+     cx="195.40506"
+     cy="51.356915"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle12"
+     r="3" />
+  <text
+     x="205.40506"
+     y="55.356915"
+     font-size="11px"
+     font-weight="500"
+     fill="#ebdbb2"
+     id="text13"
+     style="font-size:14.6667px">Task description</text>
+  <circle
+     cx="80.669785"
+     cy="485.10599"
+     fill="#928374"
+     stroke="none"
+     id="circle18"
+     r="3.5999999" />
+  <text
+     x="90.669785"
+     y="489.10599"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text18"
+     style="font-size:14.6667px">Task description,Codebase</text>
+  <text
+     x="93.635696"
+     y="508.10596"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text19"
+     dx="-3.4953573"
+     style="font-size:14.6667px">Persisted memory, History</text>
+  <circle
+     cx="80.669785"
+     cy="523.10596"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle20"
+     r="3" />
+  <text
+     x="90.669785"
+     y="527.10596"
+     font-size="11px"
+     font-weight="500"
+     fill="#ebdbb2"
+     id="text21"
+     style="font-size:14.6667px">Plan</text>
+  <circle
+     cx="585.34589"
+     cy="379.94028"
+     fill="none"
+     stroke="#fabd2f"
+     stroke-width="2"
+     id="circle24"
+     r="21" />
+  <path
+     d="m 578.3459,378.94027 5,6 9,-12"
+     stroke="#fabd2f"
+     stroke-width="1.8"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path24" />
+  <path
+     d="m 858.86069,305.64117 c 82.70542,4.89957 188.16191,53.15722 215.90051,157.56587"
+     fill="none"
+     stroke="#928374"
+     stroke-width="2"
+     marker-end="url(#ag-5-1)"
+     id="path4-1-8"
+     sodipodi:nodetypes="cc"
+     style="marker-end:url(#ag-5-1);stroke:#928374;stroke-opacity:1" />
+  <rect
+     x="716.07318"
+     y="309.79425"
+     width="176"
+     height="176"
+     rx="88"
+     fill="none"
+     stroke="#504945"
+     stroke-width="1.5"
+     id="rect7-8-5-5"
+     style="fill:none;fill-opacity:1;stroke:#504945;stroke-opacity:1" />
+  <text
+     x="716.97888"
+     y="323.63907"
+     font-family="Lora, Georgia, serif"
+     font-size="26px"
+     font-weight="500"
+     fill="#83a598"
+     id="text7-0-2-6">4</text>
+  <text
+     x="805.06177"
+     y="390.89655"
+     text-anchor="middle"
+     font-size="15px"
+     font-weight="500"
+     letter-spacing="0.08em"
+     fill="#ebdbb2"
+     id="text8-2-2-7"
+     style="font-size:16px">REVIEW</text>
+  <rect
+     x="769.6756"
+     y="410.85184"
+     width="69.783928"
+     height="22.964384"
+     rx="3.7854042"
+     fill="#3c3836"
+     stroke="#504945"
+     stroke-width="1"
+     id="rect8-4-6-9"
+     style="fill:#3c3836;fill-opacity:1;stroke:#504945;stroke-width:0.544753;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     x="805.06183"
+     y="426.33401"
+     text-anchor="middle"
+     font-size="11px"
+     font-weight="500"
+     fill="#d5c4a1"
+     id="text9-8-6-4"
+     style="font-size:14.66666667px;stroke-width:2500;stroke-dasharray:none">Kimi K2</text>
+  <circle
+     cx="409.36862"
+     cy="500.06525"
+     fill="#928374"
+     stroke="none"
+     id="circle25"
+     r="3.5999999" />
+  <text
+     x="419.36862"
+     y="504.06525"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text26"
+     style="font-size:14.6667px">Plan,Codebase</text>
+  <text
+     x="419.36862"
+     y="523.06525"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text27"
+     style="font-size:14.6667px">Persisted memory</text>
+  <circle
+     cx="409.36862"
+     cy="538.06525"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle28"
+     r="3" />
+  <text
+     x="419.36862"
+     y="542.06525"
+     font-size="11px"
+     font-weight="500"
+     fill="#ebdbb2"
+     id="text29"
+     style="font-size:14.6667px">Diff</text>
+  <circle
+     cx="838.00494"
+     cy="306.50845"
+     fill="none"
+     stroke="#d3869b"
+     stroke-width="2"
+     id="circle32"
+     r="21" />
+  <rect
+     x="830.00494"
+     y="302.50845"
+     width="16"
+     height="13"
+     rx="3"
+     stroke="#d3869b"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="rect32" />
+  <line
+     x1="838.00494"
+     y1="302.50845"
+     x2="838.00494"
+     y2="297.50845"
+     stroke="#d3869b"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="line32" />
+  <circle
+     cx="838.00494"
+     cy="296.50845"
+     fill="#d3869b"
+     stroke="none"
+     id="circle33"
+     r="1.8" />
+  <circle
+     cx="834.50494"
+     cy="308.50845"
+     fill="#d3869b"
+     stroke="none"
+     id="circle34"
+     r="1.5" />
+  <circle
+     cx="841.50494"
+     cy="308.50845"
+     fill="#d3869b"
+     stroke="none"
+     id="circle35"
+     r="1.5" />
+  <rect
+     x="1007.3496"
+     y="470.366"
+     width="176"
+     height="176"
+     rx="88"
+     fill="none"
+     stroke="#504945"
+     stroke-width="1.5"
+     id="rect7-8-5-5-7"
+     style="fill:none;fill-opacity:1;stroke:#504945;stroke-opacity:1" />
+  <text
+     x="1016.6442"
+     y="478.61826"
+     font-family="Lora, Georgia, serif"
+     font-size="26px"
+     font-weight="500"
+     fill="#83a598"
+     id="text7-0-2-6-7">5</text>
+  <text
+     x="1096.3381"
+     y="551.46832"
+     text-anchor="middle"
+     font-size="15px"
+     font-weight="500"
+     letter-spacing="0.08em"
+     fill="#ebdbb2"
+     id="text8-2-2-7-9"
+     style="font-size:16px">DOCUMENTATION</text>
+  <rect
+     x="1057.3384"
+     y="572.24426"
+     width="76.841599"
+     height="21.40786"
+     rx="4.1682448"
+     fill="#3c3836"
+     stroke="#504945"
+     stroke-width="1"
+     id="rect8-4-6-9-5"
+     style="fill:#3c3836;fill-opacity:1;stroke:#504945;stroke-width:0.48396;stroke-dasharray:none;stroke-opacity:1" />
+  <text
+     x="1096.3383"
+     y="586.90576"
+     text-anchor="middle"
+     font-size="11px"
+     font-weight="500"
+     fill="#d5c4a1"
+     id="text9-8-6-4-3"
+     style="font-size:14.6667px">GLM 5.2</text>
+  <circle
+     cx="700.58447"
+     cy="504.73581"
+     fill="#928374"
+     stroke="none"
+     id="circle36"
+     r="3.5999999" />
+  <text
+     x="710.58447"
+     y="508.73578"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text36"
+     style="font-size:14.6667px">Codebase, Persisted memory</text>
+  <circle
+     cx="700.58447"
+     cy="523.73578"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle37"
+     r="3" />
+  <path
+     d="m 700.58454,520.73573 a 3,3 0 0 1 0,6 z"
+     fill="#928374"
+     id="path37" />
+  <text
+     x="710.58447"
+     y="527.73578"
+     font-size="11px"
+     font-weight="500"
+     fill="#ebdbb2"
+     id="text38"
+     style="font-size:14.6667px">Diff</text>
+  <circle
+     cx="1168.1851"
+     cy="489.93839"
+     fill="none"
+     stroke="#8ec07c"
+     stroke-width="2"
+     id="circle41"
+     r="21" />
+  <circle
+     cx="1168.1851"
+     cy="485.93839"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="circle42"
+     r="4" />
+  <path
+     d="m 1161.1852,500.93834 q 7,-10 14,0"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path42" />
+  <circle
+     cx="953.88593"
+     cy="670.82086"
+     fill="#928374"
+     stroke="none"
+     id="circle43"
+     r="3.5999999" />
+  <text
+     x="963.88593"
+     y="674.82086"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text43"
+     style="font-size:14.6667px">Task description, Diff</text>
+  <text
+     x="963.88593"
+     y="693.82086"
+     font-size="11px"
+     font-weight="400"
+     fill="#d5c4a1"
+     id="text44"
+     style="font-size:14.6667px">Codebase, Persisted memory</text>
+  <circle
+     cx="953.88593"
+     cy="708.82086"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle45"
+     r="3" />
+  <path
+     d="m 953.88598,705.82082 a 3,3 0 0 1 0,6 z"
+     fill="#928374"
+     id="path45" />
+  <text
+     x="963.88593"
+     y="712.82086"
+     font-size="11px"
+     font-weight="500"
+     fill="#ebdbb2"
+     id="text46"
+     style="font-size:14.6667px">Diff, Persisted memory, History</text>
+  <path
+     d="M 829.48183,286.56262 C 614.2869,138.00378 408.6431,140.11451 209.58454,287.95163"
+     fill="none"
+     stroke="#928374"
+     stroke-width="2"
+     marker-end="url(#ag)"
+     id="path46"
+     sodipodi:nodetypes="cc"
+     style="stroke:#928374;stroke-opacity:1" />
+  <circle
+     cx="22"
+     cy="788.26575"
+     fill="none"
+     stroke="#8ec07c"
+     stroke-width="2"
+     id="circle47"
+     r="21" />
+  <circle
+     cx="22"
+     cy="784.26575"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="circle48"
+     r="4" />
+  <path
+     d="m 14.999994,799.26581 q 7,-10 14,0"
+     stroke="#8ec07c"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path48" />
+  <text
+     x="58"
+     y="792.26575"
+     font-size="11.5px"
+     fill="#d5c4a1"
+     id="text48"
+     style="font-size:14.66666667px">human gate</text>
+  <circle
+     cx="190.29997"
+     cy="788.26575"
+     fill="none"
+     stroke="#fabd2f"
+     stroke-width="2"
+     id="circle49"
+     r="21" />
+  <path
+     d="m 183.3,787.26581 5,6 9,-12"
+     stroke="#fabd2f"
+     stroke-width="1.8"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path49" />
+  <text
+     x="226.29999"
+     y="792.26575"
+     font-size="11.5px"
+     fill="#d5c4a1"
+     id="text49"
+     style="font-size:14.66666667px">checks gate</text>
+  <circle
+     cx="365.73001"
+     cy="788.26575"
+     fill="none"
+     stroke="#d3869b"
+     stroke-width="2"
+     id="circle50"
+     r="21" />
+  <rect
+     x="357.73001"
+     y="784.26575"
+     width="16"
+     height="13"
+     rx="3"
+     stroke="#d3869b"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="rect50" />
+  <line
+     x1="365.73001"
+     y1="784.26575"
+     x2="365.73001"
+     y2="779.26575"
+     stroke="#d3869b"
+     stroke-width="1.6"
+     fill="none"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="line50" />
+  <circle
+     cx="365.73001"
+     cy="778.26575"
+     fill="#d3869b"
+     stroke="none"
+     id="circle51"
+     r="1.8" />
+  <circle
+     cx="362.23001"
+     cy="790.26575"
+     fill="#d3869b"
+     stroke="none"
+     id="circle52"
+     r="1.5" />
+  <circle
+     cx="369.23001"
+     cy="790.26575"
+     fill="#d3869b"
+     stroke="none"
+     id="circle53"
+     r="1.5" />
+  <text
+     x="401.73001"
+     y="792.26575"
+     font-size="11.5px"
+     fill="#d5c4a1"
+     id="text53"
+     style="font-size:14.66666667px">agent gate</text>
+  <circle
+     cx="14.212997"
+     cy="734.86761"
+     fill="#928374"
+     stroke="none"
+     id="circle54"
+     r="3.5999999" />
+  <text
+     x="30.212997"
+     y="738.86761"
+     font-size="11.5px"
+     fill="#d5c4a1"
+     id="text54"
+     style="font-size:14.66666667px">reads</text>
+  <circle
+     cx="108.86298"
+     cy="734.86761"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle55"
+     r="3" />
+  <text
+     x="124.86298"
+     y="738.86761"
+     font-size="11.5px"
+     fill="#d5c4a1"
+     id="text55"
+     style="font-size:14.66666667px">creates</text>
+  <circle
+     cx="217.77301"
+     cy="734.86761"
+     fill="none"
+     stroke="#928374"
+     stroke-width="1.3"
+     id="circle56"
+     r="3" />
+  <path
+     d="m 217.773,731.86767 a 3,3 0 0 1 0,6 z"
+     fill="#928374"
+     id="path56" />
+  <text
+     x="233.77301"
+     y="738.86761"
+     font-size="11.5px"
+     fill="#d5c4a1"
+     id="text56"
+     style="font-size:14.66666667px">updates</text>
+</svg>

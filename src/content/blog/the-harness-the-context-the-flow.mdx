@@ -93,6 +93,13 @@ Not every phase should stop at the same kind of gate. Three usually show up acro
 
 Here is what that looks like end to end, the same five phases from the matrix above, each one now carrying a model, a context slice, and a gate.
 
+<ThemedIllustration
+  lightSrc="/static/images/workflow-pipeline-light.svg"
+  darkSrc="/static/images/workflow-pipeline-dark.svg"
+  alt="A flow chart of five workflow phases in sequence: brainstorming, planning, execution, review, and documentation. Each step lists its model, the context it reads or writes, and its gate type, human, automated tooling, or agent verdict. A branch from review loops back to planning for rework, or continues on to documentation once approved."
+  caption="Five phases end to end, each carrying its own model, context slice, and gate. A failed review loops back to planning, an approved one moves forward to documentation."
+/>
+
 Worth noticing where a failed review actually goes: back to planning, not back to execution. When the verdict comes back negative, the instinct is to send the diff straight back to execution for a quick patch on top of the last one. Ward Cunningham's original idea of technical debt was a conscious trade off, ship the compromise now, know exactly what it costs, and pay it back on your own schedule [@Cunningham1992]. What builds up from patch after patch on a diff nobody but the AI ever rereads from scratch is a different kind of debt. Casserini et al. call it agentic entropy: a drift nobody chose, each fix correct enough on its own but slowly pulling the code away from the plan that was meant to shape it, until the diff stops reflecting any single coherent decision [@Casserini2026]. It sits close to what I called [understanding debt](/blog/beyond-technical-debt) in an earlier post, both about what AI delegation quietly erodes when nobody pauses to look closely. Sending a failed review back to planning instead of patching execution again is what keeps that from happening.
 
 The pipeline can move in more than one way. The loop back to planning is one, skipping phases entirely is another. Few tasks actually walk through all five phases in the first place, and deciding how much of the pipeline a given task needs is itself part of the job. A one line typo fix does not need brainstorming, or much of a plan either. In practice that decision, and every handoff that follows it, comes from one of three places: a person triggering each agent by hand, an orchestration layer that sizes up the task and fires each handoff on its own, or any mix of the two.
@@ -117,6 +124,14 @@ The pipeline can move in more than one way. The loop back to planning is one, sk
 ```
 
 Deny by default, allow a whole family of subagents that match a pattern, and still ask before invoking one specific case. Each subagent can get its own rule instead of one setting for all of them [@OpenCodeAgents2026].
+
+## The architect behind the pipeline
+
+Somewhere across these three pillars our job has changed shape. Not from writing code to prompting a model, but from writing code to designing the system that decides how code gets written, who gets to see what, and where a person still has to look before anything ships. That is an architect's job, not a bricklayer's: drawing the blueprint, choosing the materials, walking the site at the points that matter, without laying every brick by hand.
+
+DORA's line from the very start of this piece reads differently from here: "AI amplifies the quality of the engineering system it operates within" [@DORA2025]. At the start that sentence was about adoption. From this side of the argument it reads more like a job description. The actual measure of the work is no longer how fast an agent can produce a diff, it is how well the harness, the context, and the flow around it are put together.
+
+Five phases, a context matrix, three kinds of gates: a starting shape, not a fixed one, worth redrawing as models and tools change and adapting to each project.
 
 ## References
 
