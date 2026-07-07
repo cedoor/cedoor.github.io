@@ -10,7 +10,7 @@ import ThemedIllustration from '../../components/ThemedIllustration.astro'
 
 According to JetBrains' developer survey from January 2026, 90% of developers were using at least one AI tool at work, a figure Google's DORA report had already put at the same 90% a few months earlier, up 14 points in a single year [@JetBrainsAIPulse2026] [@DORA2025]. However, that kind of growth comes with exactly the implications you would expect from a technology disruptive enough to reshape the whole development process and fast enough to make keeping up with it genuinely hard. DORA's own report agrees on something sharper than raw adoption, pointing out that "AI amplifies the quality of the engineering system it operates within" [@DORA2025]: strong teams get stronger and the cracks in a struggling one only widen.
 
-In my view the difference comes down to discipline and structure, the same gap practitioners like Kent Beck have been describing: augmented coding, deliberate and test driven, against what he calls vibe coding, accepting whatever comes back without much scrutiny [@Beck2025].
+In my view the difference comes down to discipline and structure, the same gap engineers like Kent Beck have been describing: augmented coding, deliberate and test driven, against what he calls vibe coding, accepting whatever comes back without much scrutiny [@Beck2025].
 
 What software engineers can, and in my view should, focus on now more than in the pre-AI era is exactly the kind of work that gives real leverage: re-engineering how software actually gets built now, with a deep study of what gets called the **harness**, its **context** and a structured **agentic workflow**. Execution today can be delegated almost entirely to agents, so the time that frees up can and should go into understanding how those agents should execute.
 
@@ -88,7 +88,7 @@ Knowing what each phase needs and which model fits it is only half the picture. 
 Not every phase should stop at the same kind of gate. Three usually show up across the pipeline, and telling them apart is what keeps the whole thing from feeling either too slow or too loose:
 
 - **Human**: a person looks at the output and decides whether to move on, worth the time only where a wrong turn is expensive to undo, typically brainstorming, planning, and documentation.
-- **Automated tooling**: a hook, the same mechanism described earlier, firing a script such as a linter, a test suite, a formatter, or a quality check, checking the output against rules that need no judgment at all.
+- **Automated checks**: a hook, the same mechanism described earlier, firing a script such as a linter, a test suite, a formatter, or a quality check, checking the output against rules that need no judgment at all.
 - **Agent verdict**: another agent judges whether the work is good enough to continue, cheaper and faster than a person, but that verdict cannot be allowed to repeat forever, it needs a limit of its own. After enough failed attempts, the loop should hand off to a human instead of trying again.
 
 Here is what that looks like end to end, the same five phases from the matrix above, each one now carrying a model, a context slice, and a gate.
@@ -96,7 +96,7 @@ Here is what that looks like end to end, the same five phases from the matrix ab
 <ThemedIllustration
   lightSrc="/static/images/workflow-pipeline-light.svg"
   darkSrc="/static/images/workflow-pipeline-dark.svg"
-  alt="A flow chart of five workflow phases in sequence: brainstorming, planning, execution, review, and documentation. Each step lists its model, the context it reads or writes, and its gate type, human, automated tooling, or agent verdict. A branch from review loops back to planning for rework, or continues on to documentation once approved."
+  alt="A flow chart of five workflow phases in sequence: brainstorming, planning, execution, review, and documentation. Each step lists its model, the context it reads or writes, and its gate type, human, automated checks, or agent verdict. A branch from review loops back to planning for rework, or continues on to documentation once approved."
   caption="Five phases end to end, each carrying its own model, context slice, and gate. A failed review loops back to planning, an approved one moves forward to documentation."
 />
 
@@ -129,7 +129,7 @@ Deny by default, allow a whole family of subagents that match a pattern, and sti
 
 Somewhere across these three pillars our job has changed shape. Not from writing code to prompting a model, but from writing code to designing the system that decides how code gets written, who gets to see what, and where a person still has to look before anything ships. That is an architect's job, not a bricklayer's: drawing the blueprint, choosing the materials, walking the site at the points that matter, without laying every brick by hand.
 
-DORA's line from the very start of this piece reads differently from here: "AI amplifies the quality of the engineering system it operates within" [@DORA2025]. At the start that sentence was about adoption. From this side of the argument it reads more like a job description. The actual measure of the work is no longer how fast an agent can produce a diff, it is how well the harness, the context, and the flow around it are put together.
+DORA's line from the very start of this piece reads differently from here: "AI amplifies the quality of the engineering system it operates within" [@DORA2025]. At the start that sentence was about adoption. From this side of the argument it reads more like a job description. The actual measure of the work is no longer how fast an agent can produce a diff. It is how well the harness, the context, and the flow around it are put together.
 
 Five phases, a context matrix, three kinds of gates: a starting shape, not a fixed one, worth redrawing as models and tools change and adapting to each project.
 

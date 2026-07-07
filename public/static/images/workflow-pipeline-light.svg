@@ -154,6 +154,24 @@
      id="path4-1"
      sodipodi:nodetypes="cc"
      style="marker-end:url(#ag-5);stroke:#a49990;stroke-opacity:1" />
+  <path
+     d="m 858.86069,305.64117 c 82.70542,4.89957 188.16191,53.15722 215.90051,157.56587"
+     fill="none"
+     stroke="#7c6f64"
+     stroke-width="2"
+     marker-end="url(#ag-5-1)"
+     id="path4-1-8"
+     sodipodi:nodetypes="cc"
+     style="marker-end:url(#ag-5-1);stroke:#a49990;stroke-opacity:1" />
+  <path
+     d="M 829.48183,286.56262 C 614.2869,138.00378 408.6431,140.11451 209.58454,287.95163"
+     fill="none"
+     stroke="#7c6f64"
+     stroke-width="2"
+     marker-end="url(#ag)"
+     id="path46"
+     sodipodi:nodetypes="cc"
+     style="stroke:#a49990;stroke-opacity:1" />
   <rect
      x="8.0744095"
      y="0.75"
@@ -206,7 +224,7 @@
   <circle
      cx="95.292343"
      cy="179.01324"
-     fill="none"
+     fill="#fafaf7"
      stroke="#427b58"
      stroke-width="2"
      id="circle9"
@@ -286,7 +304,7 @@
   <circle
      cx="267.79749"
      cy="368.0174"
-     fill="none"
+     fill="#fafaf7"
      stroke="#427b58"
      stroke-width="2"
      id="circle9-3"
@@ -437,7 +455,7 @@
   <circle
      cx="585.34589"
      cy="379.94028"
-     fill="none"
+     fill="#fafaf7"
      stroke="#b57614"
      stroke-width="2"
      id="circle24"
@@ -450,15 +468,6 @@
      stroke-linecap="round"
      stroke-linejoin="round"
      id="path24" />
-  <path
-     d="m 858.86069,305.64117 c 82.70542,4.89957 188.16191,53.15722 215.90051,157.56587"
-     fill="none"
-     stroke="#7c6f64"
-     stroke-width="2"
-     marker-end="url(#ag-5-1)"
-     id="path4-1-8"
-     sodipodi:nodetypes="cc"
-     style="marker-end:url(#ag-5-1);stroke:#a49990;stroke-opacity:1" />
   <rect
      x="716.07318"
      y="309.79425"
@@ -550,7 +559,7 @@
   <circle
      cx="838.00494"
      cy="306.50845"
-     fill="none"
+     fill="#fafaf7"
      stroke="#8f3f71"
      stroke-width="2"
      id="circle32"
@@ -686,7 +695,7 @@
   <circle
      cx="1168.1851"
      cy="489.93839"
-     fill="none"
+     fill="#fafaf7"
      stroke="#427b58"
      stroke-width="2"
      id="circle41"
@@ -752,19 +761,10 @@
      fill="#2b2b2b"
      id="text46"
      style="font-size:14.6667px">Diff, Persisted memory, History</text>
-  <path
-     d="M 829.48183,286.56262 C 614.2869,138.00378 408.6431,140.11451 209.58454,287.95163"
-     fill="none"
-     stroke="#7c6f64"
-     stroke-width="2"
-     marker-end="url(#ag)"
-     id="path46"
-     sodipodi:nodetypes="cc"
-     style="stroke:#a49990;stroke-opacity:1" />
   <circle
      cx="22"
      cy="788.26575"
-     fill="none"
+     fill="#fafaf7"
      stroke="#427b58"
      stroke-width="2"
      id="circle47"
@@ -797,7 +797,7 @@
   <circle
      cx="190.29997"
      cy="788.26575"
-     fill="none"
+     fill="#fafaf7"
      stroke="#b57614"
      stroke-width="2"
      id="circle49"
@@ -820,7 +820,7 @@
   <circle
      cx="365.73001"
      cy="788.26575"
-     fill="none"
+     fill="#fafaf7"
      stroke="#8f3f71"
      stroke-width="2"
      id="circle50"
