@@ -19,8 +19,8 @@ CSS custom properties are declared in `src/styles/global.css`:
 | `--surface`       | `#3c3836`       | `#ececea`       | Cards, skill badges            |
 | `--text`          | `#ebdbb2`       | `#2b2b2b`       | Primary text                   |
 | `--text-soft`     | `#d5c4a1`       | `#3c3836`       | Body prose                     |
-| `--muted`         | `#928374`       | `#7c6f64`       | Meta, labels, nav              |
-| `--faint`         | `#665c54`       | `#bdb6ac`       | Inactive nav links, captions   |
+| `--muted`         | `#928374`       | `#7c6f64`       | Meta, labels, nav, captions    |
+| `--faint`         | `#665c54`       | `#bdb6ac`       | Inactive nav links             |
 | `--border`        | `#3c3836`       | `#e6e4df`       | Dividers                       |
 | `--border-strong` | `#504945`       | `#d6d3cc`       | Active borders, skill badges   |
 | `--orange`        | `#fe8019`       | `#af3a03`       | Accent (default), now arrows   |
@@ -30,8 +30,8 @@ CSS custom properties are declared in `src/styles/global.css`:
 
 ## Typography
 
-- **Body / headings / prose**: `var(--font-serif)` = `'EB Garamond', Georgia, serif` (loaded from Google Fonts)
-- **Nav, labels, metadata, captions, code**: `var(--font-mono)` = `'Courier New', monospace`
+- **Body / headings / prose**: `var(--font-serif)` = `'Lora', Georgia, serif` (loaded from Google Fonts)
+- **Nav, labels, metadata, captions, code**: `var(--font-mono)` = `'IBM Plex Mono', monospace`
 - No sans-serif anywhere. No Inter, no system-ui.
 
 Typical sizes:
@@ -39,7 +39,7 @@ Typical sizes:
 - Page `h1`: 22px (20px at ≤560px)
 - Bio / prose body: 16–17px, `line-height: 1.85`
 - Nav links / labels: 11–12px
-- Captions: 10px
+- Captions: 11px, `var(--muted)`, no italic
 
 ## Layout
 

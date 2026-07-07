@@ -1100,7 +1100,7 @@ a {
 }
 
 .prose .themed-illustration {
-  margin: 0.5em 0;
+  margin: 0.5em 0 1.8em;
 }
 
 .prose .themed-illustration img {
@@ -1127,9 +1127,9 @@ a {
 
 .prose .themed-illustration figcaption {
   margin-top: 0.75em;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.82em;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
   color: var(--muted);
   text-align: center;
 }

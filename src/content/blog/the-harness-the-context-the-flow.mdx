@@ -46,11 +46,11 @@ The last one is about where work happens rather than what happens in it. **Sub-a
 
 The key to a good output is a good input, and the input that matters most is the quality of the context an agent has while executing a task, which does not need to be the same from one task to the next. When a person carries a change from idea to merge, they quietly switch hats. They think loosely while brainstorming, narrowly while implementing, and adversarially while reviewing. An agentic workflow should make those hats explicit too, and once it does the question stops being how much context to load and becomes which slice each one needs.
 
-Every project ends up needing its own mix of agents depending on the task, but it helps to start from a simple base, the phases a workflow generally moves through today:
+Every project ends up needing its own mix of agents depending on the task, but it helps to start from a simple base, listing the phases a workflow generally moves through today:
 
 - **Brainstorming**: the task gets explored, placed in the project's context, challenged, checked against the project's own requirements, and prioritized, usually the step that takes a backlog item from a rough draft to something structured enough to act on.
 - **Planning**: turns a settled task into an actual plan, which defines how it should be built given the codebase as it stands today and whatever constraints apply.
-- **Execution**: the plan turns into actual code.
+- **Execution**: the plan turns into actual code, tested as it is written.
 - **Internal review**: the code gets checked from several angles at once, quality, correctness, bugs, security, before anyone outside the loop sees it.
 - **Documentation**: whatever explains the change gets updated, the harness's own memory, the comments in the code, the docs on the site.
 - **External review**: the pull request opens and waits on whatever review still has to happen outside the loop.
@@ -64,14 +64,59 @@ Once the phases are identified, it helps to categorize the context agents actual
 - **Persisted memory**: what the project already knows and carries forward, both what the model picked up on its own and what people wrote down as rules or instructions for that project.
 - **History**: why the code got to look the way it does, not what it is now but how it got there (a changelog, parts of the git log).
 
-Put every role and every layer on one grid and the shape of the method shows up at a glance.
+Put every phase and context category on one grid and what each phase might actually need becomes clear at a glance.
 
 <ThemedIllustration
   lightSrc="/static/images/context-matrix-light.svg"
   darkSrc="/static/images/context-matrix-dark.svg"
-  alt="A grid of five agent roles against six context layers. Each cell marks whether an agent reads a layer in full or in part, creates it, updates it, or has no relationship to it at all."
-  caption="Five agent roles against six context layers: full reads, scoped reads, layers created from scratch, and layers only updated, the shape of what each role actually needs."
+  alt="A grid of five workflow phases against six context layers. Each cell marks whether a phase reads a layer in full or in part, creates it, updates it, or has no relationship to it at all."
+  caption="Five workflow phases against six context layers: full reads, scoped reads, created layers, updated layers, the shape of what each phase actually needs."
 />
+
+The matrix leaves out plenty of detail, but it gives us a framework for reasoning about which agents are worth creating, and with what context, a way of weighing different configurations against each other.
+
+Some of these context categories do not need to be loaded in full, only the slice that matters for the task at hand. Working on a new React component only requires the part of the codebase around that component. In the same way, an agent should not load every rule or instruction, or read the project's entire git history, only what is relevant to that specific task. Selecting the right slice can partly be left to the agent's own judgment, and partly comes from how those instructions are set up in the first place. On Cursor, for instance, rules can attach conditionally: written once, then set to apply automatically only to files matching a given pattern, to be pulled in by the agent based on their own description, or invoked manually, instead of loading on every single task.
+
+Some phases can be broken down further, into sub-phases with their own dedicated sub-agents. Internal review might split into security and code quality, each one benefiting from its own context, and even its own model and effort level.
+
+Splitting work across agents by role does more than optimize context, it also lets each task run on a different model, saving tokens further and matching capability to what the task actually demands. A model good at planning is not necessarily the one best suited to execution. Claude Opus 4.8, or GLM 5.2, might handle brainstorming and planning, tasks that call for broad reasoning and weighing tradeoffs, while cheap, fast models like Cursor's Composer 2.5, or the open-weight DeepSeek v4 Flash, handle execution.
+
+Knowing what each phase needs and which model fits it is only half the picture. The other half is how these phases actually connect: what decides when one hands off to the next, and where a human needs to hold the gate rather than let the pipeline run on its own.
+
+## How the work actually flows
+
+Not every phase should stop at the same kind of gate. Three usually show up across the pipeline, and telling them apart is what keeps the whole thing from feeling either too slow or too loose:
+
+- **Human**: a person looks at the output and decides whether to move on, worth the time only where a wrong turn is expensive to undo, typically brainstorming, planning, and documentation.
+- **Automated tooling**: a hook, the same mechanism described earlier, firing a script such as a linter, a test suite, a formatter, or a quality check, checking the output against rules that need no judgment at all.
+- **Agent verdict**: another agent judges whether the work is good enough to continue, cheaper and faster than a person, but that verdict cannot be allowed to repeat forever, it needs a limit of its own. After enough failed attempts, the loop should hand off to a human instead of trying again.
+
+Here is what that looks like end to end, the same five phases from the matrix above, each one now carrying a model, a context slice, and a gate.
+
+Worth noticing where a failed review actually goes: back to planning, not back to execution. When the verdict comes back negative, the instinct is to send the diff straight back to execution for a quick patch on top of the last one. Ward Cunningham's original idea of technical debt was a conscious trade off, ship the compromise now, know exactly what it costs, and pay it back on your own schedule [@Cunningham1992]. What builds up from patch after patch on a diff nobody but the AI ever rereads from scratch is a different kind of debt. Casserini et al. call it agentic entropy: a drift nobody chose, each fix correct enough on its own but slowly pulling the code away from the plan that was meant to shape it, until the diff stops reflecting any single coherent decision [@Casserini2026]. It sits close to what I called [understanding debt](/blog/beyond-technical-debt) in an earlier post, both about what AI delegation quietly erodes when nobody pauses to look closely. Sending a failed review back to planning instead of patching execution again is what keeps that from happening.
+
+The pipeline can move in more than one way. The loop back to planning is one, skipping phases entirely is another. Few tasks actually walk through all five phases in the first place, and deciding how much of the pipeline a given task needs is itself part of the job. A one line typo fix does not need brainstorming, or much of a plan either. In practice that decision, and every handoff that follows it, comes from one of three places: a person triggering each agent by hand, an orchestration layer that sizes up the task and fires each handoff on its own, or any mix of the two.
+
+[OpenCode](https://opencode.ai) already ships something close to this. Its agents declare which subagents they are allowed to hand work to through a permission map, not a single on or off switch:
+
+```json
+{
+  "agent": {
+    "orchestrator": {
+      "mode": "primary",
+      "permission": {
+        "task": {
+          "*": "deny",
+          "orchestrator-*": "allow",
+          "code-reviewer": "ask"
+        }
+      }
+    }
+  }
+}
+```
+
+Deny by default, allow a whole family of subagents that match a pattern, and still ask before invoking one specific case. Each subagent can get its own rule instead of one setting for all of them [@OpenCodeAgents2026].
 
 ## References
 
