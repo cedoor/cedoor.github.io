@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { name, role, bio, nowItems, social } from '../data/about'
+import { name, role, siteTitle, bio, nowItems, social } from '../data/about'
 ---
 
-<BaseLayout currentPath="/">
+<BaseLayout title={siteTitle} currentPath="/">
   <article>
     <header class="about-header">
       <img class="about-avatar" src="/static/images/avatar.jpg" alt={name} width="56" height="56" />

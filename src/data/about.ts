@@ -1,5 +1,6 @@
 export const name = 'Cedoor'
 export const role = 'Software engineer · privacy, cryptography & learning tools'
+export const siteTitle = `${name} — ${role}`
 
 export const bio = [
   "I'm a software engineer focused on privacy and programmable cryptography. A lot of this technology never makes it out of papers and research code, so I work on the layer above it: libraries, protocols, and developer tools that let other engineers actually build with zero-knowledge proofs, MPC, and FHE. In practice that's mostly TypeScript and Rust, reaching for Solidity or Circom/Noir when the work touches smart contracts or circuits.",

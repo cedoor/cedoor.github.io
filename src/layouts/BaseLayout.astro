@@ -11,18 +11,21 @@ interface Props {
   ogImage?: string
 }
 
+const DEFAULT_OG_IMAGE = '/static/images/avatar.jpg'
+
 const {
   title = 'cedoor.dev',
   description = 'Software engineer focused on privacy, programmable cryptography, and learning tools.',
   currentPath,
   hasMath = false,
   ogType = 'website',
-  ogImage,
+  ogImage = DEFAULT_OG_IMAGE,
 } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const ogTitle = title === 'cedoor.dev' ? title : `${title} — cedoor.dev`
-const ogImageURL = ogImage ? new URL(ogImage, Astro.site) : undefined
+const ogImageURL = new URL(ogImage, Astro.site)
+const isBlogOgImage = ogImage.includes('/static/images/og/')
 ---
 
 <!doctype html>
@@ -38,12 +41,25 @@ const ogImageURL = ogImage ? new URL(ogImage, Astro.site) : undefined
     <meta property="og:site_name" content="cedoor.dev" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
-    {ogImageURL && <meta property="og:image" content={ogImageURL} />}
+    <meta property="og:image" content={ogImageURL} />
+    {
+      isBlogOgImage ? (
+        <>
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+        </>
+      ) : (
+        <>
+          <meta property="og:image:width" content="590" />
+          <meta property="og:image:height" content="590" />
+        </>
+      )
+    }
 
-    <meta name="twitter:card" content={ogImageURL ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={description} />
-    {ogImageURL && <meta name="twitter:image" content={ogImageURL} />}
+    <meta name="twitter:image" content={ogImageURL} />
 
     <title>{ogTitle}</title>
     <link rel="icon" href="/static/favicons/favicon.ico" />
