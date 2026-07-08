@@ -19,5 +19,6 @@ export const nowItems = [
 
 export const social = [
   { label: 'GitHub', href: 'https://github.com/cedoor', external: true },
+  { label: 'Substack', href: 'https://cedoor.substack.com', external: true },
   { label: 'Email', href: 'mailto:me@cedoor.dev', external: false },
 ]
