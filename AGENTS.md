@@ -61,6 +61,12 @@ pnpm preview   # preview production build
 pnpm format    # prettier --write .
 ```
 
+## Git workflow
+
+### Branch naming
+
+When pushing a branch to open a PR, the branch name must always reflect the actual changes of the task, not a generic or placeholder name (e.g. `fix-blog-search-slug`, not `update` or `patch-1`).
+
 ## Design system
 
 ### Theme
