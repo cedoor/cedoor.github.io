@@ -15,6 +15,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 const { Content } = await render(post)
 
+const slug = post.id.replace(/\.mdx?$/, '')
+const ogImage = post.data.images?.[0] ?? `/static/images/og/${slug}.svg`
 const postReadingTime = readingTime(post.body ?? '')
 
 const hasMath =
@@ -29,6 +31,7 @@ const hasMath =
   currentPath="/blog"
   hasMath={hasMath}
   ogType="article"
+  ogImage={ogImage}
 >
   <article>
     <a class="post-back" href="/blog">← writing</a>

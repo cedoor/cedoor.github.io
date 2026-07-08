@@ -8,6 +8,7 @@ interface Props {
   currentPath: string
   hasMath?: boolean
   ogType?: 'website' | 'article'
+  ogImage?: string
 }
 
 const {
@@ -16,10 +17,12 @@ const {
   currentPath,
   hasMath = false,
   ogType = 'website',
+  ogImage,
 } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const ogTitle = title === 'cedoor.dev' ? title : `${title} — cedoor.dev`
+const ogImageURL = ogImage ? new URL(ogImage, Astro.site) : undefined
 ---
 
 <!doctype html>
@@ -35,10 +38,12 @@ const ogTitle = title === 'cedoor.dev' ? title : `${title} — cedoor.dev`
     <meta property="og:site_name" content="cedoor.dev" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
+    {ogImageURL && <meta property="og:image" content={ogImageURL} />}
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={ogImageURL ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={description} />
+    {ogImageURL && <meta name="twitter:image" content={ogImageURL} />}
 
     <title>{ogTitle}</title>
     <link rel="icon" href="/static/favicons/favicon.ico" />

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-title">
+  <title id="og-title">{{ARIA_TITLE}}</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Lora:wght@500&amp;display=swap');
+      .serif { font-family: 'Lora', Georgia, serif; font-weight: 500; fill: #2b2b2b; }
+      .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; fill: #2b2b2b; }
+      .muted { fill: #7c6f64; }
+      .faint { fill: #bdb6ac; }
+      .header { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 22px; font-weight: 500; letter-spacing: 0.02em; }
+      .role { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 16px; letter-spacing: 0.02em; }
+      .footer { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 16px; }
+    </style>
+    <clipPath id="avatar-clip">
+      <circle cx="96" cy="83.5" r="16" />
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="630" fill="#ffffff" />
+
+  <image href="{{AVATAR_URL}}" x="80" y="67.5" width="32" height="32" clip-path="url(#avatar-clip)" preserveAspectRatio="xMidYMid slice" />
+  <text class="mono header" x="126" y="89">cedoor.dev</text>
+  <text class="mono header faint" x="262" y="89">&#183;</text>
+  <text class="mono header muted" x="280" y="89" font-weight="400">blog</text>
+
+  <text class="mono role muted" x="80" y="132">{{ROLE}}</text>
+
+  {{TITLE}}
+
+  <line x1="80" y1="558" x2="1120" y2="558" stroke="#e6e4df" stroke-width="1" />
+  <text class="mono footer muted" x="80" y="598">{{AUTHOR}}</text>
+  <text class="mono footer muted" x="1120" y="598" text-anchor="end">{{DATE}}</text>
+</svg>
