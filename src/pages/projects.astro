@@ -38,7 +38,11 @@ const pastProjects = projects.filter((p) => !p.active)
                   <div class="parallel-panel">
                     <div class="timeline-meta">
                       <span class="project-date">{project.dateRange}</span>
-                      <span class="project-company">{project.company}</span>
+                      <span class="project-company">
+                        <a href={project.companyUrl} target="_blank" rel="noopener noreferrer">
+                          {project.company}
+                        </a>
+                      </span>
                     </div>
 
                     <h2 class="project-title">{project.title}</h2>
@@ -103,7 +107,11 @@ const pastProjects = projects.filter((p) => !p.active)
 
             <div class="timeline-meta">
               <span class="project-date">{project.dateRange}</span>
-              <span class="project-company">{project.company}</span>
+              <span class="project-company">
+                <a href={project.companyUrl} target="_blank" rel="noopener noreferrer">
+                  {project.company}
+                </a>
+              </span>
             </div>
 
             <h2 class="project-title">{project.title}</h2>

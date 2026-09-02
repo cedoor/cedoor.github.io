@@ -625,6 +625,17 @@ a {
   letter-spacing: 0.02em;
 }
 
+.project-company a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  transition: text-decoration-color 120ms ease;
+}
+
+.project-company a:hover {
+  text-decoration-color: var(--accent);
+}
+
 .project-title {
   font-family: var(--font-serif);
   font-weight: 400;
