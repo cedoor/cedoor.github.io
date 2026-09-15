@@ -12,6 +12,25 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Atlante',
+    company: 'Personal Project',
+    companyUrl: 'https://github.com/cedoor',
+    dateRange: 'Jul 2026 — Present',
+    description: `<a href="https://atlante.sh/">Atlante</a> is the result of months spent studying how software
+      engineers' jobs have changed over the past few years. It is a simple, <b>minimal</b> dev tool for
+      configuring, validating, sharing, and <b>testing</b> your harness (precisely your skills and agent
+      prompts) through <b>composable</b> templates. The same shift that turned infrastructure into code is now
+      happening to
+      harnesses. Think of it as the <a href="https://fallow.tools">fallow</a> of the harness.
+      With additional built-in configurable <b>evals</b>: versioned scenarios executed in disposable sandboxes
+      that check the harness against explicit expectations before it is shared. And <b>packs</b>: npm packages
+      that bundle a complete harness so any new project can initialize from the same reviewed starting point.`,
+    skills: ['AI', 'Developer Experience', 'Open Source', 'TypeScript'],
+    repoUrl: 'https://github.com/atlante/atlante',
+    siteUrl: 'https://atlante.sh/',
+    active: true,
+  },
+  {
     title: 'Squid',
     company: 'Personal Project',
     companyUrl: 'https://github.com/cedoor',
