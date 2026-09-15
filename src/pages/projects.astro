@@ -47,7 +47,7 @@ const pastProjects = projects.filter((p) => !p.active)
 
                     <h2 class="project-title">{project.title}</h2>
 
-                    <p class="project-body" set:html={project.description} />
+                    <p class="project-body is-clamped" set:html={project.description} />
                     <button class="project-expand-btn" type="button" hidden>
                       view more
                     </button>
@@ -116,7 +116,7 @@ const pastProjects = projects.filter((p) => !p.active)
 
             <h2 class="project-title">{project.title}</h2>
 
-            <p class="project-body" set:html={project.description} />
+            <p class="project-body is-clamped" set:html={project.description} />
             <button class="project-expand-btn" type="button" hidden>
               view more
             </button>
@@ -183,8 +183,6 @@ const pastProjects = projects.filter((p) => !p.active)
       container!.style.height = `${panels[index].scrollHeight}px`
     }
 
-    container.style.height = `${panels[0].scrollHeight}px`
-
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => setActiveTab(i))
     })
@@ -204,6 +202,10 @@ const pastProjects = projects.filter((p) => !p.active)
     const btn = body.nextElementSibling as HTMLButtonElement
     if (!btn?.classList.contains('project-expand-btn')) return
 
+    // Bodies are server-rendered already clamped, so the first paint shows the
+    // collapsed state with no flicker. Unclamp synchronously just to measure the
+    // natural height (no paint can happen mid-task), then decide.
+    body.classList.remove('is-clamped')
     const naturalHeight = body.scrollHeight
     body.classList.add('is-clamped')
     const clampedHeight = body.clientHeight
@@ -221,4 +223,9 @@ const pastProjects = projects.filter((p) => !p.active)
       if (body.closest('.parallel-panel')) refreshCarouselHeight()
     })
   })
+
+  // Bodies arrive clamped from the server; size the carousel from the
+  // already-clamped panels so no space is reserved for collapsed text.
+  refreshCarouselHeight()
+  document.fonts?.ready.then(() => refreshCarouselHeight())
 </script>
