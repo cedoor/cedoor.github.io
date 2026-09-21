@@ -12,23 +12,37 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Nesso',
+    company: 'Personal Project',
+    companyUrl: 'https://github.com/cedoor',
+    dateRange: 'May 2026 — Present',
+    description: `<a href="https://nesso.how/">Nesso</a> is an app for active learning built around
+      typed knowledge graphs, where nodes are ideas and edges are the typed semantic relations you
+      draw between them. Instead of absorbing answers passively, you draw connections and choose what
+      each link means: <b>causes</b> versus <b>enables</b>, <b>subtype-of</b> versus
+      <b>instance-of</b>, across <b>52 relation types</b> in eight categories. Every concept carries
+      <b>spaced-repetition</b> state via <b>FSRS</b>. Nesso runs as a <b>local-first</b> web app
+      and a <b>Tauri</b> desktop app. An optional <b>Socratic AI</b> helps you work through ideas
+      using local or cloud models. It revisits an interest I first explored with <b>Mindmapp</b>, my first
+      open-source project: helping people organize what they learn. This time I'm focusing on
+      active learning, research on memory, and giving people control over their data.`,
+    skills: ['Knowledge Graph', 'AI', 'Open Source', 'Learning'],
+    repoUrl: 'https://github.com/nesso-how/nesso',
+    siteUrl: 'https://nesso.how/',
+    active: true,
+  },
+  {
     title: 'Atlante',
     company: 'Personal Project',
     companyUrl: 'https://github.com/cedoor',
-    dateRange: 'Jul 2026 — Present',
-    description: `<a href="https://atlante.sh/">Atlante</a> is the result of months spent studying how software
-      engineers' jobs have changed over the past few years. It is a simple, <b>minimal</b> dev tool for
-      configuring, validating, sharing, and <b>testing</b> your harness (precisely your skills and agent
-      prompts) through <b>composable</b> templates. The same shift that turned infrastructure into code is now
-      happening to
-      harnesses. Think of it as the <a href="https://fallow.tools">fallow</a> of the harness.
-      With additional built-in configurable <b>evals</b>: versioned scenarios executed in disposable sandboxes
-      that check the harness against explicit expectations before it is shared. And <b>packs</b>: npm packages
-      that bundle a complete harness so any new project can initialize from the same reviewed starting point.`,
+    dateRange: 'Jul 2026 — Sep 2026',
+    description: `<a href="https://atlante.sh/">Atlante</a> has been an experimental project where I explored
+      ways to manage agent prompts, skills, and workflows as <b>composable</b>, versioned artifacts.
+      I built a small <b>TypeScript</b> tool to try out
+      templates, validation, reusable packs, and early forms of evaluation.`,
     skills: ['AI', 'Developer Experience', 'Open Source', 'TypeScript'],
     repoUrl: 'https://github.com/atlante/atlante',
     siteUrl: 'https://atlante.sh/',
-    active: true,
   },
   {
     title: 'Squid',
@@ -42,11 +56,9 @@ const projects: Project[] = [
       bivariate polynomial representation proposed in
       <a href="https://eprint.iacr.org/2023/771">Revisiting Key Decomposition Techniques for FHE</a>
       and drawing on <a href="https://eprint.iacr.org/2018/758">CHIMERA</a> for unifying different
-      schemes under a common plaintext space. Squid hides the complexity of scratch memory management
-      and scheme lifecycle transitions, letting developers focus on writing FHE programs rather than
-      managing low-level state. It also ships as <b>squid-js</b>, with <b>WebAssembly</b> and
-      <b>Node.js</b> bindings, bringing fully homomorphic encryption within reach of the broader
-      JavaScript ecosystem.`,
+      schemes under a common plaintext space. Squid handles scratch memory management
+      and scheme lifecycle transitions. It also ships as <b>squid-js</b>, with <b>WebAssembly</b> and
+      <b>Node.js</b> bindings for use from JavaScript.`,
     skills: ['Rust', 'Fully Homomorphic Encryption', 'Research'],
     repoUrl: 'https://github.com/cedoor/squid',
     siteUrl: 'https://squid.cedoor.dev/',
@@ -56,15 +68,16 @@ const projects: Project[] = [
     company: 'TheInterfold',
     companyUrl: 'https://www.theinterfold.com/',
     dateRange: 'Sep 2025 — Apr 2026',
-    description: `After a roughly 5-month break last year, I resumed working on what is without a doubt the
-      most complex project I've ever been part of, and the steepest learning curve I've experienced,
-      alongside extremely talented cryptographers and engineers.
+    description: `After a roughly 5-month break, I resumed work on the most complex project I've worked on so far.
+      I had a lot to learn from the cryptographers and engineers on the team.
       <a href="https://www.theinterfold.com/">TheInterfold</a> is a
-      <b>distributed network for verifiable confidential computation</b> where <b>FHE</b>,
-      <b>MPC</b>, <b>ZK</b>, <b>blockchain</b>, and <b>mechanism design</b> all converge. The idea
-      is to provide infrastructure that enables computation on <b>encrypted data</b> contributed by
-      multiple users, a technology with the potential to fundamentally change how sensitive
-      information is shared and used across organizations and industries.`,
+      <b>distributed network for verifiable confidential computation</b> that combines <b>FHE</b>,
+      <b>MPC</b>, <b>ZK</b>, <b>blockchain</b>, and <b>mechanism design</b>. The network is designed
+      to run computations on <b>encrypted data</b> contributed by multiple users. My work focused on
+      <b>Noir</b> circuits and recursive proofs for verifying the <b>threshold-BFV</b> protocol,
+      from distributed key generation and input encryption to threshold decryption and on-chain
+      verification. I also built <b>CRISP</b>'s proof system for coercion-resistant secret ballots,
+      along with TypeScript SDKs, APIs, and tooling for generating and integrating proofs.`,
     skills: [
       'Zero-Knowledge',
       'Full Homomorphic Encryption',
@@ -76,33 +89,13 @@ const projects: Project[] = [
     siteUrl: 'https://www.theinterfold.com/',
   },
   {
-    title: 'Nesso',
-    company: 'Personal Project',
-    companyUrl: 'https://github.com/cedoor',
-    dateRange: 'May 2026 — Present',
-    description: `<a href="https://nesso.how/">Nesso</a> is an app for active learning built around
-      typed knowledge graphs, where nodes are ideas and edges are the typed semantic relations you
-      draw between them. Instead of absorbing answers passively, you draw connections and choose what
-      each link means: <b>causes</b> versus <b>enables</b>, <b>subtype-of</b> versus
-      <b>instance-of</b>, across <b>52 relation types</b> in eight categories. Every concept carries
-      <b>spaced-repetition</b> state via <b>FSRS</b>. On top of the graph, a primarily
-      <b>local AI</b> layer is being built to guide the learner, informed by graph analysis
-      algorithms. In some ways, Nesso is a spiritual successor to <b>Mindmapp</b>, my first
-      open-source project, built years later in response to what most modern learning platforms get wrong:
-      passive consumption, no research backing, locked data, zero ownership.`,
-    skills: ['Knowledge Graph', 'AI', 'Open Source', 'Learning'],
-    repoUrl: 'https://github.com/nesso-how/nesso',
-    siteUrl: 'https://nesso.how/',
-    active: true,
-  },
-  {
     title: 'MPC Framework',
     company: 'PSE (Ethereum Foundation)',
     companyUrl: 'https://pse.dev/',
     dateRange: 'Jan 2025 — Feb 2025',
     description: `Although I only worked on it for a couple of months, this project gave me the chance to
       study <a href="https://mpc.pse.dev/">MPC</a> (Multi-Party Computation) and use <b>Rust</b>
-      for the first time. MPC Framework makes building MPC circuits dramatically simpler, thanks to
+      for the first time. MPC Framework makes building MPC circuits simpler, thanks to
       a DSL called <a href="https://github.com/privacy-ethereum/summon">Summon</a> for boolean
       circuits and a plug-in architecture for different backends. In my opinion one of the most
       well-executed projects at PSE, largely thanks to
@@ -115,11 +108,11 @@ const projects: Project[] = [
     company: 'PSE (Ethereum Foundation)',
     companyUrl: 'https://pse.dev/',
     dateRange: 'Jul 2024 — Nov 2024',
-    description: `<a href="https://pse.dev/projects/zk-id">ZK-ID</a> is a team advancing the use of
-      <b>zero-knowledge proofs</b> in digital identity systems which I contributed to from its
+    description: `<a href="https://pse.dev/projects/zk-id">ZK-ID</a> is a team working on
+      <b>zero-knowledge proofs</b> for digital identity systems. I contributed from the team's
       inception, shortly before <b>Devcon SEA</b>. The goal was to coordinate efforts toward making
       ZK technologies interoperable and standardized. What struck me the most was realizing how many
-      people, organizations, and institutions are already working to make the Internet a better place.`,
+      people, organizations, and institutions were already working on these problems.`,
     skills: ['Identity', 'Community', 'Zero-Knowledge'],
     repoUrl: 'https://github.com/privacy-ethereum/zkID',
   },
@@ -146,11 +139,10 @@ const projects: Project[] = [
     company: 'PSE (Ethereum Foundation)',
     companyUrl: 'https://pse.dev/',
     dateRange: 'Jan 2022 — Nov 2024',
-    description: `ZK-Kit was a project I deeply invested myself in, born from the realization that while
-      <b>zero-knowledge technologies</b> were maturing rapidly, there was still a lack of solid,
-      secure, and well-documented <b>development tools</b>. The idea was to build a set of libraries
-      that met high <b>production standards</b>, but also a digital meeting place for programmers
-      interested in contributing. Implementations included various Merkle trees, Baby Jubjub,
+    description: `I put a lot of work into ZK-Kit. We needed reusable, well-documented
+      <b>development tools</b> for <b>zero-knowledge</b> projects, with libraries that could be used
+      in <b>production</b>. I also wanted to bring together programmers interested in maintaining
+      and improving them. Implementations included various Merkle trees, Baby Jubjub,
       Poseidon, and utilities initially built in <b>JavaScript</b>, <b>Solidity</b>, and
       <b>Circom</b>, later extended to <b>Noir</b> and <b>Rust</b>.`,
     skills: ['Community', 'Developer Experience'],
@@ -167,7 +159,7 @@ const projects: Project[] = [
       collaborative art, all without revealing their identity. The concept was inspired by
       <a href="https://en.wikipedia.org/wiki/Temporary_Autonomous_Zone">T.A.Z.: The Temporary
       Autonomous Zone</a>, an essay by the writer and anarchist <b>Hakim Bey</b>, adapted for the
-      event by PSE's comms team. It was a powerful experience that left a deep mark on me. I also
+      event by PSE's comms team. I also
       gave a <a href="https://www.youtube.com/watch?v=dxAfL91Sbw4">talk</a> at that Devcon that I
       had worked hard on, even though every cell in my body wished I wasn't on that stage at that
       moment.`,
@@ -184,12 +176,10 @@ const projects: Project[] = [
       identity, with gatekeepers that could enforce any condition: token ownership, credentials, and
       more. It could power anything from anonymous voting apps to mixers like
       <a href="https://tornado.cash/">Tornado Cash</a>. When I started working on it, only a
-      <b>proof of concept</b> existed. My role was to <b>re-engineer it from the ground up</b>:
-      simplifying the circuit and libraries, improving developer experience and documentation,
-      building a community, and ultimately shipping it to production, with the goal of making it the
-      <b>simplest and most mature</b> zero-knowledge protocol of its time. This is without a doubt
-      the project that taught me the most and helped me grow on every front, both technically and
-      personally.`,
+      <b>proof of concept</b> existed. I led development through the <b>audited v2–v4 releases</b>,
+      redesigning the <b>Circom</b> circuits, <b>TypeScript</b> SDKs, and <b>Solidity</b> contracts.
+      Alongside the protocol, I worked on documentation, release pipelines, and the tools and
+      workflows contributors used to work on it. It is the project I learned the most from.`,
     skills: ['Blockchain', 'Zero-Knowledge', 'Protocol Design'],
     repoUrl: 'https://github.com/semaphore-protocol/semaphore',
   },
@@ -204,9 +194,9 @@ const projects: Project[] = [
       <a href="https://pse.dev/">PSE</a> (Privacy and Scaling Explorations), a research and
       development lab supported by the Ethereum Foundation. The idea behind Interep was to build a
       bridge for transferring <b>"reputation"</b> from <b>web2 to web3</b> using
-      <b>zero-knowledge</b>. This is where my professional journey began in a new world, that of the
-      <b>Ethereum community</b> and more broadly the <b>cypherpunks</b>, that has profoundly changed
-      me.<br><br><b>Fun fact</b>: one of the first contributors to Interep was Jay Graber, now CEO
+      <b>zero-knowledge</b>. Through Interep I got involved in the <b>Ethereum community</b> and
+      became interested in <b>cypherpunk</b> ideas.<br><br><b>Fun fact</b>: one of the first
+      contributors to Interep was Jay Graber, now CEO
       of Bluesky.`,
     skills: ['Blockchain', 'Zero-Knowledge', 'Identity', 'Community'],
     repoUrl: 'https://github.com/interep-project/reputation-service',
@@ -220,8 +210,7 @@ const projects: Project[] = [
       which I worked on for my <b>master's thesis</b>. The ability to prove you possess information
       without revealing it felt like such a powerful concept that I couldn't pass up the opportunity
       to study the technology and its development tools. This project was also my first real step
-      into <b>cryptography</b> and a more mature awareness of the importance of <b>privacy</b> in
-      society.`,
+      into <b>cryptography</b>, and got me thinking more seriously about <b>privacy</b>.`,
     skills: ['Blockchain', 'Zero-Knowledge', 'Research'],
     repoUrl: 'https://github.com/cedoor/elekton-dapp',
   },
@@ -230,13 +219,13 @@ const projects: Project[] = [
     company: 'University of Cagliari',
     companyUrl: 'https://www.unica.it/',
     dateRange: 'Jan 2018 — Jan 2020',
-    description: `CAFCHA was a research project I had the pleasure of contributing to during my master's degree.
+    description: `CAFCHA was a research project I contributed to during my master's degree.
       It was an application for certifying every step of the <b>agro-food supply chain</b> on the
       <b>Ethereum blockchain</b>. At the time, "blockchain" was on the verge of becoming an overused
-      buzzword, but its fascinating technology had deeply captivated me, especially the idea of
+      buzzword, but I was interested in the technology, especially the idea of
       <b>decentralization</b> as opposed to how the web was evolving (and unfortunately has kept
-      evolving). It was a great experience to deepen my knowledge of Solidity and software
-      engineering patterns for shipping a <b>proof of concept to production</b>.`,
+      evolving). Working on it taught me more about Solidity and what it takes to move a
+      <b>proof of concept to production</b>.`,
     skills: ['Blockchain', 'Research', 'Mobile'],
   },
   {
@@ -246,9 +235,8 @@ const projects: Project[] = [
     dateRange: 'Sep 2017 — Aug 2020',
     description: `My first personal <b>open-source</b> project, inspired by
       <a href="https://en.wikipedia.org/wiki/Tony_Buzan">Tony Buzan</a>'s <b>mind maps</b>. Building
-      it was a journey that deepened my understanding of <b>JavaScript and web technologies</b>, and
-      opened the door to the <b>open-source world</b> and its philosophy. Along the way, I connected
-      with people from around the globe who shared the same passion for effective memorization tools.
+      it taught me a lot about <b>JavaScript and web technologies</b> and how <b>open-source</b>
+      projects work. Through the project I met other people interested in memorization tools.
       The project was later forked by <a href="https://b310.de">B310</a> into
       <a href="https://github.com/b310-digital/teammapper">TeamMapper</a>, a collaborative mind
       mapping tool now used for free by <b>public schools in Germany</b>.`,
