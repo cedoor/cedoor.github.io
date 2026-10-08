@@ -16,17 +16,16 @@ const projects: Project[] = [
     company: 'Personal Project',
     companyUrl: 'https://github.com/cedoor',
     dateRange: 'May 2026 — Present',
-    description: `<a href="https://nesso.how/">Nesso</a> is an app for active learning built around
-      typed knowledge graphs, where nodes are ideas and edges are the typed semantic relations you
-      draw between them. Instead of absorbing answers passively, you draw connections and choose what
-      each link means: <b>causes</b> versus <b>enables</b>, <b>subtype-of</b> versus
-      <b>instance-of</b>, across <b>52 relation types</b> in eight categories. Every concept carries
-      <b>spaced-repetition</b> state via <b>FSRS</b>. Nesso runs as a <b>local-first</b> web app
-      and a <b>Tauri</b> desktop app. An optional <b>Socratic AI</b> helps you work through ideas
-      using local or cloud models. It revisits an interest I first explored with <b>Mindmapp</b>, my first
-      open-source project: helping people organize what they learn. This time I'm focusing on
-      active learning, research on memory, and giving people control over their data.`,
-    skills: ['Knowledge Graph', 'AI', 'Open Source', 'Learning'],
+    description: `<a href="https://nesso.how/">Nesso</a> is an <b>open-source second brain</b> for
+      connecting ideas and building understanding in a single <b>knowledge graph</b>. Concepts are
+      connected by directed, typed relations, with vocabularies that define what those connections
+      mean. You can name your own relation types and organize subsets of the graph into <b>views</b>.
+      It is built around a <b>small core and an extensible plugin architecture</b>: the canvas,
+      vocabularies, themes, and actions are plugins rather than fixed parts of the app. It runs on
+      the web and desktop. Still in early development,
+      it revisits an interest I first explored with <b>Mindmapp</b>, my first open-source project:
+      helping people organize what they learn, this time by making the connections between ideas explicit.`,
+    skills: ['Knowledge Graph', 'Plugin Architecture', 'Open Source', 'Learning'],
     repoUrl: 'https://github.com/nesso-how/nesso',
     siteUrl: 'https://nesso.how/',
     active: true,
