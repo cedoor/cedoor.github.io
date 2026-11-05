@@ -3,14 +3,15 @@ export const role = 'Software engineer · privacy, cryptography & learning tools
 export const siteTitle = `${name} — ${role}`
 
 export const bio = [
-  "I'm a software engineer. My core experience is in privacy and programmable cryptography. Most of that technology never makes it out of papers and research code, so I build the layer above it: libraries, protocols, and developer tools that let other engineers actually build with zero-knowledge proofs, MPC, and FHE. In practice that's mostly TypeScript and Rust, reaching for Solidity or Circom/Noir when the work touches smart contracts or circuits. Lately I've also been experimenting with AI coding tools, especially ways to reuse agent prompts and skills across projects and test how well they work.",
+  "I'm a software engineer with around ten years of experience across frontend, backend, and developer tooling, mostly in TypeScript and Rust. Most of my work so far has been in privacy and programmable cryptography. I've built SDKs, protocols, and tools that help other engineers use zero-knowledge proofs, MPC, and FHE in real products, along with the web apps, APIs, and CI/CD pipelines around them. Lately I've been working on local-first apps and AI developer tools, integrating agentic workflows into how I build software.",
   "I'm also interested in how people learn and organize knowledge, and in building tools that give them more control over that process.",
   'I care about open source, modular code, and interoperability. Check out my <a href="/projects">projects</a> to see what I\'ve been building.',
 ]
 
 export const nowItems = [
-  { text: 'Reading "Surveillance Capitalism" by Zuboff' },
-  { text: 'Listening to Jon Hopkins' },
+  { text: 'Building <a href="https://nesso.how/">Nesso</a>, a local-first app for learning' },
+  { text: 'Reading "De Brevitate Vitae" by Seneca' },
+  { text: 'Listening to Agnes Obel' },
   { text: 'Street photography' },
 ]
 
