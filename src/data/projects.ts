@@ -25,7 +25,7 @@ const projects: Project[] = [
       the web and desktop. Still in early development,
       it revisits an interest I first explored with <b>Mindmapp</b>, my first open-source project:
       helping people organize what they learn, this time by making the connections between ideas explicit.`,
-    skills: ['Knowledge Graph', 'Plugin Architecture', 'Open Source', 'Learning'],
+    skills: ['Knowledge Graph', 'Plugin Architecture', 'React', 'Tailwind CSS', 'Electron', 'CI/CD'],
     repoUrl: 'https://github.com/nesso-how/nesso',
     siteUrl: 'https://nesso.how/',
     active: true,
@@ -39,7 +39,7 @@ const projects: Project[] = [
       ways to manage agent prompts, skills, and workflows as <b>composable</b>, versioned artifacts.
       I built a small <b>TypeScript</b> tool to try out
       templates, validation, reusable packs, and early forms of evaluation.`,
-    skills: ['AI', 'Developer Experience', 'Open Source', 'TypeScript'],
+    skills: ['AI', 'Developer Experience', 'TypeScript', 'Bun', 'CLI'],
     repoUrl: 'https://github.com/atlante/atlante',
     siteUrl: 'https://atlante.sh/',
   },
@@ -58,7 +58,7 @@ const projects: Project[] = [
       schemes under a common plaintext space. Squid handles scratch memory management
       and scheme lifecycle transitions. It also ships as <b>squid-js</b>, with <b>WebAssembly</b> and
       <b>Node.js</b> bindings for use from JavaScript.`,
-    skills: ['Rust', 'Fully Homomorphic Encryption', 'Research'],
+    skills: ['Rust', 'Fully Homomorphic Encryption', 'WebAssembly', 'Research'],
     repoUrl: 'https://github.com/cedoor/squid',
     siteUrl: 'https://squid.cedoor.dev/',
   },
@@ -75,14 +75,17 @@ const projects: Project[] = [
       to run computations on <b>encrypted data</b> contributed by multiple users. My work focused on
       <b>Noir</b> circuits and recursive proofs for verifying the <b>threshold-BFV</b> protocol,
       from distributed key generation and input encryption to threshold decryption and on-chain
-      verification. I also built <b>CRISP</b>'s proof system for coercion-resistant secret ballots,
-      along with TypeScript SDKs, APIs, and tooling for generating and integrating proofs.`,
+      verification. I also worked across the stack of <b>CRISP</b>, an app for coercion-resistant
+      secret ballots built on the protocol: its proof system, <b>React</b> frontend, <b>Rust</b>
+      server, and <b>TypeScript</b> SDK. Along the way, I spent some time making the CI faster and
+      cheaper to run.`,
     skills: [
       'Zero-Knowledge',
-      'Full Homomorphic Encryption',
+      'Fully Homomorphic Encryption',
       'Multi-Party Computation',
-      'Research',
       'Rust',
+      'Noir',
+      'React',
     ],
     repoUrl: 'https://github.com/gnosisguild/enclave',
     siteUrl: 'https://www.theinterfold.com/',
@@ -99,7 +102,7 @@ const projects: Project[] = [
       circuits and a plug-in architecture for different backends. In my opinion one of the most
       well-executed projects at PSE, largely thanks to
       <a href="https://github.com/voltrevo">Andrew Morris</a>.`,
-    skills: ['Multi-Party Computation', 'Rust'],
+    skills: ['Multi-Party Computation', 'Rust', 'TypeScript'],
     repoUrl: 'https://github.com/privacy-ethereum/mpc-framework',
   },
   {
@@ -134,6 +137,22 @@ const projects: Project[] = [
     repoUrl: 'https://github.com/proofcarryingdata/zupass',
   },
   {
+    title: 'Bandada',
+    company: 'PSE (Ethereum Foundation)',
+    companyUrl: 'https://pse.dev/',
+    dateRange: 'May 2022 — Aug 2023',
+    description: `<a href="https://pse.dev/projects/bandada">Bandada</a> grew alongside Semaphore:
+      applications needed a simple way to create and manage their groups, the <b>Merkle trees</b>
+      used as anonymity sets, without building that infrastructure themselves. I started the project
+      and was its main developer through the first versions. It is a <b>full-stack</b> platform: a
+      <b>NestJS</b> REST API with <b>PostgreSQL</b>, Sign-In with Ethereum and OAuth credentials
+      (GitHub, Twitter, Reddit) for joining groups, a <b>React</b> admin dashboard, and a
+      <b>TypeScript SDK</b> for integrating it into other apps.`,
+    skills: ['Full-Stack', 'NestJS', 'PostgreSQL', 'React', 'Zero-Knowledge'],
+    repoUrl: 'https://github.com/bandada-infra/bandada',
+    siteUrl: 'https://pse.dev/projects/bandada',
+  },
+  {
     title: 'ZK-Kit',
     company: 'PSE (Ethereum Foundation)',
     companyUrl: 'https://pse.dev/',
@@ -144,7 +163,7 @@ const projects: Project[] = [
       and improving them. Implementations included various Merkle trees, Baby Jubjub,
       Poseidon, and utilities initially built in <b>JavaScript</b>, <b>Solidity</b>, and
       <b>Circom</b>, later extended to <b>Noir</b> and <b>Rust</b>.`,
-    skills: ['Community', 'Developer Experience'],
+    skills: ['Developer Experience', 'Community', 'TypeScript', 'Rust', 'CI/CD'],
     repoUrl: 'https://github.com/zk-kit',
   },
   {
@@ -177,9 +196,10 @@ const projects: Project[] = [
       <a href="https://tornado.cash/">Tornado Cash</a>. When I started working on it, only a
       <b>proof of concept</b> existed. I led development through the <b>audited v2–v4 releases</b>,
       redesigning the <b>Circom</b> circuits, <b>TypeScript</b> SDKs, and <b>Solidity</b> contracts.
-      Alongside the protocol, I worked on documentation, release pipelines, and the tools and
-      workflows contributors used to work on it. It is the project I learned the most from.`,
-    skills: ['Blockchain', 'Zero-Knowledge', 'Protocol Design'],
+      Alongside the protocol, I worked on the documentation, the website, the <b>CI/CD</b> pipelines on
+      GitHub Actions with automated npm releases, and the tools and workflows contributors used to
+      work on it. It is the project I learned the most from.`,
+    skills: ['Zero-Knowledge', 'Protocol Design', 'TypeScript', 'Solidity', 'Circom', 'CI/CD'],
     repoUrl: 'https://github.com/semaphore-protocol/semaphore',
   },
   {
@@ -193,11 +213,13 @@ const projects: Project[] = [
       <a href="https://pse.dev/">PSE</a> (Privacy and Scaling Explorations), a research and
       development lab supported by the Ethereum Foundation. The idea behind Interep was to build a
       bridge for transferring <b>"reputation"</b> from <b>web2 to web3</b> using
-      <b>zero-knowledge</b>. Through Interep I got involved in the <b>Ethereum community</b> and
+      <b>zero-knowledge</b>. I built most of its <b>full-stack</b> application, in <b>Next.js</b> with
+      OAuth sign-in and a <b>MongoDB</b> backend. Through Interep I got involved in the
+      <b>Ethereum community</b> and
       became interested in <b>cypherpunk</b> ideas.<br><br><b>Fun fact</b>: one of the first
       contributors to Interep was Jay Graber, now CEO
       of Bluesky.`,
-    skills: ['Blockchain', 'Zero-Knowledge', 'Identity', 'Community'],
+    skills: ['Zero-Knowledge', 'Identity', 'Full-Stack', 'Next.js', 'MongoDB'],
     repoUrl: 'https://github.com/interep-project/reputation-service',
   },
   {
@@ -210,7 +232,7 @@ const projects: Project[] = [
       without revealing it felt like such a powerful concept that I couldn't pass up the opportunity
       to study the technology and its development tools. This project was also my first real step
       into <b>cryptography</b>, and got me thinking more seriously about <b>privacy</b>.`,
-    skills: ['Blockchain', 'Zero-Knowledge', 'Research'],
+    skills: ['Zero-Knowledge', 'Research', 'React', 'PWA'],
     repoUrl: 'https://github.com/cedoor/elekton-dapp',
   },
   {
@@ -239,7 +261,7 @@ const projects: Project[] = [
       The project was later forked by <a href="https://b310.de">B310</a> into
       <a href="https://github.com/b310-digital/teammapper">TeamMapper</a>, a collaborative mind
       mapping tool now used for free by <b>public schools in Germany</b>.`,
-    skills: ['Open Source', 'Frontend', 'Learning'],
+    skills: ['Open Source', 'Frontend', 'Angular', 'Learning'],
     repoUrl: 'https://github.com/cedoor/mindmapp',
   },
 ]

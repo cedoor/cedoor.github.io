@@ -21,7 +21,7 @@ Vite is Astro's bundler, so no separate Vite config is needed.
 | Route          | File                             | Notes                                            |
 | -------------- | -------------------------------- | ------------------------------------------------ |
 | `/`            | `src/pages/index.astro`          | About: avatar, bio, Now section                  |
-| `/projects`    | `src/pages/projects.astro`       | Timeline of 11 projects, newest first            |
+| `/projects`    | `src/pages/projects.astro`       | Timeline of projects, newest first            |
 | `/blog`        | `src/pages/blog/index.astro`     | Searchable list via `BlogSearch` React component |
 | `/blog/[slug]` | `src/pages/blog/[...slug].astro` | MDX post rendered via Astro content layer        |
 | `/gallery`     | `src/pages/gallery.astro`        | Photo grid                                       |
@@ -37,7 +37,7 @@ src/
     blog/              # MDX files; file name = slug
   content.config.ts    # Astro 6 content layer (glob loader)
   data/
-    projects.ts        # All 11 projects with HTML description strings
+    projects.ts        # All projects with HTML description strings
     gallery.ts         # 4 gallery items with src + caption
   layouts/
     BaseLayout.astro   # HTML shell: anti-FOUC script, Nav, footer, slot
